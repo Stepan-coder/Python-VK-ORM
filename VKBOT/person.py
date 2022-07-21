@@ -1,4 +1,4 @@
-from vk_types import *
+from VKBOT.vk_types import *
 
 
 class Person:
@@ -8,10 +8,10 @@ class Person:
         self.__domain = person_json['domain'] if 'domain' in person_json else None
         self.__first_name = person_json['first_name'] if 'first_name' in person_json else None
         self.__last_name = person_json['last_name'] if 'last_name' in person_json else None
-        self.__birthday = person_json['birthday'] if 'birthday' in person_json else None
+        self.__birthday = Person.__convert_birthdate(person_json['bdate']) if 'bdate' in person_json else None
         self.__sex = Person.__decode_sex(person_json['sex']) if 'sex' in person_json else None
         self.__online = Person.__decode_online(person_json['online']) if 'online' in person_json else None
-        self.__relation =
+        self.__relation = Person.__decode_relation(person_json['relation']) if 'relation' in person_json else None
         self.__can_access_closed = person_json['can_access_closed'] if 'can_access_closed' in person_json else None
         self.__is_closed = person_json['is_closed'] if 'is_closed' in person_json else None
 
@@ -52,6 +52,16 @@ class Person:
         return self.__is_closed
 
     @staticmethod
+    def __convert_birthdate(birthdate: str) -> str:
+        date = str(birthdate).split(".")
+        if len(date) == 3:
+            return str(date[2]) + "-" + str(date[1]) + "-" + str(date[0])
+        elif len(date) == 2:
+            return "0000" + "-" + str(date[1]) + "-" + str(date[0])
+        else:
+            return "0000-00-00"
+
+    @staticmethod
     def __decode_sex(encoded_sex: int) -> SEX:
         if encoded_sex == 0:
             return SEX.NOT_SPECIFIED
@@ -68,6 +78,27 @@ class Person:
             return ONLINE.NOT_ONLINE
         elif encoded_online == 1:
             return ONLINE.ONLINE
+        else:
+            raise Exception("Invalid value!")
+
+    @staticmethod
+    def __decode_relation(encoded_relation: int) -> RELATION:
+        if encoded_relation == 0:
+            return RELATION.NOT_SPECIFIED
+        elif encoded_relation == 1:
+            return RELATION.NOT_MARRIED
+        elif encoded_relation == 2:
+            return RELATION.HAVE_FRIEND
+        elif encoded_relation == 3:
+            return RELATION.ENGAGED
+        elif encoded_relation == 4:
+            return RELATION.EVERYTHING_IS_COMPLICATED
+        elif encoded_relation == 5:
+            return RELATION.ACTIVE_SEARCH
+        elif encoded_relation == 6:
+            return RELATION.IN_LOVE
+        elif encoded_relation == 7:
+            return RELATION.CIVIL_MARRIAGE
         else:
             raise Exception("Invalid value!")
 
