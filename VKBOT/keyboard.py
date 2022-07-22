@@ -13,6 +13,9 @@ class KeyboardButton(Enum):
     #: Callback-кнопка
     CALLBACK = "callback"
 
+    #: Кнопка с местоположением
+    LOCATION = "location"
+
 
 class Keyboard:
     def __init__(self, inline: bool = False, one_time: bool = False):
@@ -20,16 +23,13 @@ class Keyboard:
 
     def add_button(self, text: str, button: KeyboardButton, color: VkKeyboardColor, payload: Any = None):
         if button == KeyboardButton.DEFAULT:
-            self.__keyboard.add_button(label=text,
-                                       color=color)
+            self.__keyboard.add_button(label=text, color=color)
         elif button == KeyboardButton.OPENLINK:
-            self.__keyboard.add_openlink_button(label=text,
-                                                link=payload)
+            self.__keyboard.add_openlink_button(label=text, link=payload)
         elif button == KeyboardButton.CALLBACK:
-            self.__keyboard.add_button(label=text,
-                                       color=color,
-                                       payload={"type": "show_snackbar",
-                                                "text": payload})
+            self.__keyboard.add_button(label=text, color=color, payload={"type": "show_snackbar", "text": payload})
+        elif button == KeyboardButton.LOCATION:
+            self.__keyboard.add_location_button()
 
     def add_line(self):
         self.__keyboard.add_line()

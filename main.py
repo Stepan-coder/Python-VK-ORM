@@ -2,8 +2,8 @@ import traceback
 from VKBOT.bot import *
 
 
-TOKEN = ""
-APP_ID = 
+TOKEN = "acc6b6f00d67fe61afc26d1527898ce49510532e229601ceeb2b781c26b44794fe756f9dd58634c48de21"
+APP_ID = 196221606
 
 
 bot = Bot()
@@ -19,7 +19,8 @@ while True:  # Этот бот тоже периодически ловит та
                 # Эта строка обязательная, используемм объект input_message вместо event.input_message
                 message = Message(event=event)
 
-                print(message.attachments)
+                print("have attachments", message.have_attachments)
+                print("message.attachments", message.attachments)
 
                 # Теперь получить id пользователя можно этой командой
                 print(message.text)
@@ -40,21 +41,49 @@ while True:  # Этот бот тоже периодически ловит та
                             print(image.width)  # Ширину картинки
                             print(image.height)  # Высоту картинки
                             # Такой командой можно сохранить картинку (обязательно указывать расширение файла)
-                            image.save("photo.jpg")
+                            image.save("inf/photo.jpg")
 
                 # Что бы получить от пользователя голосовое сообщение
                 if message.have_attachments:  # Проверяем, что пользователь отправил вложение (хоть какое то)
-                    print("message.have_voice_message", message.have_voice_message)
                     if message.have_voice_message:  # Проверяем, что в этих вложениях есть голосовые сообщения
                         # input_message.get_voice_messages() - спискок с голосовыми от пользователя, поэтому можем по нему пройтись
-                        for voice_messages in message.get_voice_messages():
+                        for voice_message in message.get_voice_messages():
                             # Для каждого голосового можно получить следующие параметры
-                            print(voice_messages.id)  # Уникальный идентификационный номер картинки
-                            print(voice_messages.url_mp3)  # Прямую ссылку на голосовое в .mp3
-                            print(voice_messages.url_oog)  # Прямую ссылку на голосовое в .oog
+                            print(voice_message.id)  # Уникальный идентификационный номер картинки
+                            print(voice_message.url_mp3)  # Прямую ссылку на голосовое в .mp3
+                            print(voice_message.url_oog)  # Прямую ссылку на голосовое в .oog
                             # Такой командой можно сохранить голосовое в .mp3
-                            voice_messages.save_mp3("voice_messages.mp3")
-                            voice_messages.save_oog('voice_messages.oog')
+                            voice_message.save_mp3("some/voice_messages.mp3")
+                            voice_message.save_oog('some/voice_messages.oog')
+
+                # Что бы получить от пользователя голосовое сообщение
+                if message.have_attachments:  # Проверяем, что пользователь отправил вложение (хоть какое то)
+                    if message.have_document:  # Проверяем, что в этих вложениях есть документы
+                        # input_message.get_documents() - спискок с документами от пользователя, поэтому можем по нему пройтись
+                        for document in message.get_documents():
+                            # Для каждого документа можно получить следующие параметры
+                            print(document.id)  # Уникальный идентификационный номер картинки
+                            print(document.date)  # Абсолютное время, когда документ был создан
+                            print(document.owner_id)
+                            print(document.url)  # Прямую ссылку на изображение (ВКонтакте хостит все изображения)
+                            print(document.extension)  # расширение файла
+                            print(document.size)  # Размер файла
+                            # Такой командой можно сохранить документ (имеется ввиду файл)
+                            document.save(f"new_document.edf")
+
+                # Что бы получить от пользователя голосовое сообщение
+                if message.have_attachments:  # Проверяем, что пользователь отправил вложение (хоть какое то)
+                    if message.have_geo:  # Проверяем, что в этих вложениях есть карта
+                        # input_message.get_geo() - спискок с документами от пользователя, поэтому можем по нему пройтись
+                        for geo in message.get_geo():
+                            # Для каждого документа можно получить следующие параметры
+                            print(geo.id)  # Уникальный идентификационный номер картинки
+                            print(geo.date)  # Абсолютное время, когда документ был создан
+                            print(geo.latitude)  # Широта пользователя
+                            print(geo.longitude)  # Долгота пользователя
+                            print(geo.title)  # Описание координаты
+                            print(geo.country)  # Страна
+                            print(geo.city)  # Город
 
                 # Получаем класс с инифой о пользователе
                 user = bot.get_user_info(user_id=message.user_id)
@@ -66,10 +95,10 @@ while True:  # Этот бот тоже периодически ловит та
                 # Отправляем стикер (где то была таблица со стикерами)
                 bot.send_sticker(user_id=message.user_id, sticker_id=63)
 
-                # Отправляем пользователю картинку
-                bot.send_photo(user_id=message.user_id,
-                               path_to_photo="some.jpg",
-                               message="some")
+                # # Отправляем пользователю картинку
+                # bot.send_photo(user_id=message.user_id,
+                #                path_to_photo="some.jpg",
+                #                message="some")
 
                 # создаём клавиатуру
                 keyboard = bot.create_keyboard()
@@ -96,11 +125,16 @@ while True:  # Этот бот тоже периодически ловит та
                                     button=KeyboardButton.OPENLINK,
                                     color=VkKeyboardColor.PRIMARY,
                                     payload="https://vk.com/stepanborodin")
+                keyboard.add_line()
+                keyboard.add_button(text="text",
+                                    button=KeyboardButton.LOCATION,
+                                    color=VkKeyboardColor.PRIMARY)
 
                 # Делаем перегрузку метода клавиатурой и отправляем
                 bot.send_message(user_id=message.user_id,
                                  message="Сообщение с клавиатурой)",
                                  keyboard=keyboard.get_keyboard())
+
     except Exception as e:
         print(traceback.format_exc())
 
