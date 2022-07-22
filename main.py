@@ -12,22 +12,42 @@ while True:  # Этот бот тоже периодически ловит та
     try:
         for event in bot.longpoll.listen():
             if event.type == VkBotEventType.MESSAGE_NEW:
+                # Эта строка обязательная, используемм объект message вместо event.message
+                message = Message(event=event)
 
-                message_text = event.message.text  # - тут лежит текст сообщения от пользователя
+                # Теперь получить id пользователя можно этой командой
+                print(message.text)
 
-                # event.object.message['peer_id'] - уникальный айдишник пользователя
+                # Теперь текст сообщения от пользователя лежит тут
+                print(message.user_id)
+
+                # Что бы получить от пользователя картинку нужно
+                if message.have_attachments:  # Проверяем, что пользователь отправил вложение (хоть какое то)
+                    if message.have_images:  # Проверяем, что в этих вложениях есть картинки
+                        # message.get_images() - спискок с картинками от пользователя, поэтому можем по нему пройтись
+                        for image in message.get_images():
+                            # Для каждого изображения можно получить следующие параметры
+                            print(image.url)  # Прямую ссылку на изображение (ВКонтакте хостит все изображения)
+                            print(image.width)  # Ширину картинки
+                            print(image.height)  # Высоту картинки
+                            # Такой командой можно сохранить картинку (обязательно указывать расширение файла)
+                            image.save("some.jpg")
+
+
                 # Получаем класс с инифой о пользователе
-                user = bot.get_user_info(user_id=event.object.message['peer_id'])  # На выходе получаем класс с инфой о пользователе
+                user = bot.get_user_info(user_id=message.user_id)
 
                 # Отправляем пользователю с user_id простое сообщение
-                bot.send_message(user_id=event.object.message['peer_id'],
+                bot.send_message(user_id=message.user_id,
                                  message="Просто сообщение")
 
                 # Отправляем стикер (где то была таблица со стикерами)
-                bot.send_sticker(user_id=event.object.message['peer_id'], sticker_id=63)
+                bot.send_sticker(user_id=message.user_id, sticker_id=63)
 
                 # Отправляем пользователю картинку
-                bot.send_photo(user_id=event.object.message['peer_id'], path_to_photo="123.jpg", message="some")
+                bot.send_photo(user_id=message.user_id,
+                               path_to_photo="some.jpg",
+                               message="some")
 
                 # создаём клавиатуру
                 keyboard = bot.create_keyboard()
@@ -56,7 +76,7 @@ while True:  # Этот бот тоже периодически ловит та
                                     payload="https://vk.com/stepanborodin")
 
                 # Делаем перегрузку метода клавиатурой и отправляем
-                bot.send_message(user_id=event.object.message['peer_id'],
+                bot.send_message(user_id=message.user_id,
                                  message="Сообщение с клавиатурой)",
                                  keyboard=keyboard.get_keyboard())
     except Exception as e:

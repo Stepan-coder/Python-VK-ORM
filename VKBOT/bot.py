@@ -2,6 +2,7 @@ import os
 import vk_api
 import traceback
 from VKBOT.person import *
+from VKBOT.message import *
 from VKBOT.keyboard import *
 from vk_api import VkApi
 from vk_api.upload import VkUpload
