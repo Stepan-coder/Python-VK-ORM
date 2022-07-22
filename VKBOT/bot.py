@@ -1,33 +1,37 @@
 import os
-import vk_api
-import traceback
+import warnings
 from VKBOT.person import *
-from VKBOT.message import *
 from VKBOT.keyboard import *
+from VKBOT.input_message.message import *
 from vk_api import VkApi
 from vk_api.upload import VkUpload
-from vk_api.vk_api import VkApiMethod
 from vk_api.utils import get_random_id
-from vk_api.keyboard import VkKeyboard, VkKeyboardColor
 from vk_api.bot_longpoll import VkBotLongPoll, VkBotEventType
 
 
 class Bot:
-    def __init__(self, TOKEN: str, APP_ID: int):
-        self.__TOKEN = TOKEN
-        self.__APP_ID = APP_ID
-        self.__vk_session = VkApi(token=self.__TOKEN)
-        self.__vk_session.RPS_DELAY = 1 / 100
-        self.__longpoll = VkBotLongPoll(self.__vk_session, self.__APP_ID)
-        self.__vk = self.__vk_session.get_api()
+    def __init__(self, token: str = None, app_id: int = None):
+        self.__TOKEN = token
+        self.__APP_ID = app_id
+        self.__bot_boot()
 
     @property
-    def token(self) -> str:
+    def TOKEN(self) -> str:
         return self.__TOKEN
 
+    @TOKEN.setter
+    def TOKEN(self, token: str):
+        self.__TOKEN = token
+        self.__bot_boot()
+
     @property
-    def app_id(self) -> int:
+    def APP_ID(self) -> int:
         return self.__APP_ID
+
+    @APP_ID.setter
+    def APP_ID(self, app_id: int):
+        self.__APP_ID = app_id
+        self.__bot_boot()
 
     @property
     def vk(self) -> vk_api.vk_api.VkApiMethod:
@@ -100,6 +104,16 @@ class Bot:
                                 random_id=get_random_id(),
                                 attachment=attachment,
                                 message=message)
+
+    def __bot_boot(self) -> None:
+        if self.__TOKEN is not None and self.APP_ID is not None:
+            self.__vk_session = VkApi(token=self.__TOKEN)
+            self.__vk_session.RPS_DELAY = 1 / 100
+            self.__longpoll = VkBotLongPoll(self.__vk_session, self.__APP_ID)
+            self.__vk = self.__vk_session.get_api()
+        else:
+            warnings.warn("Bot was not restarted! 'TOKEN' and 'APP_ID' are required fields for user authorization!",
+                          Warning)
 
     @staticmethod
     def create_keyboard(inline: bool = False, one_time: bool = False):
