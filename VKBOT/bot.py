@@ -1,5 +1,9 @@
+from __future__ import annotations
+
 import os
 import warnings
+import traceback
+from typing import List, Callable
 from VKBOT.person import *
 from VKBOT.keyboard import *
 from VKBOT.input_message.message import *
@@ -9,7 +13,7 @@ from vk_api.utils import get_random_id
 from vk_api.bot_longpoll import VkBotLongPoll, VkBotEventType
 
 
-class Bot:
+class Bot(object):
     def __init__(self, token: str = None, app_id: int = None):
         self.__TOKEN = token
         self.__APP_ID = app_id
@@ -40,6 +44,15 @@ class Bot:
     @property
     def longpoll(self) -> vk_api.bot_longpoll.VkBotLongPoll:
         return self.__longpoll
+
+    def run(self, init_method: Callable[['Bot', Message], None]):
+        while True:  # Этот бот тоже периодически ловит таймаут, но спокойно перезапускается таким образом
+            try:
+                for event in self.longpoll.listen():
+                    if event.type == VkBotEventType.MESSAGE_NEW:
+                        init_method(self, Message(event=event))
+            except Exception as e:
+                print(traceback.format_exc())
 
     def get_user_info(self, user_id: int) -> Person:
         result = self.__vk.users.get(user_ids=user_id,
