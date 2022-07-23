@@ -3,11 +3,15 @@ from VKBOT.vk_types import *
 
 class Person:
     def __init__(self, person_json: dict):
-        print(person_json)
         self.__id = person_json['id'] if 'id' in person_json else None
         self.__domain = person_json['domain'] if 'domain' in person_json else None
         self.__first_name = person_json['first_name'] if 'first_name' in person_json else None
         self.__last_name = person_json['last_name'] if 'last_name' in person_json else None
+        self.__about = person_json['about'] if 'about' in person_json else None
+        self.__city_id = person_json['city']['id'] if 'city' in person_json else None
+        self.__city_title = person_json['city']['title'] if 'city' in person_json else None
+        self.__country_id = person_json['country']['id'] if 'country' in person_json else None
+        self.__country_title = person_json['country']['title'] if 'country' in person_json else None
         self.__birthday = Person.__convert_birthdate(person_json['bdate']) if 'bdate' in person_json else None
         self.__sex = Person.__decode_sex(person_json['sex']) if 'sex' in person_json else None
         self.__online = Person.__decode_online(person_json['online']) if 'online' in person_json else None
@@ -22,6 +26,10 @@ class Person:
     @property
     def domain(self) -> str:
         return self.__domain
+
+    @property
+    def online(self) -> ONLINE:
+        return self.__online
 
     @property
     def first_name(self) -> str:
@@ -40,8 +48,28 @@ class Person:
         return self.__sex
 
     @property
-    def online(self) -> ONLINE:
-        return self.__online
+    def relation(self) -> RELATION:
+        return self.__relation
+
+    @property
+    def about(self) -> str:
+        return self.__about
+
+    @property
+    def city_id(self) -> int:
+        return self.__city_id
+
+    @property
+    def city_title(self) -> str:
+        return self.__city_title
+
+    @property
+    def country_id(self) -> int:
+        return self.__country_id
+
+    @property
+    def country_title(self) -> str:
+        return self.__country_title
 
     @property
     def can_access_closed(self) -> bool:

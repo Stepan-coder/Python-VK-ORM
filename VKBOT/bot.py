@@ -45,12 +45,12 @@ class Bot(object):
     def longpoll(self) -> vk_api.bot_longpoll.VkBotLongPoll:
         return self.__longpoll
 
-    def run(self, init_method: Callable[['Bot', Message], None]):
-        while True:  # Этот бот тоже периодически ловит таймаут, но спокойно перезапускается таким образом
+    def run(self, init_method: Callable[['Bot', Message, Any], None], other: Any = None):
+        while True:
             try:
                 for event in self.longpoll.listen():
                     if event.type == VkBotEventType.MESSAGE_NEW:
-                        init_method(self, Message(event=event))
+                        init_method(self, Message(event=event), None)
             except Exception as e:
                 print(traceback.format_exc())
 
