@@ -25,7 +25,7 @@ def some_method(bot: Bot, message: Message):
                 print(image.width)  # Ширину картинки
                 print(image.height)  # Высоту картинки
                 # Такой командой можно сохранить картинку (обязательно указывать расширение файла)
-                image.save("inf/photo.jpg")
+                image.save("photo.jpg")
 
     # Что бы получить от пользователя голосовое сообщение
     if message.have_attachments:  # Проверяем, что пользователь отправил вложение (хоть какое то)
@@ -37,8 +37,8 @@ def some_method(bot: Bot, message: Message):
                 print(voice_message.url_mp3)  # Прямую ссылку на голосовое в .mp3
                 print(voice_message.url_oog)  # Прямую ссылку на голосовое в .oog
                 # Такой командой можно сохранить голосовое в .mp3
-                voice_message.save_mp3("some/voice_messages.mp3")
-                voice_message.save_oog('some/voice_messages.oog')
+                voice_message.save_mp3("voice_messages.mp3")
+                voice_message.save_oog('voice_messages.oog')
 
     # Что бы получить от пользователя голосовое сообщение
     if message.have_attachments:  # Проверяем, что пользователь отправил вложение (хоть какое то)
@@ -120,8 +120,8 @@ def some_method(bot: Bot, message: Message):
                      keyboard=keyboard.get_keyboard())
 
 
-TOKEN = ""
-APP_ID =
+TOKEN = "acc6b6f00d67fe61afc26d1527898ce49510532e229601ceeb2b781c26b44794fe756f9dd58634c48de21"
+APP_ID = 196221606
 
 
 bot = Bot()
