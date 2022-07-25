@@ -120,8 +120,8 @@ def some_method(bot: Bot, message: Message):
                      keyboard=keyboard.get_keyboard())
 
 
-TOKEN = "acc6b6f00d67fe61afc26d1527898ce49510532e229601ceeb2b781c26b44794fe756f9dd58634c48de21"
-APP_ID = 196221606
+TOKEN = "*YOUR TOKEN*"
+APP_ID = 000000000 # YOUR APP ID
 
 
 bot = Bot()
