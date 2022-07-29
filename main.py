@@ -1,6 +1,6 @@
 import traceback
 
-from VKBOT.bot import *
+from VK_API.bot import *
 
 
 def some_method(bot: Bot, message: Message):

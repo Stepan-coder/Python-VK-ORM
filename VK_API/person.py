@@ -1,4 +1,4 @@
-from VKBOT.vk_types import *
+from VK_API.vk_types import *
 
 
 class Person:
