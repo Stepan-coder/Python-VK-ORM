@@ -1,4 +1,4 @@
-from VK_API.person.person_enum import *
+from vkbox.person.person_enum import *
 
 
 class Person:

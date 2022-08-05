@@ -1,10 +1,10 @@
 import vk_api
 from typing import Optional
-from VK_API.input_message.photo import *
-from VK_API.input_message.video import *  # Недоделано (проблемы со скачиванием)
-from VK_API.input_message.audio import *
-from VK_API.input_message.document import *
-from VK_API.input_message.geoposition import *
+from vkbox.input_message.photo import *
+from vkbox.input_message.video import *  # Недоделано (проблемы со скачиванием)
+from vkbox.input_message.audio import *
+from vkbox.input_message.document import *
+from vkbox.input_message.geoposition import *
 
 
 class Message:

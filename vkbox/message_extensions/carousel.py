@@ -2,7 +2,7 @@ import json
 from enum import Enum
 from typing import Any, Dict, List
 from prettytable import PrettyTable
-from VK_API.message_extensions.keyboard import *
+from vkbox.message_extensions.keyboard import *
 from vk_api.keyboard import VkKeyboard, VkKeyboardColor
 
 
@@ -18,9 +18,9 @@ class CarouselElement:
         :type description: str
 
         :param attachment:ru Изображение, которое будет добавленно к блоку карусели. В 'attachment' необходимо
-        передать результат загрузки изображения через 'bot.upload.photo'.
+         передать результат загрузки изображения через 'bot.upload.photo'.
         :param attachment:en Image to be added to the carousel block. In the 'attachment' it is necessary to pass the
-        result of uploading the image via 'bot.upload.photo'.
+         result of uploading the image via 'bot.upload.photo'.
         :type attachment: str
         """
         self.__title = self.__check_length(title, 30)
@@ -44,7 +44,7 @@ class CarouselElement:
 
         :param new_title:ru Короткий заголовок блока, при его написании не рекомендуется использовать более 30 символов.
         :param new_title:en It is a short block title, it is not recommended to use more than 30 characters when writing
-        it.
+         it.
         :type new_title: str
         """
         self.__title = self.__check_length(new_title, 30)
@@ -84,9 +84,9 @@ class CarouselElement:
         en: The setter for the 'attachment' property allows you to set a new value for the property.
 
         :param new_attachment:ru Изображение, которое будет добавленно к блоку карусели. В 'attachment' необходимо
-        передать результат загрузки изображения через 'bot.upload.photo'.
+         передать результат загрузки изображения через 'bot.upload.photo'.
         :param new_attachment:en Image to be added to the carousel block. In the 'attachment' it is necessary to pass
-        the result of uploading the image via 'bot.upload.photo'.
+         the result of uploading the image via 'bot.upload.photo'.
         :type new_attachment: str
         """
         self.__attachment = self.__cut_attachment(attachment=new_attachment)
@@ -195,10 +195,10 @@ class Carousel:
     def last_element(self) -> CarouselElement:
         """
         ru: Это свойство возвращает последний добавленный в карусель элемент, тем самым открывет возможность его
-        редактирования, например, для изменения описания или изменения фотографии.
+         редактирования, например, для изменения описания или изменения фотографии.
 
         en: This property returns the last element added to the carousel, thereby opening the possibility of its
-        editing, for example, to change the description or change the photo.
+         editing, for example, to change the description or change the photo.
         """
         if self.count == 0:
             raise Exception("There are no carousels yet! Add them using the 'add_element' method!")
@@ -218,9 +218,9 @@ class Carousel:
         :type description: str
 
         :param attachment:ru Изображение, которое будет добавленно к блоку карусели. В 'attachment' необходимо
-        передать результат загрузки изображения через 'bot.upload.photo'.
+         передать результат загрузки изображения через 'bot.upload.photo'.
         :param attachment:en Image to be added to the carousel block. In the 'attachment' it is necessary to pass the
-        result of uploading the image via 'bot.upload.photo'.
+         result of uploading the image via 'bot.upload.photo'.
         :type attachment: str
         """
         if self.__last_element is not None:

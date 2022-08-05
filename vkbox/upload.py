@@ -45,7 +45,7 @@ class Upload:
         video = upload.video(path_to_video)
         return f"audio_message{video['audio_message']['owner_id']}_{video['audio_message']['id']}"
 
-    def document(self, user_id: int, path_to_document: str) -> str:
+    def file(self, user_id: int, path_to_document: str) -> str:
         if not os.path.exists(path_to_document):
             raise Exception('The specified file path does not exist!')
         upload = VkUpload(self.__vk)
