@@ -16,12 +16,9 @@ class Upload:
         if not os.path.exists(path_to_audio):
             raise Exception('The specified file path does not exist!')
         upload = VkUpload(self.__vk)
-        if not os.path.basename(path_to_audio).endswith('ogg'):
-            converted_path = Upload.convert_audio(path_to_audio=path_to_audio, to_format='ogg')
-            audio = upload.audio_message(converted_path, peer_id=user_id)
-            os.remove(converted_path)
-        else:
-            audio = upload.audio_message(path_to_audio, peer_id=user_id)
+        converted_path = Upload.convert_audio(path_to_audio=path_to_audio, to_format='ogg')
+        audio = upload.audio_message(converted_path, peer_id=user_id)
+        os.remove(converted_path)
         return f"audio_message{audio['audio_message']['owner_id']}_{audio['audio_message']['id']}"
 
     def photo(self, user_id: int, path_to_photo: str) -> str:
@@ -30,13 +27,6 @@ class Upload:
         upload = VkUpload(self.__vk)
         photo = upload.photo_messages(path_to_photo)
         return f"photo{photo[0]['owner_id']}_{photo[0]['id']}_{photo[0]['access_key']}"
-
-    def audio(self, user_id: int, path_to_audio: str) -> str:
-        if not os.path.exists(path_to_audio):
-            raise Exception('The specified file path does not exist!')
-        upload = VkUpload(self.__vk)
-        audio = upload.audio_message(path_to_audio, peer_id=user_id)
-        return f"audio_message{audio['audio_message']['owner_id']}_{audio['audio_message']['id']}"
 
     def video(self, user_id: int, path_to_video: str) -> str:
         if not os.path.exists(path_to_video):
