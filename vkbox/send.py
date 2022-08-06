@@ -7,7 +7,7 @@ from vkbox.message_extensions.keyboard import *
 from vkbox.message_extensions.carousel import *
 
 
-class Sender:
+class Send:
     def __init__(self, vk: vk_api.vk_api.VkApiMethod):
         self.__vk = vk
 
@@ -92,7 +92,13 @@ class Sender:
         :type message: str
 
         :param attachment:ru Уникальная строка ссылка-идентификатор вложения.
-        *Для оптравки пользователю вложений их необходимо загрузить на сервер ВКонтакте, в*
+        :param attachment:en Unique string link-attachment ID.
+        :type attachment: str
+
+        ru: *Для оптравки пользователю вложения типа 'голосовое сообщение', его предварительно необходимо загрузить на
+         сервер ВКонтакте, с помощью 'voice' класса 'Upload'*
+        en: *To send an attachment of the 'voice message' type to the user, it must first be uploaded to the VKontakte
+         server using the 'voice' method of the 'Upload' class*
         """
         self.__vk.messages.send(peer_id=user_id,
                                 message=message,
@@ -100,12 +106,53 @@ class Sender:
                                 random_id=get_random_id())
 
     def photo(self, user_id: int, attachment: str, message: str = None):
+        """
+        ru: Этот метод позволяет отправить пользователю с id 'user_id' фотографию.
+        en: This method allows you to send a photo to a user with the id 'user_id'.
+
+        :param user_id:ru Уникальный id пользователя в социальной сети ВКонтакте.
+        :param user_id:en Unique user id in the VKontakte social network.
+        :type user_id: int
+
+        :param message:ru Сообшение пользователю в формате обычной строки.
+        :param message:en Message to the user in the format of a regular string.
+        :type message: str
+
+        :param attachment:ru Уникальная строка ссылка-идентификатор вложения.
+        :param attachment:en Unique string link-attachment ID.
+        :type attachment: str
+
+        ru: *Для оптравки пользователю вложения типа 'фотография', его предварительно необходимо загрузить на
+         сервер ВКонтакте, с помощью 'photo' класса 'Upload'*
+        en: *To send an attachment of the 'photo' type to the user, it must first be uploaded to the VKontakte server
+         using the 'photo' method of the 'Upload' class*
+        """
         self.__vk.messages.send(peer_id=user_id,
                                 message=message,
                                 attachment=attachment,
                                 random_id=get_random_id())
 
+    def video(self, user_id: int, attachment: str) -> None:
+        pass
+
     def file(self, user_id: int, attachment: str) -> None:
+        """
+        ru: Этот метод позволяет отправить пользователю с id 'user_id' файл. Файл
+        en: This method allows you to send file to a user with the id 'user_id'.
+
+        :param user_id:ru Уникальный id пользователя в социальной сети ВКонтакте.
+        :param user_id:en Unique user id in the VKontakte social network.
+        :type user_id: int
+
+        :param attachment:ru Уникальная строка ссылка-идентификатор вложения.
+        :param attachment:en Unique string link-attachment ID.
+        :type attachment: str
+
+        ru: *Для оптравки пользователю вложения типа 'файл', его предварительно необходимо загрузить на
+         сервер ВКонтакте, с помощью метода 'file' класса 'Upload'*
+        en: *To send an attachment of the 'file' type to the user, it must first be uploaded to the VKontakte server
+         using the 'file' method of the 'Upload' class*
+        """
         self.__vk.messages.send(peer_id=user_id,
                                 attachment=attachment,
                                 random_id=get_random_id())

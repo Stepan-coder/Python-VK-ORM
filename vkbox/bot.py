@@ -4,7 +4,7 @@ import warnings
 import traceback
 from typing import Callable
 from vkbox.upload import *
-from vkbox.sender import *
+from vkbox.send import *
 from vkbox.person.person import *
 from vkbox.input_message.message import *
 from vkbox.message_extensions.keyboard import *
@@ -83,14 +83,14 @@ class Bot(object):
         return self.__longpoll
 
     @property
-    def send(self) -> Sender:
+    def send(self) -> Send:
         """
-        :ru Свойство для получения экземпляра класса 'Sender'. Этот класс реализует функционал отправки различных типов
+        :ru Свойство для получения экземпляра класса 'Send'. Этот класс реализует функционал отправки различных типов
          сообщений пользователю.
-        :en Property for getting an instance of the 'Sender' class. This class implements the functionality of sending
+        :en Property for getting an instance of the 'Send' class. This class implements the functionality of sending
          various types of messages to the user.
         """
-        return Sender(vk=self.__vk)
+        return Send(vk=self.__vk)
 
     @property
     def upload(self) -> Upload:
@@ -183,6 +183,6 @@ class Bot(object):
         """
         :ru Статический метод класса 'Bot' позволяющий получить экземпляр класса 'Carousel' для создания карусели.
         :en Static method of the 'Bot' class that allows you to get an instance of the 'Carousel' class to create a
-         сarousel.
+         carousel.
         """
         return Carousel()
