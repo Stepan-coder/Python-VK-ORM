@@ -1,6 +1,13 @@
 from vkbox.person.person_enum import *
 
 
+"""
+activities, books, career, connections, counters, education, followers_count, games, has_mobile, has_photo,
+home_town, interests, is_no_index, last_seen, military, movies, music, occupation, personal, quotes, schools,
+screen_name, site, status, timezone, trending, tv, universities, verified, wall_default
+"""
+
+
 class Person:
     def __init__(self, person_json: dict):
         self.__id = person_json['id'] if 'id' in person_json else None
@@ -21,62 +28,110 @@ class Person:
 
     @property
     def id(self) -> int:
+        """
+        :ru Свойство - Идентификатор пользователя.
+        """
         return self.__id
 
     @property
     def domain(self) -> str:
+        """
+        :ru Свойство -Короткий адрес страницы. Возвращается строка, содержащая короткий адрес страницы
+        (например, andrew). Если он не назначен, возвращается "id"+user_id, например, id35828305
+        """
         return self.__domain
 
     @property
     def online(self) -> ONLINE:
+        """
+        :ru Свойство - Информация о том, находится ли пользователь сейчас на сайте.
+        """
         return self.__online
 
     @property
     def first_name(self) -> str:
+        """
+        :ru Свойство - Имя пользователя.
+        """
         return self.__first_name
 
     @property
     def last_name(self) -> str:
+        """
+        :ru Свойство - Фамилия пользователя.
+        """
         return self.__last_name
 
     @property
     def birthday(self) -> str:
+        """
+        :ru Свойство - Дата рождения пользователя, в формате ГГГГ-ММ-ДД.
+        """
         return self.__birthday
 
     @property
     def sex(self) -> SEX:
+        """
+        :ru Свойство - пол пользоватедя. Подробнее см. 'person_enum.SEX'.
+        """
         return self.__sex
 
     @property
     def relation(self) -> RELATION:
+        """
+        :ru Свойство - Семейное положение. Подробнее см. 'person_enum.RELATION'.
+        """
         return self.__relation
 
     @property
     def about(self) -> str:
+        """
+        :ru Свойство - Содержимое поля «О себе» из профиля.
+        """
         return self.__about
 
     @property
     def city_id(self) -> int:
+        """
+        :ru Свойство - идентификатор города, который можно использовать для получения его названия с помощью метода
+          database.getCitiesById.
+        """
         return self.__city_id
 
     @property
     def city_title(self) -> str:
+        """
+        :ru Свойство - название города в котором находится пользователь.
+        """
         return self.__city_title
 
     @property
     def country_id(self) -> int:
+        """
+        :ru Свойство - идентификатор страны, который можно использовать для получения его названия с помощью метода
+          database.getCitiesById.
+        """
         return self.__country_id
 
     @property
     def country_title(self) -> str:
+        """
+        :ru Свойство - название страны в которой находится пользователь.
+        """
         return self.__country_title
 
     @property
     def can_access_closed(self) -> bool:
+        """
+        :ru Свойство -  возможность пользователя видеть профиль при is_closed = 1 (например, он есть в друзьях)..
+        """
         return self.__can_access_closed
 
     @property
     def is_closed(self) -> bool:
+        """
+        :ru Свойство - Скрыт ли профиль пользователя настройками приватности.
+        """
         return self.__is_closed
 
     @staticmethod
