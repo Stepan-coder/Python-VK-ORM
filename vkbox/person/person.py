@@ -2,137 +2,306 @@ from vkbox.person.person_enum import *
 
 
 """
-activities, books, career, connections, counters, education, followers_count, games, has_mobile, has_photo,
-home_town, interests, is_no_index, last_seen, military, movies, music, occupation, personal, quotes, schools,
-screen_name, site, status, timezone, trending, tv, universities, verified, wall_default
+career, connections, counters, education
+last_seen, military, occupation, personal, schools,
+site, universities
 """
 
 
 class Person:
     def __init__(self, person_json: dict):
-        self.__id = person_json['id'] if 'id' in person_json else None
-        self.__domain = person_json['domain'] if 'domain' in person_json else None
-        self.__first_name = person_json['first_name'] if 'first_name' in person_json else None
-        self.__last_name = person_json['last_name'] if 'last_name' in person_json else None
-        self.__about = person_json['about'] if 'about' in person_json else None
-        self.__city_id = person_json['city']['id'] if 'city' in person_json else None
-        self.__city_title = person_json['city']['title'] if 'city' in person_json else None
-        self.__country_id = person_json['country']['id'] if 'country' in person_json else None
-        self.__country_title = person_json['country']['title'] if 'country' in person_json else None
-        self.__birthday = Person.__convert_birthdate(person_json['bdate']) if 'bdate' in person_json else None
-        self.__sex = Person.__decode_sex(person_json['sex']) if 'sex' in person_json else None
-        self.__online = Person.__decode_online(person_json['online']) if 'online' in person_json else None
-        self.__relation = Person.__decode_relation(person_json['relation']) if 'relation' in person_json else None
-        self.__can_access_closed = person_json['can_access_closed'] if 'can_access_closed' in person_json else None
-        self.__is_closed = person_json['is_closed'] if 'is_closed' in person_json else None
+        self.__person_json = person_json
 
     @property
     def id(self) -> int:
         """
-        :ru Свойство - Идентификатор пользователя.
+        :ru Свойство для получения идентификатора пользователя.
+        :en Property for getting the user ID.
         """
-        return self.__id
+        return self.__person_json['id'] if 'id' in self.__person_json else None
 
     @property
     def domain(self) -> str:
         """
-        :ru Свойство -Короткий адрес страницы. Возвращается строка, содержащая короткий адрес страницы
-        (например, andrew). Если он не назначен, возвращается "id"+user_id, например, id35828305
+        :ru Свойство для получения короткого адреса страницы. Возвращается строка, содержащая короткий адрес страницы
+         (например, andrew). Если он не назначен, возвращается "id"+user_id, например, id35828305.
+        :en Property for getting a short page address. A string containing the short address of the page is returned
+         (for example, andrew). If it is not assigned, "id"+user_id is returned, for example, id35828305.
         """
-        return self.__domain
+        return self.__person_json['domain'] if 'domain' in self.__person_json else None
 
     @property
-    def online(self) -> ONLINE:
+    def screen_name(self) -> str:
         """
-        :ru Свойство - Информация о том, находится ли пользователь сейчас на сайте.
+        :ru Свойство для получения короткого имени страницы.
+        :en Property for getting a short page name.
         """
-        return self.__online
+        return self.__person_json['screen_name'] if 'screen_name' in self.__person_json else None
 
     @property
     def first_name(self) -> str:
         """
-        :ru Свойство - Имя пользователя.
+        :ru Свойство для получения имени пользователя.
+        :en Property for getting the user name.
         """
-        return self.__first_name
+        return self.__person_json['first_name'] if 'first_name' in self.__person_json else None
 
     @property
     def last_name(self) -> str:
         """
-        :ru Свойство - Фамилия пользователя.
+        :ru Свойство для получения фамилии пользователя.
+        :en Property for getting the user's last name.
         """
-        return self.__last_name
+        return self.__person_json['last_name'] if 'last_name' in self.__person_json else None
 
     @property
     def birthday(self) -> str:
         """
-        :ru Свойство - Дата рождения пользователя, в формате ГГГГ-ММ-ДД.
+        :ru Свойство для получения даты рождения пользователя, в формате ГГГГ-ММ-ДД.
+        :en Property for getting the user's date of birth, in the format YYYY-MM-DD.
         """
-        return self.__birthday
+        return self.__convert_birthdate(self.__person_json['bdate']) if 'bdate' in self.__person_json else None
 
     @property
     def sex(self) -> SEX:
         """
-        :ru Свойство - пол пользоватедя. Подробнее см. 'person_enum.SEX'.
+        :ru Свойство для получения пола пользоватедя. Подробнее см. 'person_enum.SEX'.
+        :en Property for getting the user's gender. For more information, see 'person_enum.SEX'.
         """
-        return self.__sex
+        return self.__decode_sex(self.__person_json['sex']) if 'sex' in self.__person_json else None
 
     @property
-    def relation(self) -> RELATION:
+    def timezone(self) -> str:
         """
-        :ru Свойство - Семейное положение. Подробнее см. 'person_enum.RELATION'.
+        :ru Свойство для получения информации о временной зоне пользователя.
+        :en Property for getting information about the user's time zone.
         """
-        return self.__relation
+        return self.__person_json['timezone'] if 'timezone' in self.__person_json else None
+
+    @property
+    def home_town(self) -> str:
+        """
+        :ru Свойство для получения названия родного города.
+        :en Property for getting the name of the hometown.
+        """
+        return self.__person_json['home_town'] if 'home_town' in self.__person_json else None
+
+
 
     @property
     def about(self) -> str:
         """
-        :ru Свойство - Содержимое поля «О себе» из профиля.
+        :ru Свойство для получения содержимого поля «О себе» из профиля.
+        :en Property for getting the contents of the "About me" field from the profile.
         """
-        return self.__about
+        return self.__person_json['about'] if 'about' in self.__person_json else None
+
+    @property
+    def status(self) -> str:
+        """
+        :ru Свойство для получения статуса пользователя. Возвращается строка, содержащая текст статуса, расположенного в
+         профиле под именем.
+        :en Property for getting user status. Returns a string containing the status text located in profile under the
+         name.
+        """
+        return self.__person_json['status'] if 'status' in self.__person_json else None
+
+    @property
+    def activities(self) -> str:
+        """
+        :ru Свойство для получения содержимого поля «Деятельность» из профиля.
+        :en Property for getting the contents of the "Activity" field from the profile.
+        """
+        return self.__person_json['activities'] if 'activities' in self.__person_json else None
+
+    @property
+    def interests(self) -> str:
+        """
+        :ru Свойство для получения содержимого поля «Деятельность» из профиля.
+        :en Property for getting the contents of the "Activity" field from the profile.
+        """
+        return self.__person_json['interests'] if 'interests' in self.__person_json else None
+
+    @property
+    def music(self) -> str:
+        """
+        :ru Свойство для получения содержимого поля «Любимая музыка» из профиля.
+        :en Property for getting the contents of the "Favorite music" field from the profile.
+        """
+        return self.__person_json['music'] if 'music' in self.__person_json else None
+
+    @property
+    def movies(self) -> str:
+        """
+        :ru Свойство для получения содержимого поля «Любимые фильмы» из профиля.
+        :en Property for getting the contents of the "Favorite movies" field from the profile.
+        """
+        return self.__person_json['movies'] if 'movies' in self.__person_json else None
+
+    @property
+    def tv(self) -> str:
+        """
+        :ru Свойство для получения содержимого поля «Любимые телешоу» из профиля.
+        :en Property for getting the contents of the "Favorite TV shows" field from the profile.
+        """
+        return self.__person_json['tv'] if 'tv' in self.__person_json else None
+
+    @property
+    def books(self) -> str:
+        """
+        :ru Свойство для получения содержимого поля «Любимые книги» из профиля.
+        :en Property for getting the contents of the "Favorite books" field from the profile.
+        """
+        return self.__person_json['books'] if 'books' in self.__person_json else None
+
+    @property
+    def games(self) -> str:
+        """
+        :ru Свойство для получения содержимого поля «Любимые игры» из профиля.
+        :en Property for getting the contents of the "Favorite games" field from the profile.
+        """
+        return self.__person_json['games'] if 'games' in self.__person_json else None
+
+    @property
+    def quotes(self) -> str:
+        """
+        :ru Свойство для получения содержимого поля «Любимые цитаты» из профиля.
+        :en Property for getting the contents of the "Favorite quotes" field from the profile.
+        """
+        return self.__person_json['quotes'] if 'quotes' in self.__person_json else None
+
+
+    @property
+    def followers_count(self) -> int:
+        return self.__person_json['followers_count'] if 'followers_count' in self.__person_json else None
+
+
+
+    @property
+    def online(self) -> ONLINE:
+        """
+        :ru Свойство для получения информация о том, находится ли пользователь сейчас на сайте.
+        :en Property for getting information about whether the user is currently on the site.
+        """
+        return self.__decode_online(self.__person_json['online']) if 'online' in self.__person_json else None
+
+
+
+
+    @property
+    def relation(self) -> RELATION:
+        """
+        :ru Свойство для получения информация о семейном положении пользователя. Подробнее см. 'person_enum.RELATION'.
+        :en Property for getting information about the marital status of the user. For more information,
+         see 'person_enum.RELATION'.
+        """
+        return self.__decode_relation(self.__person_json['relation']) if 'relation' in self.__person_json else None
+
 
     @property
     def city_id(self) -> int:
         """
-        :ru Свойство - идентификатор города, который можно использовать для получения его названия с помощью метода
-          database.getCitiesById.
+        :ru Свойство для получения идентификатора города пользователя, который можно использовать для получения его
+         названия с помощью метода 'database.getCitiesById'.
+        :en Property for getting the user's city ID, which can be used to get it names using the
+         'database' method.getCitiesById'.
         """
-        return self.__city_id
+        return self.__person_json['city']['id'] if 'city' in self.__person_json else None
 
     @property
     def city_title(self) -> str:
         """
-        :ru Свойство - название города в котором находится пользователь.
+        :ru Свойство для получения названия города в котором находится пользователь.
+        :en Property for getting the name of the city where the user is located.
         """
-        return self.__city_title
+        return self.__person_json['city']['title'] if 'city' in self.__person_json else None
 
     @property
     def country_id(self) -> int:
         """
-        :ru Свойство - идентификатор страны, который можно использовать для получения его названия с помощью метода
-          database.getCitiesById.
+        :ru Свойство для получения идентификатора страны пользователя, который можно использовать для получения его
+         названия с помощью метода database.getCitiesById.
+        :en Property for getting the user's country ID, which can be used to get it names using the
+         database method.getCitiesById.
         """
-        return self.__country_id
+        return self.__person_json['country']['id'] if 'country' in self.__person_json else None
 
     @property
     def country_title(self) -> str:
         """
-        :ru Свойство - название страны в которой находится пользователь.
+        :ru Свойство для получения названия страны в которой находится пользователь.
+        :en Property for getting the name of the country in which the user is located.
         """
-        return self.__country_title
+        return self.__person_json['country']['title'] if 'country' in self.__person_json else None
+
+
 
     @property
     def can_access_closed(self) -> bool:
         """
-        :ru Свойство -  возможность пользователя видеть профиль при is_closed = 1 (например, он есть в друзьях)..
+        :ru Свойство для получения информации о возможности пользователя видеть профиль при is_closed = 1
+         (например, он есть в друзьях).
+        :en Property for getting information about the user's ability to see the profile when is_closed = 1
+         (for example, he is in friends).
         """
-        return self.__can_access_closed
+        return self.__person_json['can_access_closed'] if 'can_access_closed' in self.__person_json else None
 
     @property
     def is_closed(self) -> bool:
         """
-        :ru Свойство - Скрыт ли профиль пользователя настройками приватности.
+        :ru Свойство для получения информации о том, скрыт ли профиль пользователя настройками приватности.
+        :en Property for getting information about whether the user's profile is hidden by privacy settings.
         """
-        return self.__is_closed
+        return self.__person_json['is_closed'] if 'is_closed' in self.__person_json else None
+
+    @property
+    def has_mobile(self) -> bool:
+        """
+        :ru Свойство для получения информации о том, известен ли номер мобильного телефона пользователя.
+        :en Property for getting information about whether the user's mobile phone number is known.
+        """
+        return self.__person_json['has_mobile'] == 1 if 'has_mobile' in self.__person_json else None
+
+    @property
+    def has_photo(self) -> bool:
+        """
+        :ru Свойство для получения информации о том, установил ли пользователь фотографию для профиля.
+        :en Property for getting information about whether the user has set a profile photo.
+        """
+        return self.__person_json['has_photo'] == 1 if 'has_photo' in self.__person_json else None
+
+    @property
+    def is_no_index(self) -> bool:
+        """
+        :ru Свойство для получения информации о том, индексируется ли профиль поисковыми сайтами.
+        :en Property for getting information about whether the profile is indexed by search sites.
+        """
+        return self.__person_json['is_no_index'] == 0 if 'is_no_index' in self.__person_json else None
+
+    @property
+    def is_trending(self) -> bool:
+        """
+        :ru Свойство для получения информации о том, индексируется ли профиль поисковыми сайтами.
+        :en Property for getting information about whether the profile is indexed by search sites.
+        """
+        return self.__person_json['trending'] == 1 if 'trending' in self.__person_json else None
+
+    @property
+    def is_verified(self) -> bool:
+        """
+        :ru Свойство для получения информации о том, верифицирована ли страница пользователя.
+        :en Property for getting information about whether the user's page has been verified.
+        """
+        return self.__person_json['verified'] == 1 if 'verified' in self.__person_json else None
+
+    @property
+    def is_wall_privat(self) -> bool:
+        """
+        :ru Свойство для получения информации о том, открыта ли страница пользователя.
+        :en Property for getting information about whether the user's page is open.
+        """
+        return self.__person_json['wall_default'] == 'owner' if 'wall_default' in self.__person_json else None
+
 
     @staticmethod
     def __convert_birthdate(birthdate: str) -> str:
