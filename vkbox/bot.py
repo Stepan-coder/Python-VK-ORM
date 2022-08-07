@@ -5,7 +5,7 @@ import traceback
 from typing import Callable
 from vkbox.upload import *
 from vkbox.send import *
-from vkbox.person.person import *
+from vkbox.user.user import *
 from vkbox.input_message.message import *
 from vkbox.message_extensions.keyboard import *
 from vkbox.message_extensions.carousel import *
@@ -127,12 +127,12 @@ class Bot(object):
             except Exception as e:
                 print(traceback.format_exc())
 
-    def get_user_info(self, user_id: int) -> Person:
+    def get_user_info(self, user_id: int) -> User:
         """
         :ru Этот метод делает запрос в ВКонтакте на получение информации о польхователе, в ответ он получает json,
-         который преобразуется в экземпляр класса 'Person'.
+         который преобразуется в экземпляр класса 'User'.
         :en This method makes a request in VKontakte to get information about the user, in response it receives json,
-         which is converted into an instance of the 'Person' class.
+         which is converted into an instance of the 'User' class.
 
         :param user_id:ru Уникальный id пользователя для которого необходимо получить информацию.
         :param user_id:ru The unique ID of the user for whom you need to get information.
@@ -146,7 +146,7 @@ class Bot(object):
                                             "screen_name, sex, site, status, timezone, trending, tv, universities, "
                                             "verified, wall_default")
         print(result)
-        return Person(person_json=result[0])
+        return User(person_json=result[0])
 
     def __bot_boot(self) -> None:
         """

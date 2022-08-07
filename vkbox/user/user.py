@@ -1,14 +1,16 @@
-from vkbox.person.person_enum import *
-
+from typing import Dict, Any, List, Optional
+from vkbox.user.person_enum import *
+from vkbox.user.user_universities import *
+from vkbox.user.user_schools import *
 
 """
 career, connections, counters, education
 last_seen, military, occupation, personal, schools,
-site, universities
+site
 """
 
 
-class Person:
+class User:
     def __init__(self, person_json: dict):
         self.__person_json = person_json
 
@@ -63,12 +65,12 @@ class Person:
         return self.__convert_birthdate(self.__person_json['bdate']) if 'bdate' in self.__person_json else None
 
     @property
-    def sex(self) -> SEX:
+    def Sex(self) -> Sex:
         """
-        :ru Свойство для получения пола пользоватедя. Подробнее см. 'person_enum.SEX'.
-        :en Property for getting the user's gender. For more information, see 'person_enum.SEX'.
+        :ru Свойство для получения пола пользоватедя. Подробнее см. 'person_enum.Sex'.
+        :en Property for getting the user's gender. For more information, see 'person_enum.Sex'.
         """
-        return self.__decode_sex(self.__person_json['sex']) if 'sex' in self.__person_json else None
+        return self.__decode_sex(self.__person_json['Sex']) if 'Sex' in self.__person_json else None
 
     @property
     def timezone(self) -> str:
@@ -172,30 +174,51 @@ class Person:
 
 
     @property
+    def schools(self) -> Optional[List[School]]:
+        """
+        :ru Свойство для получения списка вузов, в которых учился пользователь. Массив экземпляров класса 'University'.
+        :en Property for getting a list of universities where the user studied.
+         Array of instances of the 'University' class.
+        """
+        if 'schools' in self.__person_json:
+            return [School(school=school) for school in self.__person_json['schools']]
+        return None
+
+    @property
+    def universities(self) -> Optional[List[University]]:
+        """
+        :ru Свойство для получения списка вузов, в которых учился пользователь. Массив экземпляров класса 'University'.
+        :en Property for getting a list of universities where the user studied.
+         Array of instances of the 'University' class.
+        """
+        if 'universities' in self.__person_json:
+            return [University(university=university) for university in self.__person_json['universities']]
+        return None
+
+    @property
     def followers_count(self) -> int:
         return self.__person_json['followers_count'] if 'followers_count' in self.__person_json else None
 
-
+    @property
+    def connections(self):
+        return self.__person_json['connections'] if 'connections' in self.__person_json else None
 
     @property
-    def online(self) -> ONLINE:
+    def online(self) -> Online:
         """
         :ru Свойство для получения информация о том, находится ли пользователь сейчас на сайте.
         :en Property for getting information about whether the user is currently on the site.
         """
         return self.__decode_online(self.__person_json['online']) if 'online' in self.__person_json else None
 
-
-
-
     @property
-    def relation(self) -> RELATION:
+    def relation(self) -> Relation:
         """
-        :ru Свойство для получения информация о семейном положении пользователя. Подробнее см. 'person_enum.RELATION'.
+        :ru Свойство для получения информация о семейном положении пользователя. Подробнее см. 'person_enum.Relation'.
         :en Property for getting information about the marital status of the user. For more information,
-         see 'person_enum.RELATION'.
+         see 'person_enum.Relation'.
         """
-        return self.__decode_relation(self.__person_json['relation']) if 'relation' in self.__person_json else None
+        return self.__decode_Relation(self.__person_json['relation']) if 'relation' in self.__person_json else None
 
 
     @property
@@ -314,43 +337,43 @@ class Person:
             return "0000-00-00"
 
     @staticmethod
-    def __decode_sex(encoded_sex: int) -> SEX:
+    def __decode_sex(encoded_sex: int) -> Sex:
         if encoded_sex == 0:
-            return SEX.NOT_SPECIFIED
+            return Sex.NOT_SPECIFIED
         elif encoded_sex == 1:
-            return SEX.FEMALE
+            return Sex.FEMALE
         elif encoded_sex == 2:
-            return SEX.MALE
+            return Sex.MALE
         else:
             raise Exception("Invalid value!")
 
     @staticmethod
-    def __decode_online(encoded_online: int) -> ONLINE:
+    def __decode_online(encoded_online: int) -> Online:
         if encoded_online == 0:
-            return ONLINE.NOT_ONLINE
+            return Online.NOT_ONLINE
         elif encoded_online == 1:
-            return ONLINE.ONLINE
+            return Online.Online
         else:
             raise Exception("Invalid value!")
 
     @staticmethod
-    def __decode_relation(encoded_relation: int) -> RELATION:
-        if encoded_relation == 0:
-            return RELATION.NOT_SPECIFIED
-        elif encoded_relation == 1:
-            return RELATION.NOT_MARRIED
-        elif encoded_relation == 2:
-            return RELATION.HAVE_FRIEND
-        elif encoded_relation == 3:
-            return RELATION.ENGAGED
-        elif encoded_relation == 4:
-            return RELATION.EVERYTHING_IS_COMPLICATED
-        elif encoded_relation == 5:
-            return RELATION.ACTIVE_SEARCH
-        elif encoded_relation == 6:
-            return RELATION.IN_LOVE
-        elif encoded_relation == 7:
-            return RELATION.CIVIL_MARRIAGE
+    def __decode_Relation(encoded_Relation: int) -> Relation:
+        if encoded_Relation == 0:
+            return Relation.NOT_SPECIFIED
+        elif encoded_Relation == 1:
+            return Relation.NOT_MARRIED
+        elif encoded_Relation == 2:
+            return Relation.HAVE_FRIEND
+        elif encoded_Relation == 3:
+            return Relation.ENGAGED
+        elif encoded_Relation == 4:
+            return Relation.EVERYTHING_IS_COMPLICATED
+        elif encoded_Relation == 5:
+            return Relation.ACTIVE_SEARCH
+        elif encoded_Relation == 6:
+            return Relation.IN_LOVE
+        elif encoded_Relation == 7:
+            return Relation.CIVIL_MARRIAGE
         else:
             raise Exception("Invalid value!")
 
