@@ -38,3 +38,5 @@ class Relation(Enum):
     ACTIVE_SEARCH = "ACTIVE_SEARCH"
     IN_LOVE = "IN LOVE"
     CIVIL_MARRIAGE = "CIVIL MARRIAGE"
+
+

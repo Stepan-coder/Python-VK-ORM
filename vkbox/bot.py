@@ -146,7 +146,7 @@ class Bot(object):
                                             "screen_name, sex, site, status, timezone, trending, tv, universities, "
                                             "verified, wall_default")
         print(result)
-        return User(person_json=result[0])
+        return User(user=result[0])
 
     def __bot_boot(self) -> None:
         """

@@ -1,8 +1,17 @@
+import json
 from typing import Dict, Any
 
 
 class University:
     def __init__(self, university: Dict[str, Any]):
+        """
+        :ru Информация о полях из раздела 'Университет'.
+        :en Information about fields from the 'University' section.
+
+        :param university:ru Json объект полученный от 'Вконтакте'.
+        :param university:en Json object received from 'Vkontakte'.
+        :type university: Dict[str, Any]
+        """
         self.__university = university
 
     @property
@@ -92,3 +101,20 @@ class University:
         :en Property for getting the training status.
         """
         return self.__university['education_status'] if 'education_status' in self.__university else None
+
+    def json(self) -> json:
+        """
+        :ru Этот метод формирует json объект из полей класса 'School'.
+        :en This method generates a json object from the fields of the 'School' class.
+        """
+        return {"id": self.id,
+                "name": self.name,
+                "city": self.city,
+                "country": self.country,
+                "faculty": self.faculty_id,
+                "faculty_name": self.faculty_name,
+                "chair": self.chair_id,
+                "chair_name": self.chair_name,
+                "graduation": self.graduation,
+                "education_form": self.education_form,
+                "education_status": self.education_status}
