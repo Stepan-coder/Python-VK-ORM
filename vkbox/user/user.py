@@ -1,17 +1,39 @@
-from typing import Dict, Any, List, Optional
-
-from vkbox.user.enum import *
+from enum import Enum
 from vkbox.user.career import *
 from vkbox.user.schools import *
 from vkbox.user.military import *
 from vkbox.user.personal import *
+from vkbox.user.counters import *
+from vkbox.user.last_seen import *
+from vkbox.user.occupation import *
 from vkbox.user.universities import *
+from typing import Dict, Any, List, Optional
 
 """
-counters, education
-last_seen, occupation,
-site
+occupation
 """
+
+
+class Sex(Enum):
+    NOT_SPECIFIED = "NOT SPECIFIED"
+    FEMALE = "FEMALE"
+    MALE = "MALE"
+
+
+class Relation(Enum):
+    NOT_SPECIFIED = "NOT SPECIFIED"
+    NOT_MARRIED = "NOT MARRIED"
+    HAVE_FRIEND = "HAVE FRIEND"
+    ENGAGED = "ENGAGED"
+    EVERYTHING_IS_COMPLICATED = "EVERYTHING_IS_COMPLICATED"
+    ACTIVE_SEARCH = "ACTIVE_SEARCH"
+    IN_LOVE = "IN LOVE"
+    CIVIL_MARRIAGE = "CIVIL MARRIAGE"
+
+
+class Online(Enum):
+    ONLINE = "ONLINE"
+    NOT_ONLINE = "NOT ONLINE"
 
 
 class User:
@@ -20,9 +42,9 @@ class User:
         :ru Информация о полях из раздела 'User'.
         :en Information about fields from the 'User' section.
 
-        :param career:ru Json объект полученный от 'Вконтакте'.
-        :param career:en Json object received from 'Vkontakte'.
-        :type career: Dict[str, Any]
+        :param user:ru Json объект полученный от 'Вконтакте'.
+        :param user:en Json object received from 'Vkontakte'.
+        :type user: Dict[str, Any]
         """
         self.__user = user
 
@@ -146,7 +168,27 @@ class User:
         """
         return self.__user['timezone'] if 'timezone' in self.__user else None
 
+    @property
+    def connections(self) -> Dict[str, Any]:
+        """
+        :ru Свойство для получения данных об указанных в профиле сервисах пользователя, таких как: skype, livejournal.
+         Для каждого сервиса возвращается отдельное поле с типом string, содержащее никнейм пользователя.
+         Например, "skype": "username".
+        :en Property for getting data about the user's services specified in the profile, such as: skype, livejournal.
+         A separate string field containing the user's nickname is returned for each service.
+         For example, "skype": "username".
+        """
+        return self.__user['connections'] if 'connections' in self.__user else None
+
 # ============================== О пользователе ============================== About user ==============================
+    @property
+    def site(self) -> str:
+        """
+        :ru Свойство для получения адреса сайта, указанного в профиле.
+        :en Property for getting the site address specified in the profile.
+        """
+        return self.__user['about'] if 'about' in self.__user else None
+
     @property
     def about(self) -> str:
         """
@@ -233,11 +275,31 @@ class User:
     @property
     def personal(self) -> Optional[Personal]:
         """
-        :ru Свойство для получения списка школ, в которых учился пользователь. Массив экземпляров класса 'University'.
-        :en Property for getting a list of schools where the user studied. Array of instances of the 'School' class.
+        :ru Свойство для получения информации о полях из раздела «Жизненная позиция».
+        :en Property for getting information about fields from the "Life position" section.
         """
         if 'personal' in self.__user:
             return Personal(personal=self.__user['personal'])
+        return None
+
+    @property
+    def occupation(self) -> Optional[Occupation]:
+        """
+        :ru Свойство для получения информации о деятельности пользователя.
+        :en Property for getting information about user activity.
+        """
+        if 'occupation' in self.__user:
+            return Occupation(occupation=self.__user['occupation'])
+        return None
+
+    @property
+    def counters(self) -> Optional[Counters]:
+        """
+        :ru Свойство для получения информации количестве различных объектов у пользователя.
+        :en Property for getting information about the number of different objects from the user.
+        """
+        if 'counters' in self.__user:
+            return Counters(counters=self.__user['counters'])
         return None
 
     @property
@@ -281,13 +343,7 @@ class User:
             return [Career(career=career) for career in self.__user['career']]
         return None
 
-    @property
-    def followers_count(self) -> int:
-        return self.__user['followers_count'] if 'followers_count' in self.__user else None
 
-    @property
-    def connections(self):
-        return self.__user['connections'] if 'connections' in self.__user else None
 
     @property
     def online(self) -> Online:
@@ -297,6 +353,11 @@ class User:
         """
         return self.__decode_online(self.__user['online']) if 'online' in self.__user else None
 
+    @property
+    def last_seen(self) -> Optional[LastSeen]:
+        if 'last_seen' in self.__user:
+            return LastSeen(last_seen=self.__user['last_seen'])
+        return None
 
 
 
@@ -366,7 +427,6 @@ class User:
         """
         return self.__user['wall_default'] == 'owner' if 'wall_default' in self.__user else None
 
-
     @staticmethod
     def __convert_birthdate(birthdate: str) -> str:
         date = str(birthdate).split(".")
@@ -394,7 +454,7 @@ class User:
         elif sex == 2:
             return Sex.MALE
         else:
-            raise Exception("Invalid value!")
+            raise Exception(f"Invalid value '{sex}' for Enum 'Sex'!")
 
     @staticmethod
     def __decode_online(online: int) -> Online:
@@ -409,9 +469,9 @@ class User:
         if online == 0:
             return Online.NOT_ONLINE
         elif online == 1:
-            return Online.Online
+            return Online.ONLINE
         else:
-            raise Exception("Invalid value!")
+            raise Exception(f"Invalid value '{online}' for Enum 'Online'!")
 
     @staticmethod
     def __decode_relation(relation: int) -> Relation:
@@ -440,5 +500,5 @@ class User:
         elif relation == 7:
             return Relation.CIVIL_MARRIAGE
         else:
-            raise Exception("Invalid value!")
+            raise Exception(f"Invalid value '{relation}' for Enum 'Relation'!")
 

@@ -1,6 +1,6 @@
 import json
+from enum import Enum
 from typing import Dict, List, Any
-from vkbox.user.enum import *
 
 
 class Political(Enum):

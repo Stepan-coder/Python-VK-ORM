@@ -1,4 +1,5 @@
 import json
+from enum import Enum
 from typing import Dict, Any
 
 
@@ -63,7 +64,7 @@ class Career:
         return self.__career['from'] if 'from' in self.__career else None
 
     @property
-    def work_until(self) -> str:
+    def work_until(self) -> int:
         """
         :ru Свойство для получения года окончания работы.
         :en Property for getting the year of completion of work.
@@ -71,7 +72,7 @@ class Career:
         return self.__career['until'] if 'until' in self.__career else None
 
     @property
-    def position(self) -> int:
+    def position(self) -> str:
         """
         :ru Свойство для получения названия должности
         :en Property for getting the title of the position

@@ -1,6 +1,23 @@
 import json
+from enum import Enum
 from typing import Dict, Any
-from vkbox.user.enum import *
+
+
+class SchoolType(Enum):
+    SCHOOL = "SCHOOL"
+    GYMNASIUM = "GYMNASIUM"
+    LYCEUM = "LYCEUM"
+    BOARDING_SCHOOL = "BOARDING_SCHOOL"
+    EVENING_SCHOOL = "EVENING_SCHOOL"
+    MUSIC_SCHOOL = "MUSIC_SCHOOL"
+    SPORTS_SCHOOL = "SPORTS_SCHOOL"
+    ART_SCHOOL = "ART_SCHOOL"
+    COLLAGE = "COLLAGE"
+    PROFESSIONAL_LYCEUM = "PROFESSIONAL_LYCEUM"
+    TECHNICAL_SCHOOL = "TECHNICAL_SCHOOL"
+    VOCATIONAL_SCHOOL = "VOCATIONAL_SCHOOL"
+    UCHILISHE = "UCHILISHE"
+    SCHOOL_OF_ARTS = "SCHOOL_OF_ARTS"
 
 
 class School:
@@ -122,32 +139,32 @@ class School:
         :type school_type: int
         """
         if school_type == 0:
-            return SchoolType.SCHOOL
+            return SchoolType.SCHOOL  # Школа
         elif school_type == 1:
-            return SchoolType.GYMNASIUM
+            return SchoolType.GYMNASIUM  # Гимназия
         elif school_type == 2:
-            return SchoolType.LYCEUM
+            return SchoolType.LYCEUM  # Лицей
         elif school_type == 3:
-            return SchoolType.BOARDING_SCHOOL
+            return SchoolType.BOARDING_SCHOOL  # Школа-интернат
         elif school_type == 4:
-            return SchoolType.EVENING_SCHOOL
+            return SchoolType.EVENING_SCHOOL  # Вечерняя школа
         elif school_type == 5:
-            return SchoolType.MUSIC_SCHOOL
+            return SchoolType.MUSIC_SCHOOL  # Музыкальная школа
         elif school_type == 6:
-            return SchoolType.SPORTS_SCHOOL
+            return SchoolType.SPORTS_SCHOOL  # Спортивная школа
         elif school_type == 7:
-            return SchoolType.ART_SCHOOL
+            return SchoolType.ART_SCHOOL  # Художественная школа
         elif school_type == 8:
-            return SchoolType.COLLAGE
+            return SchoolType.COLLAGE  # Колледж
         elif school_type == 9:
-            return SchoolType.PROFESSIONAL_LYCEUM
+            return SchoolType.PROFESSIONAL_LYCEUM  # Профессиональный лицей
         elif school_type == 10:
-            return SchoolType.TECHNICAL_SCHOOL
+            return SchoolType.TECHNICAL_SCHOOL  # Техникум
         elif school_type == 11:
-            return SchoolType.VOCATIONAL_SCHOOL
+            return SchoolType.VOCATIONAL_SCHOOL  # ПТУ
         elif school_type == 12:
-            return SchoolType.UCHILISHE
+            return SchoolType.UCHILISHE  # Училище
         elif school_type == 13:
-            return SchoolType.SCHOOL_OF_ARTS
+            return SchoolType.SCHOOL_OF_ARTS  # школа искусств
         else:
-            raise Exception("Invalid value!")
+            raise Exception(f"Invalid value '{school_type}' for Enum 'SchoolType'!")
