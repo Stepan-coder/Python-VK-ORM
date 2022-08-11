@@ -60,8 +60,8 @@ class Occupation:
         :ru Этот приватный метод конвертирует числовое представление значения 'occupation_type' в Enum 'Platform'.
         :en This private method converts the numeric representation of the value 'occupation_type' to Enum 'Platform'.
 
-        :param occupation_type:ru Числовое представление значения 'platform'.
-        :param occupation_type:en Numeric representation of the 'platform' value.
+        :param occupation_type:ru Числовое представление значения 'occupation_type'.
+        :param occupation_type:en Numeric representation of the 'occupation_type' value.
         :type occupation_type: int
         """
         if occupation_type == 'work':

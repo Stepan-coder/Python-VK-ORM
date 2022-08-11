@@ -43,7 +43,7 @@ class Position(Enum):
     POSITIVE = "POSITIVE"  # положительное
 
 
-class Personal:
+class LifePosition:
     def __init__(self, personal: Dict[str, Any]):
         """
         :ru Информация о полях из раздела 'Жизненная позиция'.
@@ -120,8 +120,8 @@ class Personal:
 
     def json(self) -> json:
         """
-        :ru Этот метод формирует json объект из полей класса 'Personal'.
-        :en This method generates a json object from the fields of the 'Personal' class.
+        :ru Этот метод формирует json объект из полей класса 'LifePosition'.
+        :en This method generates a json object from the fields of the 'LifePosition' class.
         """
         return {"political": self.political.value,
                 "langs": self.langs,
@@ -227,15 +227,15 @@ class Personal:
         :param position:en Numeric representation of the 'position' value.
         :type position: int
         """
-        if position == 0:
+        if position == 1:
             return Position.SHARPLY_NEGATIVE  # Резко негативное
-        elif position == 1:
-            return Position.NEGATIVE  # Негативное
         elif position == 2:
-            return Position.COMPROMISE  # Компромисное
+            return Position.NEGATIVE  # Негативное
         elif position == 3:
-            return Position.NEUTRAL  # Нейтральное
+            return Position.COMPROMISE  # Компромисное
         elif position == 4:
+            return Position.NEUTRAL  # Нейтральное
+        elif position == 5:
             return Position.POSITIVE  # Положительное
         else:
             raise Exception("Invalid value!")

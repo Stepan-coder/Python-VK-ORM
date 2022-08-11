@@ -1,17 +1,15 @@
 from enum import Enum
-from vkbox.user.career import *
-from vkbox.user.schools import *
-from vkbox.user.military import *
-from vkbox.user.personal import *
-from vkbox.user.counters import *
-from vkbox.user.last_seen import *
-from vkbox.user.occupation import *
-from vkbox.user.universities import *
-from typing import Dict, Any, List, Optional
 
-"""
-occupation
-"""
+from vkbox.user.params import *
+from vkbox.user.career import *
+from vkbox.user.military import *
+from vkbox.user.counters import *
+from vkbox.user.contacts import *
+from vkbox.user.interests import *
+from vkbox.user.occupation import *
+from vkbox.user.lifeposition import *
+from vkbox.user.education.education import *
+from typing import Dict, Any, List, Optional
 
 
 class Sex(Enum):
@@ -50,7 +48,7 @@ class User:
 
 # ========================== Базовая информация ========================== Basic information ==========================
     @property
-    def id(self) -> int:
+    def user_id(self) -> int:
         """
         :ru Свойство для получения идентификатора пользователя.
         :en Property for getting the user ID.
@@ -117,169 +115,21 @@ class User:
         return self.__decode_relation(self.__user['relation']) if 'relation' in self.__user else None
 
     @property
-    def home_town(self) -> str:
+    def online(self) -> Online:
         """
-        :ru Свойство для получения названия родного города.
-        :en Property for getting the name of the hometown.
+        :ru Свойство для получения информация о том, находится ли пользователь сейчас на сайте.
+        :en Property for getting information about whether the user is currently on the site.
         """
-        return self.__user['home_town'] if 'home_town' in self.__user else None
+        return self.__decode_online(self.__user['online']) if 'online' in self.__user else None
 
     @property
-    def city_id(self) -> int:
+    def count(self) -> Optional[Counters]:
         """
-        :ru Свойство для получения идентификатора города пользователя, который можно использовать для получения его
-         названия с помощью метода 'database.getCitiesById'.
-        :en Property for getting the user's city ID, which can be used to get it names using the
-         'database' method.getCitiesById'.
+        :ru Свойство для получения информации количестве различных объектов у пользователя.
+        :en Property for getting information about the number of different objects from the user.
         """
-        return self.__user['city']['id'] if 'city' in self.__user else None
-
-    @property
-    def city_title(self) -> str:
-        """
-        :ru Свойство для получения названия города в котором находится пользователь.
-        :en Property for getting the name of the city where the user is located.
-        """
-        return self.__user['city']['title'] if 'city' in self.__user else None
-
-    @property
-    def country_id(self) -> int:
-        """
-        :ru Свойство для получения идентификатора страны пользователя, который можно использовать для получения его
-         названия с помощью метода database.getCitiesById.
-        :en Property for getting the user's country ID, which can be used to get it names using the
-         database method.getCitiesById.
-        """
-        return self.__user['country']['id'] if 'country' in self.__user else None
-
-    @property
-    def country_title(self) -> str:
-        """
-        :ru Свойство для получения названия страны в которой находится пользователь.
-        :en Property for getting the name of the country in which the user is located.
-        """
-        return self.__user['country']['title'] if 'country' in self.__user else None
-
-    @property
-    def timezone(self) -> str:
-        """
-        :ru Свойство для получения информации о временной зоне пользователя.
-        :en Property for getting information about the user's time zone.
-        """
-        return self.__user['timezone'] if 'timezone' in self.__user else None
-
-    @property
-    def connections(self) -> Dict[str, Any]:
-        """
-        :ru Свойство для получения данных об указанных в профиле сервисах пользователя, таких как: skype, livejournal.
-         Для каждого сервиса возвращается отдельное поле с типом string, содержащее никнейм пользователя.
-         Например, "skype": "username".
-        :en Property for getting data about the user's services specified in the profile, such as: skype, livejournal.
-         A separate string field containing the user's nickname is returned for each service.
-         For example, "skype": "username".
-        """
-        return self.__user['connections'] if 'connections' in self.__user else None
-
-# ============================== О пользователе ============================== About user ==============================
-    @property
-    def site(self) -> str:
-        """
-        :ru Свойство для получения адреса сайта, указанного в профиле.
-        :en Property for getting the site address specified in the profile.
-        """
-        return self.__user['about'] if 'about' in self.__user else None
-
-    @property
-    def about(self) -> str:
-        """
-        :ru Свойство для получения содержимого поля «О себе» из профиля.
-        :en Property for getting the contents of the "About me" field from the profile.
-        """
-        return self.__user['about'] if 'about' in self.__user else None
-
-    @property
-    def status(self) -> str:
-        """
-        :ru Свойство для получения статуса пользователя. Возвращается строка, содержащая текст статуса, расположенного в
-         профиле под именем.
-        :en Property for getting user status. Returns a string containing the status text located in profile under the
-         name.
-        """
-        return self.__user['status'] if 'status' in self.__user else None
-
-    @property
-    def activities(self) -> str:
-        """
-        :ru Свойство для получения содержимого поля «Деятельность» из профиля.
-        :en Property for getting the contents of the "Activity" field from the profile.
-        """
-        return self.__user['activities'] if 'activities' in self.__user else None
-
-    @property
-    def interests(self) -> str:
-        """
-        :ru Свойство для получения содержимого поля «Деятельность» из профиля.
-        :en Property for getting the contents of the "Activity" field from the profile.
-        """
-        return self.__user['interests'] if 'interests' in self.__user else None
-
-    @property
-    def music(self) -> str:
-        """
-        :ru Свойство для получения содержимого поля «Любимая музыка» из профиля.
-        :en Property for getting the contents of the "Favorite music" field from the profile.
-        """
-        return self.__user['music'] if 'music' in self.__user else None
-
-    @property
-    def movies(self) -> str:
-        """
-        :ru Свойство для получения содержимого поля «Любимые фильмы» из профиля.
-        :en Property for getting the contents of the "Favorite movies" field from the profile.
-        """
-        return self.__user['movies'] if 'movies' in self.__user else None
-
-    @property
-    def tv(self) -> str:
-        """
-        :ru Свойство для получения содержимого поля «Любимые телешоу» из профиля.
-        :en Property for getting the contents of the "Favorite TV shows" field from the profile.
-        """
-        return self.__user['tv'] if 'tv' in self.__user else None
-
-    @property
-    def books(self) -> str:
-        """
-        :ru Свойство для получения содержимого поля «Любимые книги» из профиля.
-        :en Property for getting the contents of the "Favorite books" field from the profile.
-        """
-        return self.__user['books'] if 'books' in self.__user else None
-
-    @property
-    def games(self) -> str:
-        """
-        :ru Свойство для получения содержимого поля «Любимые игры» из профиля.
-        :en Property for getting the contents of the "Favorite games" field from the profile.
-        """
-        return self.__user['games'] if 'games' in self.__user else None
-
-    @property
-    def quotes(self) -> str:
-        """
-        :ru Свойство для получения содержимого поля «Любимые цитаты» из профиля.
-        :en Property for getting the contents of the "Favorite quotes" field from the profile.
-        """
-        return self.__user['quotes'] if 'quotes' in self.__user else None
-
-
-    @property
-    def personal(self) -> Optional[Personal]:
-        """
-        :ru Свойство для получения информации о полях из раздела «Жизненная позиция».
-        :en Property for getting information about fields from the "Life position" section.
-        """
-        if 'personal' in self.__user:
-            return Personal(personal=self.__user['personal'])
+        if 'counters' in self.__user:
+            return Counters(counters=self.__user['counters'])
         return None
 
     @property
@@ -293,44 +143,29 @@ class User:
         return None
 
     @property
-    def counters(self) -> Optional[Counters]:
+    def contacts(self) -> Optional[Contacts]:
         """
-        :ru Свойство для получения информации количестве различных объектов у пользователя.
-        :en Property for getting information about the number of different objects from the user.
+        :ru Свойство для получения информации о контактной информации пользователя
+        :ru Property for getting information about the user's contact information
         """
-        if 'counters' in self.__user:
-            return Counters(counters=self.__user['counters'])
-        return None
+        return Contacts(contacts=self.__user)
 
     @property
-    def schools(self) -> Optional[List[School]]:
+    def interests(self) -> Optional[Interests]:
         """
-        :ru Свойство для получения списка школ, в которых учился пользователь. Массив экземпляров класса 'University'.
-        :en Property for getting a list of schools where the user studied. Array of instances of the 'School' class.
+        :ru Свойство для получения информации о полях из раздела «Жизненная позиция».
+        :en Property for getting information about fields from the "Life position" section.
         """
-        if 'schools' in self.__user:
-            return [School(school=school) for school in self.__user['schools']]
-        return None
+        return Interests(interests=self.__user)
 
     @property
-    def universities(self) -> Optional[List[University]]:
+    def education(self) -> Optional[Education]:
         """
-        :ru Свойство для получения списка вузов, в которых учился пользователь. Массив экземпляров класса 'University'.
-        :en Property for getting a list of universities where the user studied.
-         Array of instances of the 'University' class.
+        :ru Свойство для получения образовательных учереждений, в которых обучался пользователь.
+        :en Property for obtaining educational institutions in which the user studied.
         """
-        if 'universities' in self.__user:
-            return [University(university=university) for university in self.__user['universities']]
-        return None
-
-    @property
-    def military(self) -> Optional[Military]:
-        """
-        :ru Свойство для получения информации о военной службе пользователя.
-        :en Property for getting information about the user's military service.
-        """
-        if 'military' in self.__user:
-            return Military(military=self.__user['military'])
+        if 'schools' in self.__user or 'universities' in self.__user:
+            return Education(education=self.__user)
         return None
 
     @property
@@ -343,89 +178,89 @@ class User:
             return [Career(career=career) for career in self.__user['career']]
         return None
 
-
-
     @property
-    def online(self) -> Online:
+    def military(self) -> Optional[List[Military]]:
         """
-        :ru Свойство для получения информация о том, находится ли пользователь сейчас на сайте.
-        :en Property for getting information about whether the user is currently on the site.
+        :ru Свойство для получения информации о военной службе пользователя.
+        :en Property for getting information about the user's military service.
         """
-        return self.__decode_online(self.__user['online']) if 'online' in self.__user else None
-
-    @property
-    def last_seen(self) -> Optional[LastSeen]:
-        if 'last_seen' in self.__user:
-            return LastSeen(last_seen=self.__user['last_seen'])
+        if 'military' in self.__user:
+            return [Military(military=military) for military in self.__user['military']]
         return None
 
-
+    @property
+    def life_position(self) -> Optional[LifePosition]:
+        """
+        :ru Свойство для получения информации о полях из раздела «Жизненная позиция».
+        :en Property for getting information about fields from the "Life position" section.
+        """
+        if 'personal' in self.__user:
+            return LifePosition(personal=self.__user['personal'])
+        return None
 
     @property
-    def can_access_closed(self) -> bool:
+    def params(self) -> Optional[Params]:
         """
-        :ru Свойство для получения информации о возможности пользователя видеть профиль при is_closed = 1
-         (например, он есть в друзьях).
-        :en Property for getting information about the user's ability to see the profile when is_closed = 1
-         (for example, he is in friends).
+        :ru Свойство для получения информации о дополнительных полях пользователя.
+        :en Property for getting information about additional user fields.
         """
-        return self.__user['can_access_closed'] if 'can_access_closed' in self.__user else None
+        return Params(params=self.__user)
 
-    @property
-    def is_closed(self) -> bool:
+    def json(self, is_full: bool = False) -> json:
         """
-        :ru Свойство для получения информации о том, скрыт ли профиль пользователя настройками приватности.
-        :en Property for getting information about whether the user's profile is hidden by privacy settings.
+        :ru Этот метод формирует json объект из полей класса 'User'.
+        :en This method generates a json object from the fields of the 'User' class.
         """
-        return self.__user['is_closed'] if 'is_closed' in self.__user else None
+        if self.education.schools is not None:
+            schools_id =[school.json() if is_full else school.id for school in self.education.schools]
+        else:
+            schools_id = self.education.schools
+        if self.education.universities is not None:
+            uni_id = [university.json() if is_full else university.id for university in self.education.universities]
+        else:
+            uni_id = self.education.universities
+        if self.career is not None:
+            for career in self.career:
+                if is_full:
+                    user_career = career.json()
+                else:
+                    user_career = career.company if career.company is not None else career.group_id
+        else:
+            user_career = self.career
+        if self.military is not None:
+            military = [military.json() if is_full else military.unit_id for military in self.military]
+        else:
+            military = self.military
+        main_info = {"id": self.user_id,
+                     "domain": self.domain,
+                     "screen_name": self.screen_name,
+                     "first_name": self.first_name,
+                     "last_name": self.last_name,
+                     "birthday": self.birthday,
+                     "sex": self.sex.name,
+                     "relation": self.relation.name,
+                     "online": self.online.name}
 
-    @property
-    def has_mobile(self) -> bool:
-        """
-        :ru Свойство для получения информации о том, известен ли номер мобильного телефона пользователя.
-        :en Property for getting information about whether the user's mobile phone number is known.
-        """
-        return self.__user['has_mobile'] == 1 if 'has_mobile' in self.__user else None
+        count = self.count.json()
+        occupation = self.occupation.json()
+        contacts = self.contacts.json() if is_full else {"city_id": self.contacts.city_id,
+                                                         "country_id": self.contacts.country_id}
+        interests = self.interests.json()
+        activities = {"schools_id": schools_id,
+                      "universities_id": uni_id,
+                      "career": user_career,
+                      "military": military}
+        life_position = self.life_position.json()
+        params = self.params.json()
+        return {**main_info,
+                **count,
+                **occupation,
+                **contacts,
+                **interests,
+                **activities,
+                **life_position,
+                **params}
 
-    @property
-    def has_photo(self) -> bool:
-        """
-        :ru Свойство для получения информации о том, установил ли пользователь фотографию для профиля.
-        :en Property for getting information about whether the user has set a profile photo.
-        """
-        return self.__user['has_photo'] == 1 if 'has_photo' in self.__user else None
-
-    @property
-    def is_no_index(self) -> bool:
-        """
-        :ru Свойство для получения информации о том, индексируется ли профиль поисковыми сайтами.
-        :en Property for getting information about whether the profile is indexed by search sites.
-        """
-        return self.__user['is_no_index'] == 0 if 'is_no_index' in self.__user else None
-
-    @property
-    def is_trending(self) -> bool:
-        """
-        :ru Свойство для получения информации о том, индексируется ли профиль поисковыми сайтами.
-        :en Property for getting information about whether the profile is indexed by search sites.
-        """
-        return self.__user['trending'] == 1 if 'trending' in self.__user else None
-
-    @property
-    def is_verified(self) -> bool:
-        """
-        :ru Свойство для получения информации о том, верифицирована ли страница пользователя.
-        :en Property for getting information about whether the user's page has been verified.
-        """
-        return self.__user['verified'] == 1 if 'verified' in self.__user else None
-
-    @property
-    def is_wall_privat(self) -> bool:
-        """
-        :ru Свойство для получения информации о том, открыта ли страница пользователя.
-        :en Property for getting information about whether the user's page is open.
-        """
-        return self.__user['wall_default'] == 'owner' if 'wall_default' in self.__user else None
 
     @staticmethod
     def __convert_birthdate(birthdate: str) -> str:

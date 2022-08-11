@@ -138,13 +138,14 @@ class Bot(object):
         :param user_id:ru The unique ID of the user for whom you need to get information.
         :type user_id: int
         """
+        # print( self.__vk.friends.get(user_ids=user_id))
         result = self.__vk.users.get(user_ids=user_id,
                                      fields="about, activities, bdate, books, career, city, connections, counters, "
                                             "country, domain, education, followers_count, games, has_mobile, has_photo,"
                                             "home_town, interests, is_no_index, last_seen, military, movies, music, "
                                             "occupation, online, personal, quotes, relatives, relation, schools, "
                                             "screen_name, sex, site, status, timezone, trending, tv, universities, "
-                                            "verified, wall_default")
+                                            "verified, wall_default, phone")
         print(result)
         return User(user=result[0])
 
