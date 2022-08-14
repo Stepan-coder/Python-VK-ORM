@@ -72,3 +72,7 @@ class VideoMessage:
     def is_favorite(self) -> bool:
         return self.__video['is_favorite']
 
+    def get_attachment(self) -> str:
+        return f"video{self.owner_id}_{self.id}_{self.access_key}"
+
+

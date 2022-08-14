@@ -1,6 +1,6 @@
 import json
 from enum import Enum
-from vkbox.user.last_seen import *
+from quanario.user.last_seen import *
 from typing import Dict, Any, List, Optional
 
 

@@ -1,6 +1,6 @@
 # import traceback
 #
-# from vkbox.bot import *
+# from quanario.bot import *
 #
 #
 # def some_method(bot: Bot, message: Message, args: tuple = None):

@@ -3,8 +3,8 @@ from vk_api import VkApi
 from vk_api.upload import VkUpload
 from vk_api.utils import get_random_id
 from vk_api.bot_longpoll import VkBotLongPoll, VkBotEventType
-from vkbox.message_extensions.keyboard import *
-from vkbox.message_extensions.carousel import *
+from quanario.message_extensions.keyboard import *
+from quanario.message_extensions.carousel import *
 
 
 class Send:
@@ -133,7 +133,26 @@ class Send:
                                 random_id=get_random_id())
 
     def video(self, user_id: int, attachment: str) -> None:
-        pass
+        """
+        ru: Этот метод позволяет отправить пользователю с id 'user_id' файл. Файл
+        en: This method allows you to send file to a user with the id 'user_id'.
+
+        :param user_id:ru Уникальный id пользователя в социальной сети ВКонтакте.
+        :param user_id:en Unique user id in the VKontakte social network.
+        :type user_id: int
+
+        :param attachment:ru Уникальная строка ссылка-идентификатор вложения.
+        :param attachment:en Unique string link-attachment ID.
+        :type attachment: str
+
+        ru: *Для оптравки пользователю вложения типа 'видео', в отличие от остольных типов вложений, для него необходимо
+        получить 'attachment', с помощью метода 'get_attachment' класса 'VideoMessage'*
+        en: *To send an attachment of the 'video' type to the user, unlike other types of attachments, it is necessary
+         for him to get the 'attachment', using the 'get_attachment' method of the 'VideoMessage' class*
+        """
+        self.__vk.messages.send(peer_id=user_id,
+                                attachment=attachment,
+                                random_id=get_random_id())
 
     def file(self, user_id: int, attachment: str) -> None:
         """

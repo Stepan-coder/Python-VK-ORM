@@ -44,6 +44,9 @@ class PhotoMessage:
     def post_id(self) -> int:
         return self.__photo['post_id']
 
+    def get_attachment(self) -> str:
+        return f"photo{self.owner_id}_{self.id}_{self.access_key}"
+
     def save(self, path_to_save: str):
         if not os.path.exists(os.path.dirname(os.path.abspath(path_to_save))):
             raise Exception('Invalid path to save the file!')

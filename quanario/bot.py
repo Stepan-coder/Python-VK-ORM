@@ -3,12 +3,12 @@ from __future__ import annotations
 import warnings
 import traceback
 from typing import Callable
-from vkbox.upload import *
-from vkbox.send import *
-from vkbox.user.user import *
-from vkbox.input_message.message import *
-from vkbox.message_extensions.keyboard import *
-from vkbox.message_extensions.carousel import *
+from quanario.upload import *
+from quanario.send import *
+from quanario.user.user import *
+from quanario.input_message.message import *
+from quanario.message_extensions.keyboard import *
+from quanario.message_extensions.carousel import *
 from vk_api import VkApi
 from vk_api.bot_longpoll import VkBotLongPoll, VkBotEventType
 

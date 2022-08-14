@@ -3,7 +3,7 @@ import vk_api
 import ffmpeg
 from pydub import AudioSegment
 from vk_api import VkApi
-from vk_api.upload import VkUpload
+from vk_api.upload import VkUpload, FilesOpener
 from vk_api.utils import get_random_id
 from vk_api.bot_longpoll import VkBotLongPoll, VkBotEventType
 
@@ -14,7 +14,7 @@ class Upload:
 
     def voice(self, user_id: int, path_to_audio: str) -> str:
         """
-        ru: Этот метод позволяет получить 'attachment' для аудиофайла для отправки его польхователю.
+        ru: Этот метод позволяет получить 'attachment' для аудиофайла для отправки его пользователю.
         en: This method allows you to get an 'attachment' for an audio file to send it to the user.
 
         :param user_id:ru Уникальный id пользователя в социальной сети ВКонтакте.
@@ -35,7 +35,7 @@ class Upload:
 
     def photo(self, user_id: int, path_to_photo: str) -> str:
         """
-        ru: Этот метод позволяет получить 'attachment' для картинки для отправки её польхователю.
+        ru: Этот метод позволяет получить 'attachment' для картинки для отправки её пользователю.
         en: This method allows you to get an 'attachment' for an image to send it to the user.
 
         :param user_id:ru Уникальный id пользователя в социальной сети ВКонтакте.
@@ -52,28 +52,9 @@ class Upload:
         photo = upload.photo_messages(path_to_photo)
         return f"photo{photo[0]['owner_id']}_{photo[0]['id']}_{photo[0]['access_key']}"
 
-    def video(self, user_id: int, path_to_video: str) -> str:  # Допилить
-        """
-        ru: Этот метод позволяет получить 'attachment' для видео для отправки его польхователю.
-        en: This method allows you to get an 'attachment' for the video to send it to the user.
-
-        :param user_id:ru Уникальный id пользователя в социальной сети ВКонтакте.
-        :param user_id:en Unique user id in the VKontakte social network.
-        :type user_id: int
-
-        :param path_to_video:ru Путь к видеозаписи, которое необходимо загрузить.
-        :param path_to_video:en The path to the video file to upload.
-        :type path_to_video: str
-        """
-        if not os.path.exists(path_to_video):
-            raise Exception('The specified file path does not exist!')
-        upload = VkUpload(self.__vk)
-        video = upload.video(path_to_video)
-        return f"audio_message{video['audio_message']['owner_id']}_{video['audio_message']['id']}"
-
     def file(self, user_id: int, path_to_file: str) -> str:
         """
-        ru: Этот метод позволяет получить 'attachment' для фйла для отправки его польхователю.
+        ru: Этот метод позволяет получить 'attachment' для фйла для отправки его пользователю.
         en: This method allows you to get an 'attachment' for the file to send it to the user.
 
         :param user_id:ru Уникальный id пользователя в социальной сети ВКонтакте.

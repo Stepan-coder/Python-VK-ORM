@@ -1,21 +1,21 @@
 from enum import Enum
 
-from vkbox.user.params import *
-from vkbox.user.career import *
-from vkbox.user.military import *
-from vkbox.user.counters import *
-from vkbox.user.contacts import *
-from vkbox.user.interests import *
-from vkbox.user.occupation import *
-from vkbox.user.lifeposition import *
-from vkbox.user.education.education import *
+from quanario.user.params import *
+from quanario.user.career import *
+from quanario.user.military import *
+from quanario.user.counters import *
+from quanario.user.contacts import *
+from quanario.user.interests import *
+from quanario.user.occupation import *
+from quanario.user.lifeposition import *
+from quanario.user.education.education import *
 from typing import Dict, Any, List, Optional
 
 
 class Sex(Enum):
-    NOT_SPECIFIED = "NOT SPECIFIED"
-    FEMALE = "FEMALE"
-    MALE = "MALE"
+    NOT_SPECIFIED = "NOT SPECIFIED"  # Пол не указан
+    FEMALE = "FEMALE"  # Женщина
+    MALE = "MALE"  # Мужщина
 
 
 class Relation(Enum):
@@ -30,8 +30,8 @@ class Relation(Enum):
 
 
 class Online(Enum):
-    ONLINE = "ONLINE"
-    NOT_ONLINE = "NOT ONLINE"
+    ONLINE = "ONLINE"  # Пользователь онлайн
+    NOT_ONLINE = "NOT ONLINE"  # Пользователь не онлайн
 
 
 class User:
@@ -261,7 +261,6 @@ class User:
                 **life_position,
                 **params}
 
-
     @staticmethod
     def __convert_birthdate(birthdate: str) -> str:
         date = str(birthdate).split(".")
@@ -283,11 +282,11 @@ class User:
         :type sex: int
         """
         if sex == 0:
-            return Sex.NOT_SPECIFIED
+            return Sex.NOT_SPECIFIED  # Пол не указан
         elif sex == 1:
-            return Sex.FEMALE
+            return Sex.FEMALE  # Женщина
         elif sex == 2:
-            return Sex.MALE
+            return Sex.MALE  # Мужщина
         else:
             raise Exception(f"Invalid value '{sex}' for Enum 'Sex'!")
 

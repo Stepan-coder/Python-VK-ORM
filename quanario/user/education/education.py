@@ -1,5 +1,5 @@
-from vkbox.user.education.schools import *
-from vkbox.user.education.universities import *
+from quanario.user.education.schools import *
+from quanario.user.education.universities import *
 from typing import Dict, Any, List, Optional
 
 
