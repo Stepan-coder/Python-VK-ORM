@@ -17,11 +17,11 @@ def send_keyboard(bot: Bot, message: Message, args: tuple = None):
     keyboard = bot.create_keyboard(inline=False,
                                    one_time=False)
     # :ru Теперь, когда экземпляр клавиатуры получен, можем перейти к добавлению кнопок в клавиатуру (ну, а для чего же
-    #  она ещё нужна). Каждая кнопка добавляется добавляется и настраивается отдельно. Всего, есть возможнось создать 3
+    #  она ещё нужна). Каждая кнопка добавляется и настраивается отдельно. Всего, есть возможнось создать 3
     #  типа кнопок: обычная текстовая, она бывает 4-х разных цветов - белая, синяя, красная и зелёная (DEFAULT),
     #  кнопка-ссылка, для отправки пользователю ссылок на различные интернет ресурсы (OPENLINK) и кнопка, для отправки
-    #  пользователем своей геопозиции боту (LOCATION), обратите внимание, что кнопока "LOCATION" должена
-    #  распологаться единственной в ряду.
+    #  пользователем своей геопозиции боту (LOCATION), обратите внимание, что кнопка "LOCATION" должна
+    #  располагаться единственной в ряду.
 
     # :ут Now that the keyboard instance has been received, we can proceed to adding buttons to the keyboard (well,
     #  what else is it needed for). Each button is added added and configured separately. In total, it is possible to
@@ -45,9 +45,10 @@ def send_keyboard(bot: Bot, message: Message, args: tuple = None):
                         button_type=VkKeyboardButton.DEFAULT,
                         color=VkKeyboardColor.NEGATIVE)  # Красная кнопка (Green button)
 
-    # :ru Вообще, при добавлении кнопок, они добавляются "в ряд", поэтому, для переноса, нужно вызвать метод 'add_line'
+    # :ru Вообще, при добавлении кнопок, они добавляются "в ряд", поэтому, для переноса, нужно вызвать метод
+    #  'add_line()'
     # :en In general, when adding buttons, they are added "in a row", therefore, to transfer, you need to call
-    #  the 'add_line' method
+    #  the 'add_line()' method
     keyboard.add_line()
 
     # :ru Добавим кнопку-ссылку, с её помощью можно отправить пользователя на какой то внешний интернет ресурс.
@@ -58,7 +59,7 @@ def send_keyboard(bot: Bot, message: Message, args: tuple = None):
                                                 # The text that will be displayed on the button
                         button_type=VkKeyboardButton.OPENLINK,  # :ru Указываем, что это кнопка-ссылка
                                                                 # :en We indicate that this is a link button
-                        payload="https://www.google.ru"  # :ru Указываем, ресурс, на который нужно отправть пользователя
+                        payload="https://www.google.ru"  # :ru Указываем, ресурс, куда нужно отправить пользователя
                                                          # :en Specify the resource to which you want to send the user
                         )
 
@@ -66,8 +67,8 @@ def send_keyboard(bot: Bot, message: Message, args: tuple = None):
     # :en Let's do it again by moving the buttons on the keyboard
     keyboard.add_line()
 
-    # :ru Добавим кноку для получения геолокации пользователя. Обратите внимание, что мы не указываем ни цвет кнопки,
-    #  ни текст на ней, т.к. эта кнопка уже обладает полностью готовым дизайном от Вконтакт.
+    # :ru Добавим кнопку для получения геолокации пользователя. Обратите внимание, что мы не указываем ни цвет кнопки,
+    #  ни текст на ней, т.к. эта кнопка уже обладает полностью готовым дизайном от Вконтакте.
     # :en Add a button to get the user's geolocation. Please note that we do not specify either the color of the button
     #  or the text on it, because this button already has a completely ready-made design from Vkontakte.
     keyboard.add_button(button_type=VkKeyboardButton.LOCATION)
@@ -77,7 +78,7 @@ def send_keyboard(bot: Bot, message: Message, args: tuple = None):
     bot.send.message(user_id=message.user_id,  # :ru Передаём уникальный идентификатор пользователя
                                                # :en Transmitting a unique user ID
                      message="Message text",  # :ru Передаём текст, который хотим отправить
-                                              # :ru Passing the text we want to send
+                                              # :en Passing the text we want to send
                      keyboard=keyboard  # :ru Передаём клавиатуру
                                         # :en Passing the keyboard
                      )

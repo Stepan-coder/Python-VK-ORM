@@ -17,7 +17,7 @@ class CarouselElement:
         :param description:en Description of what is on the block, the recommended number of characters is 80
         :type description: str
 
-        :param attachment:ru Изображение, которое будет добавленно к блоку карусели. В 'attachment' необходимо
+        :param attachment:ru Изображение, которое будет добавлено к блоку карусели. В 'attachment' необходимо
          передать результат загрузки изображения через 'bot.upload.photo'.
         :param attachment:en Image to be added to the carousel block. In the 'attachment' it is necessary to pass the
          result of uploading the image via 'bot.upload.photo'.
@@ -169,14 +169,14 @@ class CarouselElement:
 class Carousel:
     """
     ru: Основной класс для создания вложений типа "Карусель".
-    Отличие карусели от обычных сообщений это её необычный внешний вид, карусель состоит из блоков (максимум 10 шт.),
-    в каждом блоке есть заголовок, описание и картинка. В последствии есть возможность прикрепить к каждому блоку
-    уникальную клавиатуру. !!!Важно, чтобы количество кнопок совпадало во всех блоках!!!
+     Отличие карусели от обычных сообщений это её необычный внешний вид, карусель состоит из блоков (максимум 10 шт.),
+     в каждом блоке есть заголовок, описание и картинка. В последствии есть возможность прикрепить к каждому блоку
+     уникальную клавиатуру. !!!Важно, чтобы количество кнопок совпадало во всех блоках!!!
 
     en: The main class for creating attachments of the "Carousel" type.
-    The difference between the carousel and ordinary messages is its unusual appearance, the carousel consists of blocks
-    (maximum 10 pcs.), each block has a title, description and picture. Subsequently, it is possible to attach to each
-    block unique keyboard. !!!It is important that the number of buttons matches in all blocks!!!
+     The difference between the carousel and ordinary messages is its unusual appearance, the carousel consists of blocks
+     (maximum 10 pcs.), each block has a title, description and picture. Subsequently, it is possible to attach to each
+     block unique keyboard. !!!It is important that the number of buttons matches in all blocks!!!
     """
 
     def __init__(self):
@@ -217,7 +217,7 @@ class Carousel:
         :param description:en Description of what is on the block, the recommended number of characters is 80
         :type description: str
 
-        :param attachment:ru Изображение, которое будет добавленно к блоку карусели. В 'attachment' необходимо
+        :param attachment:ru Изображение, которое будет добавлено к блоку карусели. В 'attachment' необходимо
          передать результат загрузки изображения через 'bot.upload.photo'.
         :param attachment:en Image to be added to the carousel block. In the 'attachment' it is necessary to pass the
          result of uploading the image via 'bot.upload.photo'.

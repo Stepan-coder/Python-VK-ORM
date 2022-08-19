@@ -16,7 +16,7 @@ APP_ID = 000000000
 bot = Bot(token=TOKEN, app_id=APP_ID)
 bot.run(init_method=send_keyboard)
 ```
-
+---
 Для отправки клавиатуры пользователю, её необходимо сгенерировать. Для этого вызовем метод `create_keyboard()` экземпляра класса `bot`. Вообще, клавиатуры бывают двух типов: `обычные` и так называемые `inline`. Inline клавиатуры отличаются от обычных тем, что располагаются в беседе, в то время, как обычные клавиатуры, прикрепляются к нижней части экрана... Аргумент `one_time`, необходим для сохранения текущей клавиатуры у пользователя, до отправки следующей. (Ради интереса можете поэкспериментировать с параметрами `inline` и `one_time`)
 >*To send the keyboard to the user, it must be generated. To do this, call the `create_keyboard()` method of the `bot` class instance. In general, there are two types of keyboards: `regular` and the so-called `inline`. Inline keyboards differ from regular keyboards in that they are located in a conversation, while regular keyboards are attached to the bottom of the screen... The `one_time` argument is required to save the user's current keyboard before sending the next one. (For the sake of interest, you can experiment with the parameters `inline` and `one_time`)*
 ```Python3
@@ -69,7 +69,7 @@ def send_keyboard(bot: Bot, message: Message, args: tuple = None):
 ```Python3   
     keyboard.add_button(button_type=VkKeyboardButton.LOCATION)
 ```
-
+---
 Для отправки пользователю клавиатуры, её экземпляр необходимо передать в качестве аргумента методу `message`.
 >*To send the keyboard to the user, its instance must be passed as an argument to the `message` method.*
 ```Python3  
@@ -77,7 +77,7 @@ def send_keyboard(bot: Bot, message: Message, args: tuple = None):
                      message="Message text",
                      keyboard=keyboard)
 ```
-
+---
 По итогу получаем следующий код для бота, который в ответ на любое сообщение пользователя отправляет ему сообщение "Message text" с клавиатурой.
 >*As a result, we get the following code for the bot, which in response to any message from the user sends him a message "Message text" with a keyboard.*
 ```Python3 
