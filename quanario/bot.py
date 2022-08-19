@@ -1,15 +1,15 @@
 from __future__ import annotations
-
+import asyncio
 import warnings
 import traceback
-from typing import Callable
-from quanario.upload import *
+from vk_api import VkApi
+from typing import Callable, Awaitable
 from quanario.send import *
+from quanario.upload import *
 from quanario.user.user import *
 from quanario.input_message.message import *
 from quanario.message_extensions.keyboard import *
 from quanario.message_extensions.carousel import *
-from vk_api import VkApi
 from vk_api.bot_longpoll import VkBotLongPoll, VkBotEventType
 
 
@@ -96,13 +96,16 @@ class Bot(object):
     def upload(self) -> Upload:
         """
         :ru Свойство для получения экземпляра класса 'Upload'. Этот класс реализует функционал публикации контента на
-         сеервер ВКонтакте
+         сервер ВКонтакте
         :en Property for getting an instance of the 'Upload' class. This class implements the functionality of
          publishing content on vkontakte server
         """
         return Upload(vk=self.__vk)
 
-    def run(self, init_method: Callable[['Bot', Message, tuple], None], args: tuple = None) -> None:
+    def run(self,
+            init_method: Callable[['Bot', Message, tuple], Optional[Awaitable[None]]],
+            is_async: bool = False,
+            args: tuple = None) -> None:
         """
         :ru Основной метод класса 'Bot'. Он запускает вызов метода 'init_method' в вечном цикле для получения и
          обработки сообщений от пользователя.
@@ -115,6 +118,10 @@ class Bot(object):
          For more information, see the examples.
         :type init_method: Callable
 
+        :param is_async:ru Аргумент, отвечающий за перевод бота в асинхронный режим, для увеличения производительности
+        :param is_async:en The argument responsible for switching the bot to asynchronous mode to increase performance
+        :type is_async: bool
+
         :param args:ru Кортеж аргументов, которые необходимо передать в init_method
         :param args:en Tuple of arguments to be passed to init_method
         :type args: tuple
@@ -123,13 +130,16 @@ class Bot(object):
             try:
                 for event in self.longpoll.listen():
                     if event.type == VkBotEventType.MESSAGE_NEW:
-                        init_method(self, Message(event=event), args)
+                        if is_async:
+                            asyncio.run(init_method(self, Message(event=event), args))
+                        else:
+                            init_method(self, Message(event=event), args)
             except Exception as e:
                 print(traceback.format_exc())
 
     def get_user_info(self, user_id: int) -> User:
         """
-        :ru Этот метод делает запрос в ВКонтакте на получение информации о польхователе, в ответ он получает json,
+        :ru Этот метод делает запрос в ВКонтакте на получение информации о пользователе, в ответ он получает json,
          который преобразуется в экземпляр класса 'User'.
         :en This method makes a request in VKontakte to get information about the user, in response it receives json,
          which is converted into an instance of the 'User' class.
