@@ -45,13 +45,13 @@ def send_keyboard(bot: Bot, message: Message, args: tuple = None):
                         color=VkKeyboardColor.NEGATIVE)  # Красная кнопка (Green button)
 ```
 Вообще, при добавлении кнопок, они добавляются `в ряд`, поэтому, для переноса на следующую строку, нужно вызвать метод `add_line()`.
->*In general, when adding buttons, they are added `in a row`, so to move to the next line, you need to call the `add_line()' method.*
+>*In general, when adding buttons, they are added `in a row`, so to move to the next line, you need to call the `add_line()` method.*
 ```Python3
     keyboard.add_line()
 ```
 
 Добавим кнопку-ссылку, с её помощью можно отправить пользователя на какой-то внешний интернет ресурс. **Обратите внимание, что мы не указываем цвет кнопки, т.к. кнопка ссылка может быть только белой**.
->*Let's add a link button, with its help you can send the user to some external Internet resource. **Please note that we do not specify the color of the button, because the link button can only be white **.*
+>*Let's add a link button, with its help you can send the user to some external Internet resource. **Please note that we do not specify the color of the button, because the link button can only be white**.*
 ```Python3
     keyboard.add_button(text="Open this link",  
                         button_type=VkKeyboardButton.OPENLINK, 
@@ -71,7 +71,7 @@ def send_keyboard(bot: Bot, message: Message, args: tuple = None):
 ```
 
 Для отправки пользователю клавиатуры, её экземпляр необходимо передать в качестве аргумента методу `message`.
->*To send the keyboard to the user, its instance must be passed as an argument to the 'message' method.*
+>*To send the keyboard to the user, its instance must be passed as an argument to the `message` method.*
 ```Python3  
     bot.send.message(user_id=message.user_id,
                      message="Message text",
