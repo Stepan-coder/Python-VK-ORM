@@ -22,14 +22,18 @@ class Keyboard:
     def __init__(self, inline: bool = False, one_time: bool = False):
         self.__keyboard = VkKeyboard(inline=inline, one_time=one_time)
 
-    def add_button(self, text: str, button: VkKeyboardButton, color: VkKeyboardColor, payload: Any = None) -> None:
-        if button == VkKeyboardButton.DEFAULT:
+    def add_button(self,
+                   button_type: VkKeyboardButton,
+                   text: str = None,
+                   color: VkKeyboardColor = None,
+                   payload: Any = None) -> None:
+        if button_type == VkKeyboardButton.DEFAULT:
             self.__keyboard.add_button(label=text, color=color)
-        elif button == VkKeyboardButton.OPENLINK:
+        elif button_type == VkKeyboardButton.OPENLINK:
             self.__keyboard.add_openlink_button(label=text, link=payload)
-        elif button == VkKeyboardButton.CALLBACK:
+        elif button_type == VkKeyboardButton.CALLBACK:
             self.__keyboard.add_button(label=text, color=color, payload={"type": "show_snackbar", "text": payload})
-        elif button == VkKeyboardButton.LOCATION:
+        elif button_type == VkKeyboardButton.LOCATION:
             self.__keyboard.add_location_button()
 
     def add_line(self) -> None:

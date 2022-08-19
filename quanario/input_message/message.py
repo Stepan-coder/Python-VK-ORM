@@ -48,19 +48,17 @@ class Message:
         else:
             return {}
 
-    @property
     def have_attachments(self) -> bool:
         """
-        :ru Свойство для получения информации о наличии вложений в сообщении от пользователя.
-        :en Property for getting information about the presence of attachments in a message from a user.
+        :ru Метод для получения информации о наличии вложений в сообщении от пользователя.
+        :en Method for getting information about the presence of attachments in a message from a user.
         """
         return len(self.attachments) > 0 or 'geo' in self.__event.object['message']
 
-    @property
     def have_voices(self) -> bool:
         """
-        :ru Свойство для получения информации о наличии аудиофайлов во вложених к сообщению от пользователя.
-        :en Property for getting information about the presence of audio files in attachments to a message from a user.
+        :ru Метод для получения информации о наличии аудиофайлов во вложених к сообщению от пользователя.
+        :en Method for getting information about the presence of audio files in attachments to a message from a user.
         """
         if len(self.__event.object['message']['attachments']) == 0:
             return False
@@ -70,11 +68,10 @@ class Message:
                 counter += 1
         return counter > 0 and self.have_attachments
 
-    @property
     def have_photos(self) -> bool:
         """
-        :ru Свойство для получения информации о наличии фотографий во вложених к сообщению от пользователя.
-        :en Property for getting information about the presence of photos in attachments to a message from the user.
+        :ru Метод для получения информации о наличии фотографий во вложених к сообщению от пользователя.
+        :en Method for getting information about the presence of photos in attachments to a message from the user.
         """
         if len(self.__event.object['message']['attachments']) == 0:
             return False
@@ -84,11 +81,10 @@ class Message:
                 counter += 1
         return counter > 0 and self.have_attachments
 
-    @property
     def have_videos(self) -> bool:
         """
-        :ru Свойство для получения информации о наличии видеозаписей во вложених к сообщению от пользователя.
-        :en Property for getting information about the presence of video recordings in attachments to a message from
+        :ru Метод для получения информации о наличии видеозаписей во вложених к сообщению от пользователя.
+        :en Method for getting information about the presence of video recordings in attachments to a message from
          a user.
         """
         if len(self.__event.object['message']['attachments']) == 0:
@@ -99,11 +95,10 @@ class Message:
                 counter += 1
         return counter > 0 and self.have_attachments
 
-    @property
     def have_files(self) -> bool:
         """
-        :ru Свойство для получения информации о наличии файлов/документов во вложених к сообщению от пользователя.
-        :en Property for getting information about the presence of files/documents in attachments to a message from the
+        :ru Метод для получения информации о наличии файлов/документов во вложених к сообщению от пользователя.
+        :en Method for getting information about the presence of files/documents in attachments to a message from the
          user.
         """
         if len(self.__event.object['message']['attachments']) == 0:
@@ -114,11 +109,10 @@ class Message:
                 counter += 1
         return counter > 0 and self.have_attachments
 
-    @property
     def have_geo(self) -> bool:
         """
-        :ru Свойство для получения информации об отправке геопозиции пользователем.
-        :en Property for getting information about sending a geo position by the user.
+        :ru Метод для получения информации об отправке геопозиции пользователем.
+        :en Method for getting information about sending a geo position by the user.
         """
         return 'geo' in self.__event.object['message']
 
