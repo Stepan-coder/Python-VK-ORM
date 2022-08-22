@@ -55,7 +55,7 @@ class Military:
         """
         return self.__military['until'] if 'until' in self.__military else None
 
-    def json(self) -> json:
+    def get_json(self) -> json:
         """
         :ru Этот метод формирует json объект из полей класса 'Military'.
         :en This method generates a json object from the fields of the 'Military' class.

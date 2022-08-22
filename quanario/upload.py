@@ -12,7 +12,7 @@ class Upload:
     def __init__(self, vk: vk_api.vk_api.VkApiMethod):
         self.__vk = vk
 
-    def voice(self, user_id: int, path_to_audio: str) -> str:
+    def voice(self, user_id: int, path_to_voice: str) -> str:
         """
         ru: Этот метод позволяет получить 'attachment' для аудиофайла для отправки его пользователю.
         en: This method allows you to get an 'attachment' for an audio file to send it to the user.
@@ -21,14 +21,14 @@ class Upload:
         :param user_id:en Unique user id in the VKontakte social network.
         :type user_id: int
 
-        :param path_to_audio:ru Путь к аудиофайлу, который необходимо загрузить.
-        :param path_to_audio:en The path to the audio file to upload.
-        :type path_to_audio: str
+        :param path_to_voice:ru Путь к аудиофайлу, который необходимо загрузить.
+        :param path_to_voice:en The path to the audio file to upload.
+        :type path_to_voice: str
         """
-        if not os.path.exists(path_to_audio):
+        if not os.path.exists(path_to_voice):
             raise Exception('The specified file path does not exist!')
         upload = VkUpload(self.__vk)
-        converted_path = Upload.convert_audio(path_to_audio=path_to_audio, to_format='ogg')
+        converted_path = Upload.convert_audio(path_to_audio=path_to_voice, to_format='ogg')
         audio = upload.audio_message(converted_path, peer_id=user_id)
         os.remove(converted_path)
         return f"audio_message{audio['audio_message']['owner_id']}_{audio['audio_message']['id']}"

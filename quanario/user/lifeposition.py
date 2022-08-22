@@ -118,7 +118,7 @@ class LifePosition:
         """
         return self.__convert_position(self.__personal['alcohol']) if 'alcohol' in self.__personal else None
 
-    def json(self) -> json:
+    def get_json(self) -> json:
         """
         :ru Этот метод формирует json объект из полей класса 'LifePosition'.
         :en This method generates a json object from the fields of the 'LifePosition' class.

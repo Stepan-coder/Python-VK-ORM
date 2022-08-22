@@ -112,7 +112,7 @@ class School:
         """
         return self.__convert_school_type(school_type=self.__school['type']) if 'type' in self.__school else None
 
-    def json(self) -> json:
+    def get_json(self) -> json:
         """
         :ru Этот метод формирует json объект из полей класса 'School'.
         :en This method generates a json object from the fields of the 'School' class.

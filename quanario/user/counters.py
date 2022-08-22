@@ -119,7 +119,7 @@ class Counters:
         """
         return self.__counters['online_friends'] if 'online_friends' in self.__counters else None
 
-    def json(self) -> json:
+    def get_json(self) -> json:
         """
         :ru Этот метод формирует json объект из полей класса 'Counters'.
         :en This method generates a json object from the fields of the 'Counters' class.

@@ -100,7 +100,7 @@ class Params:
             return LastSeen(last_seen=self.__params['last_seen'])
         return None
 
-    def json(self) -> json:
+    def get_json(self) -> json:
         """
         :ru Этот метод формирует json объект из полей класса 'Params'.
         :en This method generates a json object from the fields of the 'Params' class.

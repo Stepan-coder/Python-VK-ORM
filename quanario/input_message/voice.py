@@ -3,7 +3,7 @@ import urllib.request
 from typing import List
 
 
-class AudioMessage:
+class Voice:
     def __init__(self, audio_message: dict):
         self.__audio_message = audio_message
 

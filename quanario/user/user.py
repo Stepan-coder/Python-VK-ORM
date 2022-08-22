@@ -206,7 +206,7 @@ class User:
         """
         return Params(params=self.__user)
 
-    def json(self, is_full: bool = False) -> json:
+    def get_json(self, is_full: bool = False) -> json:
         """
         :ru Этот метод формирует json объект из полей класса 'User'.
         :en This method generates a json object from the fields of the 'User' class.
@@ -241,17 +241,17 @@ class User:
                      "relation": self.relation.name,
                      "online": self.online.name}
 
-        count = self.count.json()
-        occupation = self.occupation.json()
-        contacts = self.contacts.json() if is_full else {"city_id": self.contacts.city_id,
-                                                         "country_id": self.contacts.country_id}
-        interests = self.interests.json()
+        count = self.count.get_json()
+        occupation = self.occupation.get_json()
+        contacts = self.contacts.get_json() if is_full else {"city_id": self.contacts.city_id,
+                                                             "country_id": self.contacts.country_id}
+        interests = self.interests.get_json()
         activities = {"schools_id": schools_id,
                       "universities_id": uni_id,
                       "career": user_career,
                       "military": military}
-        life_position = self.life_position.json()
-        params = self.params.json()
+        life_position = self.life_position.get_json()
+        params = self.params.get_json()
         return {**main_info,
                 **count,
                 **occupation,

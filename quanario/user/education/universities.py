@@ -103,7 +103,7 @@ class University:
         """
         return self.__university['education_status'] if 'education_status' in self.__university else None
 
-    def json(self) -> json:
+    def get_json(self) -> json:
         """
         :ru Этот метод формирует json объект из полей класса 'School'.
         :en This method generates a json object from the fields of the 'School' class.

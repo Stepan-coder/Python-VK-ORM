@@ -2,7 +2,7 @@ import vk_api
 from typing import Optional
 from quanario.input_message.photo import *
 from quanario.input_message.video import *  # Недоделано (проблемы со скачиванием)
-from quanario.input_message.audio import *
+from quanario.input_message.voice import *
 from quanario.input_message.file import *
 from quanario.input_message.geoposition import *
 
@@ -48,14 +48,14 @@ class Message:
         else:
             return {}
 
-    def have_attachments(self) -> bool:
+    def is_have_attachments(self) -> bool:
         """
         :ru Метод для получения информации о наличии вложений в сообщении от пользователя.
         :en Method for getting information about the presence of attachments in a message from a user.
         """
         return len(self.attachments) > 0 or 'geo' in self.__event.object['message']
 
-    def have_voices(self) -> bool:
+    def is_voices(self) -> bool:
         """
         :ru Метод для получения информации о наличии аудиофайлов во вложених к сообщению от пользователя.
         :en Method for getting information about the presence of audio files in attachments to a message from a user.
@@ -66,9 +66,9 @@ class Message:
         for attachment in self.attachments:
             if attachment['type'] == 'audio_message':
                 counter += 1
-        return counter > 0 and self.have_attachments
+        return counter > 0 and self.is_voices
 
-    def have_photos(self) -> bool:
+    def is_photos(self) -> bool:
         """
         :ru Метод для получения информации о наличии фотографий во вложених к сообщению от пользователя.
         :en Method for getting information about the presence of photos in attachments to a message from the user.
@@ -79,9 +79,9 @@ class Message:
         for attachment in self.attachments:
             if attachment['type'] == 'photo':
                 counter += 1
-        return counter > 0 and self.have_attachments
+        return counter > 0 and self.is_photos
 
-    def have_videos(self) -> bool:
+    def is_videos(self) -> bool:
         """
         :ru Метод для получения информации о наличии видеозаписей во вложених к сообщению от пользователя.
         :en Method for getting information about the presence of video recordings in attachments to a message from
@@ -93,9 +93,9 @@ class Message:
         for attachment in self.attachments:
             if attachment['type'] == 'video':
                 counter += 1
-        return counter > 0 and self.have_attachments
+        return counter > 0 and self.is_videos
 
-    def have_files(self) -> bool:
+    def is_files(self) -> bool:
         """
         :ru Метод для получения информации о наличии файлов/документов во вложених к сообщению от пользователя.
         :en Method for getting information about the presence of files/documents in attachments to a message from the
@@ -107,9 +107,9 @@ class Message:
         for attachment in self.attachments:
             if attachment['type'] == 'doc':
                 counter += 1
-        return counter > 0 and self.have_attachments
+        return counter > 0 and self.is_files
 
-    def have_geo(self) -> bool:
+    def is_geo(self) -> bool:
         """
         :ru Метод для получения информации об отправке геопозиции пользователем.
         :en Method for getting information about sending a geo position by the user.
@@ -121,19 +121,19 @@ class Message:
         :ru Этот метод возвращает список экземпляров класса 'PhotoMessage'.
         :en This method returns a list of instances of the 'PhotoMessage' class.
         """
-        if not self.have_attachments:
+        if not self.is_have_attachments():
             raise Exception('There are no images in this input_message!')
         return [PhotoMessage(attachment['photo']) for attachment in self.attachments
                 if attachment['type'] == 'photo']
 
-    def get_voice_messages(self) -> List[AudioMessage]:
+    def get_voices(self) -> List[Voice]:
         """
-        :ru Этот метод возвращает список экземпляров класса 'AudioMessage'.
-        :en This method returns a list of instances of the 'AudioMessage' class.
+        :ru Этот метод возвращает список экземпляров класса 'Voice'.
+        :en This method returns a list of instances of the 'Voice' class.
         """
-        if not self.have_attachments:
+        if not self.is_have_attachments():
             raise Exception('There are no audio messages in this input_message!')
-        return [AudioMessage(attachment['audio_message']) for attachment in self.attachments
+        return [Voice(attachment['audio_message']) for attachment in self.attachments
                 if attachment['type'] == 'audio_message']
 
     def get_videos(self) -> List[VideoMessage]:
@@ -141,7 +141,7 @@ class Message:
         :ru Этот метод возвращает список экземпляров класса 'VideoMessage'.
         :en This method returns a list of instances of the 'VideoMessage' class.
         """
-        if not self.have_attachments:
+        if not self.is_have_attachments():
             raise Exception('There are no video messages in this input_message!')
         return [VideoMessage(attachment['video']) for attachment in self.attachments
                 if attachment['type'] == 'video']
@@ -151,7 +151,7 @@ class Message:
         :ru Этот метод возвращает список экземпляров класса 'FileMessage'.
         :en This method returns a list of instances of the 'FileMessage' class.
         """
-        if not self.have_attachments:
+        if not self.is_have_attachments():
             raise Exception('There are no document messages in this input_message!')
         return [FileMessage(attachment['doc']) for attachment in self.attachments
                 if attachment['type'] == 'doc']
@@ -161,7 +161,7 @@ class Message:
         :ru Этот метод возвращает список экземпляров класса 'GeoMessage'.
         :en This method returns a list of instances of the 'GeoMessage' class.
         """
-        if not self.have_attachments:
+        if not self.is_have_attachments():
             raise Exception('There are no geo messages in this input_message!')
         return [GeoMessage(self.__event.object['message'])]
 

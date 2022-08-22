@@ -42,7 +42,7 @@ class LastSeen:
         """
         return self.__convert_platform(self.__last_seen['platform']) if 'platform' in self.__last_seen else None
 
-    def json(self) -> json:
+    def get_json(self) -> json:
         """
         :ru Этот метод формирует json объект из полей класса 'LastSeen'.
         :en This method generates a json object from the fields of the 'LastSeen' class.

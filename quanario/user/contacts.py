@@ -79,7 +79,7 @@ class Contacts:
         """
         return self.__contacts['country']['title'] if 'country' in self.__contacts else None
 
-    def json(self) -> json:
+    def get_json(self) -> json:
         """
         :ru Этот метод формирует json объект из полей класса 'Contacts'.
         :en This method generates a json object from the fields of the 'Contacts' class.

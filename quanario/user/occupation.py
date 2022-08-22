@@ -45,7 +45,7 @@ class Occupation:
         """
         return self.__convert_occupation_type(self.__occupation['type']) if 'type' in self.__occupation else None
 
-    def json(self) -> json:
+    def get_json(self) -> json:
         """
         :ru Этот метод формирует json объект из полей класса 'Occupation'.
         :en This method generates a json object from the fields of the 'Occupation' class.

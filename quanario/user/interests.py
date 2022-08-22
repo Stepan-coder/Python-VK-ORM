@@ -97,7 +97,7 @@ class Interests:
         """
         return self.__interests['quotes'] if 'quotes' in self.__interests else None
 
-    def json(self) -> json:
+    def get_json(self) -> json:
         """
         :ru Этот метод формирует json объект из полей класса 'Interests'.
         :en This method generates a json object from the fields of the 'Interests' class.
