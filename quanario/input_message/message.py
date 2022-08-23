@@ -156,7 +156,7 @@ class Message:
         return [FileMessage(attachment['doc']) for attachment in self.attachments
                 if attachment['type'] == 'doc']
 
-    def get_geo(self):
+    def get_geo(self) -> List[GeoMessage]:
         """
         :ru Этот метод возвращает список экземпляров класса 'GeoMessage'.
         :en This method returns a list of instances of the 'GeoMessage' class.
