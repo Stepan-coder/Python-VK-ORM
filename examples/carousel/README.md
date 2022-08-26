@@ -104,3 +104,7 @@ APP_ID = 000000000
 bot = Bot(token=TOKEN, app_id=APP_ID)
 bot.run(init_method=send_carousel)
 ```
+---
+### P.S. 
+Подробнее ознакомиться с работой `карусели` можно [тут](../../quanario/message_extensions/carousel.py) 
+>*You can learn more about the work of the `carousel` [here](../../quanario/message_extensions/carousel.py)*

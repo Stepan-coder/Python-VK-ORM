@@ -19,6 +19,7 @@ class Audio:
     def title(self) -> str:
         """
         :ru Свойство для получения названия аудиофайла.
+        :en Property for getting the name of the audio file.
         """
         return self.__audio['title']
 
@@ -26,6 +27,7 @@ class Audio:
     def artist(self) -> str:
         """
         :ru Свойство для получения имени исполнителя.
+        :en Property for getting the artist's name.
         """
         return self.__audio['artist']
 

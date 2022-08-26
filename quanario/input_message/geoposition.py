@@ -11,6 +11,7 @@ class Geo:
     def id(self) -> int:
         """
         :ru Свойство для получения уникального идентификатора метки на карте.
+        :en Property for getting the unique identifier of the placemark on the map.
         """
         return self.__geo_position['id']
 
@@ -18,6 +19,7 @@ class Geo:
     def from_id(self) -> int:
         """
         :ru Свойство для получения уникального идентификатора пользователя, отправившего метку.
+        :en Property for getting the unique identifier of the user who sent the tag.
         """
         return self.__geo_position['from_id']
 

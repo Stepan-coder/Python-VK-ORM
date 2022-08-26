@@ -177,14 +177,14 @@ class Message:
             raise Exception('There are no document messages in this input_message!')
         return [File(attachment['doc']) for attachment in self.attachments if attachment['type'] == 'doc']
 
-    def get_geo(self) -> List[Geo]:
+    def get_geo(self) -> Geo:
         """
         :ru Этот метод возвращает список экземпляров класса 'Geo'.
         :en This method returns a list of instances of the 'Geo' class.
         """
         if not self.is_have_attachments():
             raise Exception('There are no geo messages in this input_message!')
-        return [Geo(self.__event.object['message'])]
+        return Geo(self.__event.object['message'])
 
 
 

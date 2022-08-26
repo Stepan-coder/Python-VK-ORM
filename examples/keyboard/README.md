@@ -118,4 +118,7 @@ bot.run(init_method=send_keyboard)
 
 Ещё одно важное уточнение, максимально, в клавиатуре может быть 10 кнопок, при этом, в ряду должно быть не более 4-х.
 >*Another important clarification, as much as possible, there can be 10 buttons in the keyboard, at the same time, there should be no more than 4 in a row.*
-
+---
+### P.S. 
+Подробнее ознакомиться с работой `клавиатуры` можно [тут](../../quanario/message_extensions/keyboard.py) 
+>*You can learn more about the `keyboard` operation [here](../../quanario/message_extensions/keyboard.py)*

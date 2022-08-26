@@ -93,3 +93,21 @@ def echo_video(bot: Bot, message: Message, args: tuple = None):
 ## Заключение (Conclusion)
 В этом примере у нас получилось реализовать различных эхо-ботов, которые могут получать, сохранять и пересылать пользователю его же сообщения. Конечно, непосредственно сами эхо-боты бесполезны, но они показывают возможности библиотеки и примеры их реализации. Впоследствии, вы можете сами модифицировать эти примеры под свои нужды:)
 >*In this example, we managed to implement various echo bots that can receive, save and forward messages to the user. Of course, the echo bots themselves are useless, but they show the library's capabilities and examples of their implementation. Afterwards, you can modify these examples yourself to suit your needs:)*
+---
+### P.S. 
+Подробнее ознакомиться с работой:
+* `голосовых сообщений` можно [тут](../../quanario/input_message/voice.py) 
+* `музыки` можно [тут](../../quanario/input_message/audio.py)
+* `фотографий` можно [тут](../../quanario/input_message/photo.py)
+* `видео` можно [тут](../../quanario/input_message/video.py)
+* `геопозиции` можно [тут](../../quanario/input_message/geoposition.py)
+* `файлов` можно [тут](../../quanario/input_message/file.py)
+>Learn more about the work:
+>* `voice messages` can be [here](../../quanario/input_message/voice.py )
+>* `music` can be [here](../../quanario/input_message/audio.py )
+>* `photos` can be found [here](../../quanario/input_message/photo.py )
+>* `video` can be [here](../../quanario/input_message/video.py)
+>* `geopositions` can be found [here](../../quanario/input_message/geoposition.py )
+>* `files` can be [here](../../quanario/input_message/file.py)
+
+
