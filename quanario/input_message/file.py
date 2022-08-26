@@ -4,7 +4,7 @@ import quanario.upload
 from typing import Tuple
 
 
-class FileMessage:
+class File:
     def __init__(self, file: dict):
         self.__file = file
 

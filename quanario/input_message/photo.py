@@ -3,7 +3,7 @@ import urllib.request
 from typing import Tuple
 
 
-class PhotoMessage:
+class Photo:
     def __init__(self, photo: dict):
         self.__photo = photo
         self.__width, self.__height, self.__url = self.__get_image()

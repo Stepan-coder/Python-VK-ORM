@@ -5,6 +5,8 @@ from quanario.bot import *
 def echo_voice_audio(bot: Bot, message: Message, args: tuple = None):
     if message.is_have_attachments():   # :ru Проверяем, есть ли вложения к сообщению от пользователя
                                         # :en Check if there are attachments to the message from the user
+        # if message.is_audio():                 # :ru Другой способ проверки наличия музыки
+        #     for audio in message.get_audios(): # :en Another way to check the availability of music
         if message.is_voices():   # :ru Проверяем, есть ли во вложениях голосовые сообщения
                                   # :en Check if there are voice messages in the attachments
             attachments = []

@@ -2,7 +2,7 @@ import urllib.request
 from typing import Tuple
 
 
-class VideoMessage:
+class Video:
     def __init__(self, video: dict):
         self.__video = video
 
@@ -45,22 +45,6 @@ class VideoMessage:
         :en Property for getting a link to download a file.
         """
         return self.__video['url']
-
-    @property
-    def owner_id(self) -> int:
-        """
-        :ru Свойство для получения идентификатора пользователя/сообщества, загрузившего файл.
-        :en Property for getting the ID of the user/community who uploaded the file.
-        """
-        return self.__video['owner_id']
-
-    @property
-    def access_key(self) -> str:
-        """
-         :ru Свойство для получения ключа доступа, для отправки файла другим пользователям.
-         :ru Property for obtaining an access key, for sending a file to other users.
-         """
-        return self.__video['access_key']
 
     @property
     def date(self) -> int:
@@ -133,6 +117,22 @@ class VideoMessage:
         :en Property for getting information about adding an object to bookmarks from the current user.
         """
         return self.__video['is_favorite']
+
+    @property
+    def owner_id(self) -> int:
+        """
+        :ru Свойство для получения идентификатора пользователя/сообщества, загрузившего файл.
+        :en Property for getting the ID of the user/community who uploaded the file.
+        """
+        return self.__video['owner_id']
+
+    @property
+    def access_key(self) -> str:
+        """
+        :ru Свойство для получения ключа доступа, для отправки файла другим пользователям.
+        :ru Property for obtaining an access key, for sending a file to other users.
+        """
+        return self.__video['access_key']
 
     def get_attachment(self) -> str:
         """

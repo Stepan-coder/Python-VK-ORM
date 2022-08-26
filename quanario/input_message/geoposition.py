@@ -3,7 +3,7 @@ import urllib.request
 from typing import Tuple
 
 
-class GeoMessage:
+class Geo:
     def __init__(self, geo_position: dict):
         self.__geo_position = geo_position
 
