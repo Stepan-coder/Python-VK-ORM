@@ -16,7 +16,6 @@ APP_ID = 000000000
 bot = Bot(token=TOKEN, app_id=APP_ID)
 bot.run(init_method=send_carousel)
 ```
-
 ---
 Карусель - это новый формат взаимодействия пользователя с ботом, представленный компанией `ВКонтакте`. Карусель состоит из нескольких карточек состоящих из: картинки, заголовка карточки, описания карточки и кнопок клавиатуры. Для отправки карусели пользователю, её необходимо сгенерировать. Для этого вызовем метод `create_carousel()` экземпляра класса `bot`.
 >*Carousel is a new format of user interaction with a bot, presented by `VKontakte`. The carousel consists of several cards consisting of: picture, card title, card description and keyboard buttons. To send a carousel to the user, it must be generated. To do this, call the `create_carousel()` method of an instance of the `bot` class.*
@@ -25,12 +24,9 @@ def send_carousel(bot: Bot, message: Message, args: tuple = None):
     carousel = bot.create_carousel()
 ```
 ---
-
 Теперь, когда экземпляр карусели получен, можем перейти к добавлению карточек в неё. Каждая карточка добавляется и настраивается отдельно. **Всего, в одной карусели, максимально может быть не более 10 карточек**!
 >*Now that an instance of the carousel has been received, we can proceed to adding cards to it. Each card is added and configured separately. **In total, there can be no more than 10 cards in one carousel**!*
-
 #### Клавиатура (Keyboard)
-
 Клавиатура для карточек карусели не является обязательной, но это крайне удобное место для размещения кнопок, т.к. пользователь наглядно может увидеть продукт/товар/услугу, на которую он соглашается. (Подробнее о клавиатурах см. Клавиатура). Но есть одно важное замечание - **количество кнопок во всех карточках обязательно должно быть одинаковым, либо не быть вообще**.
 >*A keyboard for carousel cards is not mandatory, but it is an extremely convenient place to place buttons, because the user can clearly see the product / product / service to which he agrees. (For more information about keyboards, see Keyboard). But there is one important note - **the number of buttons in all cards must necessarily be the same, or not at all**.*
 ```Python3
@@ -58,14 +54,12 @@ def send_carousel(bot: Bot, message: Message, args: tuple = None):
                                                      path_to_photo="image.png"),
                          keyboard=card_keyboard)
 ```
-
 По аналогии примера выше, можно добавить в карусель до 10 карточек, с помощью метода `add_element()`...
 >*By analogy with the example above, you can add up to 10 cards to the carousel using the `add_element()` method...*
 ---
 Для отправки пользователю клавиатуры, её экземпляр необходимо передать в качестве аргумента методу `carousel`.
 >*To send the keyboard to the user, its instance must be passed as an argument to the `carousel` method.*
 ```Python3  
-    
     bot.send.carousel(user_id=message.user_id,
                       message="It's carousel", 
                       carousel=carousel)
@@ -74,7 +68,6 @@ def send_carousel(bot: Bot, message: Message, args: tuple = None):
 По итогу получаем следующий код для бота, который в ответ на любое сообщение пользователя отправляет ему сообщение "It's carousel" и карусель состоящую из одной карточки.
 >*As a result, we get the following code for the bot, which in response to any message from the user sends him a message "It's carousel" and a carousel consisting of one card.*
 ```Python3 
-
 def send_carousel(bot: Bot, message: Message, args: tuple = None):
     carousel = bot.create_carousel()
     
