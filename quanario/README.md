@@ -15,13 +15,13 @@
 - and much more!
 ---
 ## Project structure
--> `quanario` - root folder of the project.  
+|-> `quanario` - root folder of the project.  
 &nbsp;&nbsp;&nbsp;&nbsp; ∟ `bot.py` - the main class of the module. [Learn more.]()  
 &nbsp;&nbsp;&nbsp;&nbsp; ∟ `send.py` - class for sending messages and attachments to the user. [Learn more.]()     
 &nbsp;&nbsp;&nbsp;&nbsp; ∟ `upload.py` - class for uploading attachments to the `VKontakte` server. [Learn more.]()  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |-> `message_extensions`  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |-> `message_extensions/carousel.py` - class that implements the functionality of the `carousel` element. [Learn more.]()  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |-> `message_extensions/keyboard.py` - class that implements the functionality of the `keyboard` element. [Learn more.]()  
+&nbsp;&nbsp;&nbsp;&nbsp; |-> `message_extensions`  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |-> `carousel.py` - class that implements the functionality of the `carousel` element. [Learn more.]()  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |-> `keyboard.py` - class that implements the functionality of the `keyboard` element. [Learn more.]()  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |-> `SQLite3_table.py`  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |-> `SQLite3_DBType.py`  
 &nbsp;&nbsp;&nbsp;&nbsp; |-> `__main__.py`  
