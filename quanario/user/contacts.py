@@ -7,7 +7,7 @@ class Contacts:
     def __init__(self, contacts: Dict[str, Any]):
         """
         :ru Информация о полях из раздела 'Contacts'.
-        :en Information about fields from the 'User' Contacts.
+        :en Information about fields from the 'Contacts'.
 
         :param contacts:ru Json объект полученный от 'Вконтакте'.
         :param contacts:en Json object received from 'Vkontakte'.

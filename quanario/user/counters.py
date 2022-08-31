@@ -7,7 +7,7 @@ class Counters:
     def __init__(self, counters: Dict[str, Any]):
         """
         :ru Количество различных объектов у пользователя.
-        :en Information about fields from the 'Military' section.
+        :en The number of different objects the user has.
 
         :param counters:ru Json объект полученный от 'Вконтакте'.
         :param counters:en Json object received from 'Vkontakte'.

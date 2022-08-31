@@ -6,8 +6,8 @@ from typing import Dict, Any
 class Interests:
     def __init__(self, interests: Dict[str, Any]):
         """
-        :ru Информация о полях из раздела 'User'.
-        :en Information about fields from the 'User' section.
+        :ru Информация о полях из раздела 'Interests'.
+        :en Information about fields from the 'Interests' section.
 
         :param interests:ru Json объект полученный от 'Вконтакте'.
         :param interests:en Json object received from 'Vkontakte'.
