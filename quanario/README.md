@@ -263,19 +263,20 @@
 >
 ></p></details>
 ---
+
 ### user/user.py
 ><details><summary>Class `User` - Information about fields from the 'User' section.</summary><p>
 >
->* `user_id`: int - Property for getting the user ID.
->* `domain` - Property for getting a short page address. A string containing the short address of the page is returned (for example, andrew). If it is not assigned, "id"+user_id is returned, for example, id35828305.
->* `screen_name` - Property for getting a short page name.
->* `first_name` - Property for getting the user name.
->* `last_name` - Property for getting the user's last name.
->* `birthday` - Property for getting the user's date of birth, in the format YYYY-MM-DD.
->* `sex` - Property for getting the user's gender. For more information, see `person_enum.Sex`.
->* `relation` - Property for getting information about the marital status of the user. For more information, see `person_enum.Relation`.
->* `online` - Property for getting information about whether the user is currently on the site.
->* `count` - Property for getting information about the number of different objects from the user.
+>* `user_id`: [int]() - Property for getting the user ID.
+>* `domain`: [str]() - Property for getting a short page address. A string containing the short address of the page is returned (for example, andrew). If it is not assigned, "id"+user_id is returned, for example, id35828305.
+>* `screen_name`: [str]() - Property for getting a short page name.
+>* `first_name`: [str]() - Property for getting the user name.
+>* `last_name`: [str]() - Property for getting the user's last name.
+>* `birthday`: [str]() - Property for getting the user's date of birth, in the format YYYY-MM-DD.
+>* `sex`: [Sex](#useruserpy) - Property for getting the user's gender. For more information, see `person_enum.Sex`.
+>* `relation`: [Relation](#useruserpy) - Property for getting information about the marital status of the user. For more information, see `person_enum.Relation`.
+>* `online`: [Online](#useruserpy) - Property for getting information about whether the user is currently on the site.
+>* `count`: Optional[[Counters](#useruserpy)] - Property for getting information about the number of different objects from the user.
 >* `occupation` - Property for getting information about user activity.
 >* `contacts` - Property for getting information about the user's contact information
 >* `interests` - Property for getting information about fields from the `Life position` section
@@ -323,26 +324,38 @@
 ></p></details>
 ---
 ### user/carer.py
+
 ---
 ### user/contacts.py
+
 ---
 ### user/counters.py
+
 ---
 ### user/interests.py
+
 ---
 ### user/last_seen.py
+
 ---
 ### user/lifeposition.py
+
 ---
 ### user/military.py
+
 ---
 ### user/occupation.py
+
 ---
 ### user/params.py
+
 ---
 ### user/education/education.py
+
 ---
 ### user/education/schools.py
+
 ---
 ### user/education/universities.py
+
 
