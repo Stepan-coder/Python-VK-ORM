@@ -32,7 +32,7 @@ class CarouselElement:
     def title(self) -> str:
         """
         ru: Это свойство возвращает заголовок блока.
-        en: This property returns the block header.
+        en: This property contains the block header.
         """
         return self.__title
 
@@ -53,7 +53,7 @@ class CarouselElement:
     def description(self) -> str:
         """
         ru: Это свойство возвращает описание блока.
-        en: This property returns the block description.
+        en: This property contains the block description.
         """
         return self.__description
 
@@ -73,7 +73,7 @@ class CarouselElement:
     def attachment(self) -> str:
         """
         ru: Это свойство возвращает ссылку картинки блока.
-        en: This property returns a link to the block image.
+        en: This property contains a link to the block image.
         """
         return self.__attachment
 
@@ -95,7 +95,7 @@ class CarouselElement:
     def keyboard(self) -> json:
         """
         ru: Это свойство возвращает json с кнопками для элемента.
-        en: This property returns json with buttons for the element.
+        en: This property contains json with buttons for the element.
         """
         return self.__keyboard
 
@@ -187,7 +187,7 @@ class Carousel:
     def count(self) -> int:
         """
         ru: Это свойство возвращает количество элементов в карусели
-        en: This property returns the number of elements in the carousel
+        en: This property contains the number of elements in the carousel
         """
         return len(self.__elements)
 
@@ -197,7 +197,7 @@ class Carousel:
         ru: Это свойство возвращает последний добавленный в карусель элемент, тем самым открывет возможность его
          редактирования, например, для изменения описания или изменения фотографии.
 
-        en: This property returns the last element added to the carousel, thereby opening the possibility of its
+        en: This property contains the last element added to the carousel, thereby opening the possibility of its
          editing, for example, to change the description or change the photo.
         """
         if self.count == 0:

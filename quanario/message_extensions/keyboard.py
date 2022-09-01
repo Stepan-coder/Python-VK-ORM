@@ -42,7 +42,7 @@ class Keyboard:
     def get_keyboard(self) -> str:
         """
         ru: По уму это json, но он возвращает в формате обычной строки
-        en: This is json by mind, but it returns in the format of a regular string
+        en: This is json by mind, but it returns in the format of a regular string.
         """
         return self.__keyboard.get_keyboard()
 

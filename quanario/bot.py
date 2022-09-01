@@ -148,7 +148,6 @@ class Bot(object):
         :param user_id:ru The unique ID of the user for whom you need to get information.
         :type user_id: int
         """
-        # print( self.__vk.friends.get(user_ids=user_id))
         result = self.__vk.users.get(user_ids=user_id,
                                      fields="about, activities, bdate, books, career, city, connections, counters, "
                                             "country, domain, education, followers_count, games, has_mobile, has_photo,"
@@ -156,22 +155,7 @@ class Bot(object):
                                             "occupation, online, personal, quotes, relatives, relation, schools, "
                                             "screen_name, sex, site, status, timezone, trending, tv, universities, "
                                             "verified, wall_default, phone")
-        print(result)
         return User(user=result[0])
-
-    def __bot_boot(self) -> None:
-        """
-        :ru Приватный метод класса 'Bot', который производит авторизацию бота в ВКонтакте.
-        :en A private method of the 'Bot' class that authorizes the bot in VKontakte.
-        """
-        if self.__TOKEN is not None and self.APP_ID is not None:
-            self.__vk_session = VkApi(token=self.__TOKEN)
-            self.__vk_session.RPS_DELAY = 1 / 100
-            self.__longpoll = VkBotLongPoll(self.__vk_session, self.__APP_ID)
-            self.__vk = self.__vk_session.get_api()
-        else:
-            warnings.warn("Bot was not restarted! 'TOKEN' and 'APP_ID' are required fields for user authorization!",
-                          Warning)
 
     @staticmethod
     def create_keyboard(inline: bool = False, one_time: bool = False) -> Keyboard:
@@ -203,3 +187,17 @@ class Bot(object):
          carousel.
         """
         return Carousel()
+
+    def __bot_boot(self) -> None:
+        """
+        :ru Приватный метод класса 'Bot', который производит авторизацию бота в ВКонтакте.
+        :en A private method of the 'Bot' class that authorizes the bot in VKontakte.
+        """
+        if self.__TOKEN is not None and self.APP_ID is not None:
+            self.__vk_session = VkApi(token=self.__TOKEN)
+            self.__vk_session.RPS_DELAY = 1 / 100
+            self.__longpoll = VkBotLongPoll(self.__vk_session, self.__APP_ID)
+            self.__vk = self.__vk_session.get_api()
+        else:
+            warnings.warn("Bot was not restarted! 'TOKEN' and 'APP_ID' are required fields for user authorization!",
+                          Warning)

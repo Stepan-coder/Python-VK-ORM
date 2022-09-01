@@ -14,7 +14,7 @@ class Send:
     def message(self, user_id: int, message: str, keyboard: Keyboard = None) -> None:
         """
         ru: Этот метод позволяет отправить пользователю с id 'user_id' сообщение с текстом 'message', при необходимости,
-         иеется возможность прикрепить клавивтуру с кнопками - 'keyboard'. Подробнее о 'keyboard' см. документацию.
+         имеется возможность прикрепить клавиатуру с кнопками - 'keyboard'. Подробнее о 'keyboard' см. документацию.
         en: This method allows you to send a message with the text 'message' to a user with the id 'user_id', if
          necessary, it is possible to attach a keyboard with buttons - 'keyboard'. For more information about
          'keyboard', see the documentation.
@@ -135,7 +135,7 @@ class Send:
     def video(self, user_id: int, attachment: str or List[str]) -> None:
         """
         ru: Этот метод позволяет отправить пользователю с id 'user_id' файл. Файл
-        en: This method allows you to send file to a user with the id 'user_id'.
+        en: This method allows you to send video file to a user with the id 'user_id'.
 
         :param user_id:ru Уникальный id пользователя в социальной сети ВКонтакте.
         :param user_id:en Unique user id in the VKontakte social network.
