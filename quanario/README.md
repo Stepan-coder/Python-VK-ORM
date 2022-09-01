@@ -336,7 +336,19 @@
 ></p></details>
 ---
 ### user/contacts.py
-
+><details><summary>Class `Contacts` - Information about fields from the 'Contacts' section.</summary><p>
+>
+>* `site`: [str](#usercontactspy) - Property for getting the site address specified in the profile.
+>* `connections`: [Dict](#usercontactspy)[[str](#usercontactspy), [Any](#usercontactspy)] - Property for getting data about the user's services specified in the profile, such as: skype, livejournal. A separate string field containing the user's nickname is returned for each service. For example, "skype": "username".
+>* `home_town`: [str](#usercontactspy) - Property for getting the name of the hometown.
+>* `city_id`: [int](#usercontactspy) - Property for getting the user's city ID, which can be used to get it names using the `database` `method.getCitiesById`.
+>* `city_name`: [str](#usercontactspy) - Property for getting the name of the city where the user is located.
+>* `country_id`: [int](#usercontactspy) - Property for getting the user's country ID, which can be used to get it names using the `database` `method.getCitiesById`.
+>* `country_name`: [str](#usercontactspy) - Property for getting the name of the country in which the user is located.
+>* `get_json()`: [json](#usercontactspy) - This method generates a json object from the fields of the `Contacts` class.
+>* ``: - 
+>
+></p></details>
 ---
 ### user/counters.py
 
