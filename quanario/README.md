@@ -346,12 +346,28 @@
 >* `country_id`: [int](#usercontactspy) - Property for getting the user's country ID, which can be used to get it names using the `database` `method.getCitiesById`.
 >* `country_name`: [str](#usercontactspy) - Property for getting the name of the country in which the user is located.
 >* `get_json()`: [json](#usercontactspy) - This method generates a json object from the fields of the `Contacts` class.
->* ``: - 
 >
 ></p></details>
 ---
 ### user/counters.py
-
+><details><summary>Class `Counters` - Information about the number of different objects the user has.</summary><p>
+>
+>* `notes`: [int](#usercounterspy) - Property for getting the number of `notes from the user.
+>* `pages`: [int](#usercounterspy) - Property for getting the number of `subscribers from the user.
+>* `audios`: [int](#usercounterspy) - Property for getting the number of `audio recordings from the user.
+>* `albums`: [int](#usercounterspy) - Property for getting the number of `photo albums from the user.
+>* `photos`: [int](#usercounterspy) - Property for getting the number of `photos from the user.
+>* `videos`: [int](#usercounterspy) - Property for getting the number of `videos from the user.
+>* `user_videos`: [int](#usercounterspy) - Property for getting the number of `videos with user`.
+>* `clips_followers`: [int](#usercounterspy) - Property for getting the number of `clips with  user`.
+>* `groups`: [int](#usercounterspy) - Property for getting the number of community subscribers from the user.
+>* `friends`: [int](#usercounterspy) - Property for getting the number of friends a user has.
+>* `followers`: [int](#usercounterspy) - Property for getting the number of `subscribers` from the user.
+>* `subscriptions`: [int](#usercounterspy) - Property for getting the number of `subscriptions` from the user.
+>* `online_friends`: [int](#usercounterspy) - Property for getting the number of `online friends` of the user.
+>* `get_json()`: [int](#usercounterspy) - This method generates a json object from the fields of the `Counters` class.
+>
+></p></details>
 ---
 ### user/interests.py
 
