@@ -135,17 +135,131 @@
 ></p></details>
 ---
 ### input_message/message.py
+><details><summary>Class `Message`</summary><p>
+>
+>* `type` - Property for getting the message type.
+>* `text` - Property for receiving the text of the message sent by the user.
+>* `user_id` - Property for getting the message type.
+>* `attachments` - Property for getting a list of attachments.
+>* `is_have_attachments()` - Method for getting information about the presence of attachments in a message from a user.
+>* `is_voices()` - A method for getting information about the presence of `voice` messages in attachments to a message from a user.
+>* `is_audio()` - A method for getting information about the presence of `music` in attachments to a message from a user.
+>* `is_photos()` - Method for getting information about the presence of `photos` in attachments to a message from the user.
+>* `is_videos()` - Method for getting information about the presence of `video` recordings in attachments to a message from a user.
+>* `is_files()` - Method for getting information about the presence of `files` or `documents` in attachments to a message from the user.
+>* `is_geo()` - Method for getting information about sending a geo position by the user.
+>* `get_voices()` - This method returns a list of instances of the `Voice` class.
+>* `get_audios()` - This method returns a list of instances of the `Audio` class.
+>* `get_photos()` - This method returns a list of instances of the `Photo` class.
+>* `get_videos()` - This method returns a list of instances of the `Video` class.
+>* `get_files()` - This method returns a list of instances of the `File` class.
+>* `get_geo()` - This method returns a list of instances of the `Geo` class.
+>
+></p></details>
 ---
 ### input_message/voice.py
+><details><summary>Class `Voice`</summary><p>
+>
+>* `id` - Property for getting a unique file identifier.
+>* `duration` - Property for getting the duration of an audio file.
+>* `url_mp3` - Property for getting a link to download a file in the `.mp3` format.
+>* `url_ogg` - Property for getting a link to download a file in the `.ogg` format.
+>* `waveform` - Property for getting a graph of file volume changes.
+>* `owner_id` - Property for getting the ID of the `user` or `community` who uploaded the file.
+>* `access_key` - Property for obtaining an access key, for sending a file to other users.
+>* `save_mp3()` - A method for saving a file in the system in `.mp3` format.
+>* `save_ogg()` - A method for saving a file in the system in `.ogg` format.
+>
+></p></details>
 ---
 ### input_message/audio.py
+><details><summary>Class `Audio`</summary><p>
+>
+>* `id` - Property for getting a unique file identifier.
+>* `title` - Property for getting the name of the audio file.
+>* `artist` - Property for getting the artist's name.
+>* `date` - Property for getting the file upload date to the `VKontakte` server (in Unix format).
+>* `duration` - Property for getting the duration of an audio.
+>* `url_mp3` - Property for getting a link to download a file.
+>* `is_explicit` - 
+>* `is_focus_track` - 
+>* `owner_id` - Property for getting the ID of the `user` or `community` who uploaded the file.
+>* `track_code` - Property for obtaining an access key, for sending a file to other users.
+>* `save_mp3()` - A method for saving a file in the system in `.mp3` format.
+>
+></p></details>
 ---
 ### input_message/photo.py
+><details><summary>Class `Photo`</summary><p>
+>
+>* `id` - Property for getting a unique file identifier.
+>* `width` - Property for getting the width of the photo.
+>* `height` - Property for getting the height of the photo.
+>* `url` - Property for getting a link to download a file.
+>* `album_id` - Property for getting the album where the file is placed.
+>* `date` - Property for getting the file upload date to the `VKontakte` server (in Unix format).
+>* `post_id` - Property for getting the post ID.
+>* `owner_id` - Property for getting the ID of the `user` or `community` who uploaded the file.
+>* `access_key` - Property for obtaining an access key, for sending a file to other users.
+>* `get_attachment()` - Method for getting the file ID string.
+>* `save()` - A method for saving a file in the system.
+>* *`__get_image` - A private method for finding the highest file resolution.*
+>
+></p></details>
 ---
 ### input_message/video.py
+><details><summary>Class `Photo`</summary><p>
+>
+>* `id` - Property for getting a unique file identifier.
+>* `width` - Property for getting the width of the video.
+>* `height` - Property for getting the height of the video.
+>* `title` - Property for getting the full name of the file.
+>* `url` - Property for getting a link to download a file.
+>* `date` - Property for getting the file upload date to the `VKontakte` server (in Unix format).
+>* `description` - Property for getting a description of the video.
+>* `duration` - Property for getting the duration of an video.
+>* `views` - Property for getting the number of views of a video recording.
+>* `can_edit` - Property for getting the number of views of a video recording.
+>* `can_add` - Property for getting information whether the user can record a video to himself.
+>* `can_attach_link` - Property for getting information whether a user can attach an action button to a video.
+>* `comments` - Property for getting the number of comments on the video.
+>* `is_favorite` - Property for getting information about adding an object to bookmarks from the current user.
+>* `owner_id` - Property for getting the ID of the `user` or `community` who uploaded the file.
+>* `access_key` - Property for obtaining an access key, for sending a file to other users.
+>* `get_attachment()` - Method for getting the file ID string.
+>
+></p></details>
 ---
 ### input_message/file.py
+><details><summary>Class `Photo`</summary><p>
+>
+>* `id` - Property for getting a unique file identifier.
+>* `type` - Property for getting a unique file ID.
+>* `title` - Property for getting the full name of the file.
+>* `extension` - Property for getting the file extension, for example: `.png` or `.pdf`.
+>* `size` - Property for getting the file size in bytes. (How much space does it take up on disk)
+>* `url` - Property for getting a link to download a file.
+>* `date` - Property for getting the file upload date to the `VKontakte` server (in Unix format).
+>* `owner_id` - Property for getting the ID of the `user` or `community` who uploaded the file.
+>* `access_key` - Property for obtaining an access key, for sending a file to other users.
+>* `get_attachment` - Method for getting the file ID string.
+>* `save` -Method for saving a file in the system.
+>
+></p></details>
 ---
 ### input_message/geoposition.py
-
+><details><summary>Class `Photo`</summary><p>
+>
+>* `id` - Property for getting the unique identifier of the placemark on the map.
+>* `from_id` - Property for getting the unique identifier of the user who sent the tag.
+>* `date` - Property for getting the date of sending the geo position.
+>* `out` - 
+>* `latitude` - Property for getting the geographical `latitude` of the starting point, set in degrees.
+>* `longitude` - Property for getting the geographical `longitude` of the starting point, set in degrees.
+>* `location_type` - Property for getting the type of the label sent by the user.
+>* `title` - Property for getting the location name as a string.
+>* `country` - Property for getting the country where the label is located.
+>* `city` - Property for getting the city where the label is located.
+>
+></p></details>
 

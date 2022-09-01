@@ -31,8 +31,8 @@ class Message:
     @property
     def user_id(self) -> int:
         """
-        :ru Свойство для получения типа сообщения
-        :en Property for getting the message type
+        :ru Свойство для получения типа сообщения.
+        :en Property for getting the message type.
         """
         return self.__event.object.message['peer_id']
 

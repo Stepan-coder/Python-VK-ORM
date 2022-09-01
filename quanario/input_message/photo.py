@@ -57,6 +57,14 @@ class Photo:
         return self.__photo['date']
 
     @property
+    def post_id(self) -> int:
+        """
+        :ru Свойство для получения идентификатора поста.
+        :en Property for getting the post ID.
+        """
+        return self.__photo['post_id']
+
+    @property
     def owner_id(self) -> int:
         """
         :ru Свойство для получения идентификатора пользователя/сообщества, загрузившего файл.
@@ -71,14 +79,6 @@ class Photo:
         :en Property for obtaining an access key, for sending a file to other users.
         """
         return self.__photo['access_key']
-
-    @property
-    def post_id(self) -> int:
-        """
-        :ru Свойство для получения идентификатора поста.
-        :en Property for getting the post ID.
-        """
-        return self.__photo['post_id']
 
     def get_attachment(self) -> str:
         """

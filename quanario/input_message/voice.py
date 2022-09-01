@@ -4,8 +4,8 @@ from typing import List
 
 
 class Voice:
-    def __init__(self, audio_message: dict):
-        self.__audio_message = audio_message
+    def __init__(self, voice: dict):
+        self.__voice = voice
 
     @property
     def id(self) -> int:
@@ -13,7 +13,7 @@ class Voice:
         :ru Свойство для получения уникального идентификатор файла.
         :en Property for getting a unique file identifier.
         """
-        return self.__audio_message['id']
+        return self.__voice['id']
 
     @property
     def duration(self) -> int:
@@ -21,7 +21,7 @@ class Voice:
         :ru Свойство для получения длительности аудиофайла.
         :en Property for getting the duration of an audio file.
         """
-        return self.__audio_message['duration']
+        return self.__voice['duration']
 
     @property
     def url_mp3(self) -> str:
@@ -29,7 +29,7 @@ class Voice:
         :ru Свойство для получения ссылки для скачивание файла в формате '.mp3'.
         :en Property for getting a link to download a file in the '.mp3' format.
         """
-        return self.__audio_message['link_mp3']
+        return self.__voice['link_mp3']
 
     @property
     def url_ogg(self) -> str:
@@ -37,23 +37,7 @@ class Voice:
         :ru Свойство для получения ссылки для скачивание файла в формате '.ogg'.
         :en Property for getting a link to download a file in the '.ogg' format.
         """
-        return self.__audio_message['link_ogg']
-
-    @property
-    def owner_id(self) -> int:
-        """
-        :ru Свойство для получения идентификатора пользователя/сообщества, загрузившего файл.
-        :en Property for getting the ID of the user/community who uploaded the file.
-        """
-        return self.__audio_message['owner_id']
-
-    @property
-    def access_key(self) -> str:
-        """
-        :ru Свойство для получения ключа доступа, для отправки файла другим пользователям.
-        :ru Property for obtaining an access key, for sending a file to other users.
-        """
-        return self.__audio_message['access_key']
+        return self.__voice['link_ogg']
 
     @property
     def waveform(self) -> List[int]:
@@ -61,7 +45,23 @@ class Voice:
         :ru Свойство для получения графика изменения громкости файла.
         :ru Property for getting a graph of file volume changes.
         """
-        return self.__audio_message['waveform']
+        return self.__voice['waveform']
+
+    @property
+    def owner_id(self) -> int:
+        """
+        :ru Свойство для получения идентификатора пользователя/сообщества, загрузившего файл.
+        :en Property for getting the ID of the user/community who uploaded the file.
+        """
+        return self.__voice['owner_id']
+
+    @property
+    def access_key(self) -> str:
+        """
+        :ru Свойство для получения ключа доступа, для отправки файла другим пользователям.
+        :ru Property for obtaining an access key, for sending a file to other users.
+        """
+        return self.__voice['access_key']
 
     def save_mp3(self, path_to_save: str) -> None:
         """
