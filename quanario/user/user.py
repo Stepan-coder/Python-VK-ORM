@@ -1,5 +1,4 @@
 from enum import Enum
-
 from quanario.user.params import *
 from quanario.user.career import *
 from quanario.user.military import *
@@ -100,7 +99,7 @@ class User:
     @property
     def sex(self) -> Sex:
         """
-        :ru Свойство для получения пола пользоватедя. Подробнее см. 'person_enum.Sex'.
+        :ru Свойство для получения пола пользователя. Подробнее см. 'person_enum.Sex'.
         :en Property for getting the user's gender. For more information, see 'person_enum.Sex'.
         """
         return self.__decode_sex(self.__user['sex']) if 'sex' in self.__user else None
@@ -153,8 +152,8 @@ class User:
     @property
     def interests(self) -> Optional[Interests]:
         """
-        :ru Свойство для получения информации о полях из раздела «Жизненная позиция».
-        :en Property for getting information about fields from the "Life position" section.
+        :ru Свойство для получения информации о полях из раздела `Жизненная позиция`.
+        :en Property for getting information about fields from the `Life position` section.
         """
         return Interests(interests=self.__user)
 

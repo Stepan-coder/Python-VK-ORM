@@ -20,16 +20,16 @@
 &nbsp;&nbsp;&nbsp;&nbsp; ∟ `send.py` - class for sending messages and attachments to the user. [Learn more.](#sendpy)     
 &nbsp;&nbsp;&nbsp;&nbsp; ∟ `upload.py` - class for uploading attachments to the `VKontakte` server. [Learn more.](#uploadpy)  
 &nbsp;&nbsp;&nbsp;&nbsp; |-> `message_extensions`  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ∟ `carousel.py` - class that implements the functionality of the `carousel` element. [Learn more.]()  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ∟ `keyboard.py` - class that implements the functionality of the `keyboard` element. [Learn more.](https://github.com/Stepan-coder/Quanario/tree/master/quanario#message_extensionskeyboardpy)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ∟ `carousel.py` - class that implements the functionality of the `carousel` element. [Learn more.](#message_extensionscarouselpy)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ∟ `keyboard.py` - class that implements the functionality of the `keyboard` element. [Learn more.](#message_extensionskeyboardpy)  
 &nbsp;&nbsp;&nbsp;&nbsp; |-> `input_message`  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ∟ `message.py` - main class for processing messages from the user, including attachments. [Learn more.]()  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ∟ `voice.py` - class for working with attachments of the `voice message` type. [Learn more.]()  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ∟ `audio.py` - class for working with attachments of the `audio` or `music` types. [Learn more.]()  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ∟ `photo.py` - class for working with attachments of the `photo` type. [Learn more.]()  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ∟ `video.py` - class for working with attachments of the `video` type. [Learn more.]()  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ∟ `file.py` - class for working with attachments of the `file` or `document` types. [Learn more.]()  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ∟ `geoposition.py` - class for working with attachments of the `geo` type. [Learn more.]()  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ∟ `message.py` - main class for processing messages from the user, including attachments. [Learn more.](#input_messagemessagepy)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ∟ `voice.py` - class for working with attachments of the `voice message` type. [Learn more.](#input_messagevoicepy)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ∟ `audio.py` - class for working with attachments of the `audio` or `music` types. [Learn more.](#input_messageaudiopy)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ∟ `photo.py` - class for working with attachments of the `photo` type. [Learn more.](#input_messagephotopy)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ∟ `video.py` - class for working with attachments of the `video` type. [Learn more.](#input_messagevideopy)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ∟ `file.py` - class for working with attachments of the `file` or `document` types. [Learn more.](#input_messagefilepy)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ∟ `geoposition.py` - class for working with attachments of the `geo` type. [Learn more.](#input_messagegeopositionpy)  
 &nbsp;&nbsp;&nbsp;&nbsp; |-> `user`  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ∟ `user.py` - main class for processing user information. [Learn more.]()  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ∟ `carer.py` - class with information about fields from the `Career` section. [Learn more.]()  
@@ -262,4 +262,87 @@
 >* `city` - Property for getting the city where the label is located.
 >
 ></p></details>
+---
+### user/user.py
+><details><summary>Class `User` - Information about fields from the 'User' section.</summary><p>
+>
+>* `user_id`: int - Property for getting the user ID.
+>* `domain` - Property for getting a short page address. A string containing the short address of the page is returned (for example, andrew). If it is not assigned, "id"+user_id is returned, for example, id35828305.
+>* `screen_name` - Property for getting a short page name.
+>* `first_name` - Property for getting the user name.
+>* `last_name` - Property for getting the user's last name.
+>* `birthday` - Property for getting the user's date of birth, in the format YYYY-MM-DD.
+>* `sex` - Property for getting the user's gender. For more information, see `person_enum.Sex`.
+>* `relation` - Property for getting information about the marital status of the user. For more information, see `person_enum.Relation`.
+>* `online` - Property for getting information about whether the user is currently on the site.
+>* `count` - Property for getting information about the number of different objects from the user.
+>* `occupation` - Property for getting information about user activity.
+>* `contacts` - Property for getting information about the user's contact information
+>* `interests` - Property for getting information about fields from the `Life position` section
+>* `education`: Optional[[Education](#-usereducationeducationpy)] - Property for obtaining educational institutions in which the user studied.
+>* `` - 
+>* `` - 
+>* `` - 
+>* `` - 
+>* `` - 
+>* `` - 
+>* `` - 
+>* `` - 
+>* `` - 
+>* `` - 
+>* `` - 
+>* `` - 
+>* `` - 
+>* `` - 
+>* `` - 
+>* `` - 
+>* `` - 
+>* `` - 
+>* `` - 
+>* `` - 
+>* `` - 
+>* `` - 
+>* `` - 
+>* `` - 
+>
+></p></details>
+
+><details><summary>Enum `Sex`</summary><p>
+>
+>
+></p></details>
+
+><details><summary>Enum `Relation`</summary><p>
+>
+>
+></p></details>
+
+><details><summary>Enum `Online`</summary><p>
+>
+>
+></p></details>
+---
+### user/carer.py
+---
+### user/contacts.py
+---
+### user/counters.py
+---
+### user/interests.py
+---
+### user/last_seen.py
+---
+### user/lifeposition.py
+---
+### user/military.py
+---
+### user/occupation.py
+---
+### user/params.py
+---
+### user/education/education.py
+---
+### user/education/schools.py
+---
+### user/education/universities.py
 
