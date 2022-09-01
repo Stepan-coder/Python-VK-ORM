@@ -18,8 +18,8 @@ class Interests:
     @property
     def about(self) -> str:
         """
-        :ru Свойство для получения содержимого поля «О себе» из профиля.
-        :en Property for getting the contents of the "About me" field from the profile.
+        :ru Свойство для получения содержимого поля `О себе` из профиля.
+        :en Property for getting the contents of the `About me` field from the profile.
         """
         return self.__interests['about'] if 'about' in self.__interests else None
 
@@ -36,64 +36,64 @@ class Interests:
     @property
     def activities(self) -> str:
         """
-        :ru Свойство для получения содержимого поля «Деятельность» из профиля.
-        :en Property for getting the contents of the "Activity" field from the profile.
+        :ru Свойство для получения содержимого поля `Деятельность` из профиля.
+        :en Property for getting the contents of the `Activity` field from the profile.
         """
         return self.__interests['activities'] if 'activities' in self.__interests else None
 
     @property
     def interests(self) -> str:
         """
-        :ru Свойство для получения содержимого поля «Деятельность» из профиля.
-        :en Property for getting the contents of the "Activity" field from the profile.
+        :ru Свойство для получения содержимого поля `Интересы` из профиля.
+        :en Property for getting the contents of the `Interests` field from the profile.
         """
         return self.__interests['interests'] if 'interests' in self.__interests else None
 
     @property
     def music(self) -> str:
         """
-        :ru Свойство для получения содержимого поля «Любимая музыка» из профиля.
-        :en Property for getting the contents of the "Favorite music" field from the profile.
+        :ru Свойство для получения содержимого поля `Любимая музыка` из профиля.
+        :en Property for getting the contents of the `Favorite music` field from the profile.
         """
         return self.__interests['music'] if 'music' in self.__interests else None
 
     @property
     def movies(self) -> str:
         """
-        :ru Свойство для получения содержимого поля «Любимые фильмы» из профиля.
-        :en Property for getting the contents of the "Favorite movies" field from the profile.
+        :ru Свойство для получения содержимого поля `Любимые фильмы` из профиля.
+        :en Property for getting the contents of the `Favorite movies` field from the profile.
         """
         return self.__interests['movies'] if 'movies' in self.__interests else None
 
     @property
     def tv(self) -> str:
         """
-        :ru Свойство для получения содержимого поля «Любимые телешоу» из профиля.
-        :en Property for getting the contents of the "Favorite TV shows" field from the profile.
+        :ru Свойство для получения содержимого поля `Любимые телешоу` из профиля.
+        :en Property for getting the contents of the `Favorite TV shows` field from the profile.
         """
         return self.__interests['tv'] if 'tv' in self.__interests else None
 
     @property
     def books(self) -> str:
         """
-        :ru Свойство для получения содержимого поля «Любимые книги» из профиля.
-        :en Property for getting the contents of the "Favorite books" field from the profile.
+        :ru Свойство для получения содержимого поля `Любимые книги` из профиля.
+        :en Property for getting the contents of the `Favorite books` field from the profile.
         """
         return self.__interests['books'] if 'books' in self.__interests else None
 
     @property
     def games(self) -> str:
         """
-        :ru Свойство для получения содержимого поля «Любимые игры» из профиля.
-        :en Property for getting the contents of the "Favorite games" field from the profile.
+        :ru Свойство для получения содержимого поля `Любимые игры` из профиля.
+        :en Property for getting the contents of the `Favorite games` field from the profile.
         """
         return self.__interests['games'] if 'games' in self.__interests else None
 
     @property
     def quotes(self) -> str:
         """
-        :ru Свойство для получения содержимого поля «Любимые цитаты» из профиля.
-        :en Property for getting the contents of the "Favorite quotes" field from the profile.
+        :ru Свойство для получения содержимого поля `Любимые цитаты` из профиля.
+        :en Property for getting the contents of the `Favorite quotes` field from the profile.
         """
         return self.__interests['quotes'] if 'quotes' in self.__interests else None
 

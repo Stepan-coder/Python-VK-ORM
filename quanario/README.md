@@ -365,12 +365,26 @@
 >* `followers`: [int](#usercounterspy) - Property for getting the number of `subscribers` from the user.
 >* `subscriptions`: [int](#usercounterspy) - Property for getting the number of `subscriptions` from the user.
 >* `online_friends`: [int](#usercounterspy) - Property for getting the number of `online friends` of the user.
->* `get_json()`: [int](#usercounterspy) - This method generates a json object from the fields of the `Counters` class.
+>* `get_json()`: [json](#usercounterspy) - This method generates a json object from the fields of the `Counters` class.
 >
 ></p></details>
 ---
 ### user/interests.py
-
+><details><summary>Class `Interests` - Information about fields from the 'Interests' section.</summary><p>
+>
+>* `about`: [str](#userinterestspy) - Property for getting the contents of the `About me` field from the profile.
+>* `status`: [str](#userinterestspy) - Property for getting user status. Returns a string containing the `status` text located in profile under the name.
+>* `activities`: [str](#userinterestspy) - Property for getting the contents of the `Activity` field from the profile.
+>* `interests`: [str](#userinterestspy) - Property for getting the contents of the `Interests` field from the profile.
+>* `music`: [str](#userinterestspy) - Property for getting the contents of the `Favorite music` field from the profile.
+>* `movies`: [str](#userinterestspy) - Property for getting the contents of the `Favorite movies` field from the profile.
+>* `tv`: [str](#userinterestspy) - Property for getting the contents of the `Favorite TV shows` field from the profile.
+>* `books`: [str](#userinterestspy) - Property for getting the contents of the `Favorite books` field from the profile.
+>* `games`: [str](#userinterestspy) - Property for getting the contents of the `Favorite games` field from the profile.
+>* `quotes`: [str](#userinterestspy) - Property for getting the contents of the `Favorite quotes` field from the profile.
+>* `get_json()`: [json](#userinterestspy) - This method generates a json object from the fields of the 'Interests' class.
+>
+></p></details>
 ---
 ### user/last_seen.py
 
