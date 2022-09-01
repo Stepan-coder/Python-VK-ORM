@@ -34,7 +34,7 @@ class Online(Enum):
 
 
 class User:
-    def __init__(self, user: dict):
+    def __init__(self, user: Dict[str, Any]):
         """
         :ru Информация о полях из раздела 'User'.
         :en Information about fields from the 'User' section.
@@ -190,8 +190,8 @@ class User:
     @property
     def life_position(self) -> Optional[LifePosition]:
         """
-        :ru Свойство для получения информации о полях из раздела «Жизненная позиция».
-        :en Property for getting information about fields from the "Life position" section.
+        :ru Свойство для получения информации о полях из раздела `Жизненная позиция`.
+        :en Property for getting information about fields from the `Life position` section.
         """
         if 'personal' in self.__user:
             return LifePosition(personal=self.__user['personal'])
@@ -262,6 +262,7 @@ class User:
 
     @staticmethod
     def __convert_birthdate(birthdate: str) -> str:
+
         date = str(birthdate).split(".")
         if len(date) == 3:
             return str(date[2]) + "-" + str(date[1]) + "-" + str(date[0])

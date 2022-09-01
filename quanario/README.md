@@ -281,50 +281,59 @@
 >* `contacts` - Property for getting information about the user's contact information
 >* `interests` - Property for getting information about fields from the `Life position` section
 >* `education`: Optional[[Education](#-usereducationeducationpy)] - Property for obtaining educational institutions in which the user studied.
->* `` - 
->* `` - 
->* `` - 
->* `` - 
->* `` - 
->* `` - 
->* `` - 
->* `` - 
->* `` - 
->* `` - 
->* `` - 
->* `` - 
->* `` - 
->* `` - 
->* `` - 
->* `` - 
->* `` - 
->* `` - 
->* `` - 
->* `` - 
->* `` - 
->* `` - 
->* `` - 
->* `` - 
+>* `career` - Property for getting a list of schools where the user studied. Array of instances of the `School` class.
+>* `military` - Property for getting information about the user's military service.
+>* `life_position` - Property for getting information about fields from the `Life position` section.
+>* `params` - Property for getting information about additional user fields.
+>* `get_json()` - This method generates a json object from the fields of the `User` class.
+>* *`__convert_birthdate()` -* 
+>* *`__decode_sex()` - This private method converts the numeric representation of the value `sex` to Enum `Sex`.*
+>* *`__decode_online()` - This private method converts the numeric representation of the value `online` to Enum `Online`.*
 >
 ></p></details>
 
 ><details><summary>Enum `Sex`</summary><p>
 >
+>* `NOT_SPECIFIED`
+>* `FEMALE`
+>* `MALE`
 >
 ></p></details>
 
 ><details><summary>Enum `Relation`</summary><p>
 >
->
+>* `NOT_SPECIFIED`
+>* `NOT_MARRIED`
+>* `HAVE_FRIEND`
+>* `ENGAGED`
+>* `EVERYTHING_IS_COMPLICATED`
+>* `ACTIVE_SEARCH`
+>* `IN_LOVE`
+>* `CIVIL_MARRIAGE`
+> 
 ></p></details>
 
 ><details><summary>Enum `Online`</summary><p>
 >
+>* `ONLINE`
+>* `NOT_ONLINE`
 >
 ></p></details>
 ---
 ### user/carer.py
-
+><details><summary>Class `Career` - Information about fields from the 'Career' section.</summary><p>
+>
+>* `group_id`: [int](#usercarerpy) - Property for getting the community ID (if available, otherwise company).
+>* `company`: [str](#usercarerpy) - Property for getting the company name (if available, otherwise group_id).
+>* `city_id`: [str](#usercarerpy) - Everything to get the ids of the city, city (if is available, otherwise city_name).
+>* `city_name`: [str](#usercarerpy) - Property for getting the name of the city.
+>* `country_id`: [int](#usercarerpy) - Property for getting the country ID.
+>* `work_from`: [int](#usercarerpy) - Property for getting the year of the start of work.
+>* `work_until`: [int](#usercarerpy) - Property for getting the year of completion of work.
+>* `position`: [str](#usercarerpy) - Property for getting the title of the position
+>* `get_json()`: [json](#usercarerpy) - This method generates a json object from the fields of the `Career` class.
+>
+></p></details>
 ---
 ### user/contacts.py
 

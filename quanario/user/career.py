@@ -35,7 +35,7 @@ class Career:
     def city_id(self) -> int:
         """
         :ru Свойство для получения идентификаторa города, города (если доступно, иначе city_name).
-        :en Everything to get the ids of the city, city (esli is available, otherwise city_name).
+        :en Everything to get the ids of the city, city (if is available, otherwise city_name).
         """
         return self.__career['city_id'] if 'city_id' in self.__career else None
 
