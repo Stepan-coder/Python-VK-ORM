@@ -116,22 +116,21 @@
 ></p></details>
 ---
 ### message_extensions/keyboard.py
+><details><summary>Class `Keyboard` - The keyboard in messengers is a special type of attachment, unlike ordinary text messages, it is a tool for interactive user interaction with a bot. By clicking on the button, the user gives the system various commands: if these are ordinary buttons, then when clicking on them, the user gives the command to send the text to the community that is written on the button (i.e., the typing process is accelerated), if it is a link or a geo-location, then the system performs these actions outside of a conversation with the bot (sends to the site, sends a placemark on the map).</summary><p>
+>
+>* `add_button()` -
+>* `add_line()` -
+>* `get_keyboard()` - This is json by mind, but it return in the format of a regular string.
+>* `get_empty_keyboard()` - This is json by mind, but it return in the format of a regular string.
+>
+></p></details>
+
 ><details><summary>Enum `VkKeyboardButton`</summary><p>
 >
 >* `DEFAULT` - 
 >* `OPENLINK` - 
 >* `CALLBACK` - 
 >* `LOCATION` -
->
-></p></details>
-
-
-><details><summary>Class `Keyboard`</summary><p>
->
->* `add_button()` -
->* `add_line()` -
->* `get_keyboard()` - This is json by mind, but it return in the format of a regular string.
->* `get_empty_keyboard()` - This is json by mind, but it return in the format of a regular string.
 >
 ></p></details>
 ---

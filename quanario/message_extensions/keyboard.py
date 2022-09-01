@@ -19,6 +19,20 @@ class VkKeyboardButton(Enum):
 
 
 class Keyboard:
+    """
+    ru: Клавиатура в мессенджерах особенный тип вложения, в отличие, от обычных текстовых сообщений она представляет
+     собой инструмент интерактивного взаимодействия пользователя с ботом. Нажимая на кнопку, пользователь подаёт системе
+     различные команды: если это обычные кнопки, то при нажатии на них, пользователь подаёт команду отправить сообществу
+     текст, который написан на кнопка (т.е. происходит ускорение процесса набора текста), если же это ссылка или
+     геопозиция, то система выполняет эти действия вне беседы с ботом (отправляет на сайт, отправляет метку на карте).
+
+    en: The keyboard in messengers is a special type of attachment, unlike ordinary text messages, it is a tool for
+     interactive user interaction with a bot. By clicking on the button, the user gives the system various commands:
+     if these are ordinary buttons, then when clicking on them, the user gives the command to send the text to the
+     community that is written on the button (i.e., the typing process is accelerated), if it is a link or a
+     geo-location, then the system performs these actions outside of a conversation with the bot (sends to the site,
+     sends a placemark on the map).
+    """
     def __init__(self, inline: bool = False, one_time: bool = False):
         self.__keyboard = VkKeyboard(inline=inline, one_time=one_time)
 
