@@ -148,12 +148,12 @@
 >* `is_videos()`: [bool](#input_message--messagepy) - Method for getting information about the presence of `video` recordings in attachments to a message from a user.
 >* `is_files()`: [bool](#input_message--messagepy) - Method for getting information about the presence of `files` or `documents` in attachments to a message from the user.
 >* `is_geo()`: [bool](#input_message--messagepy) - Method for getting information about sending a geo position by the user.
->* `get_voices()` - This method returns a list of instances of the `Voice` class.
->* `get_audios()` - This method returns a list of instances of the `Audio` class.
->* `get_photos()` - This method returns a list of instances of the `Photo` class.
->* `get_videos()` - This method returns a list of instances of the `Video` class.
->* `get_files()` - This method returns a list of instances of the `File` class.
->* `get_geo()` - This method returns a list of instances of the `Geo` class.
+>* `get_voices()`: [List](#input_message--messagepy)[[Voice](#input_message--voicepy)] - This method returns a list of instances of the `Voice` class.
+>* `get_audios()`: [List](#input_message--messagepy)[[Audio](#input_message--audiopy)] - This method returns a list of instances of the `Audio` class.
+>* `get_photos()`: [List](#input_message--messagepy)[[Photo](#input_message--photopy)] - This method returns a list of instances of the `Photo` class.
+>* `get_videos()`: [List](#input_message--messagepy)[[Video](#input_message--videopy)] - This method returns a list of instances of the `Video` class.
+>* `get_files()`: [List](#input_message--messagepy)[[File](#input_message--filepy)] - This method returns a list of instances of the `File` class.
+>* `get_geo()`: [Geo](#input_message--geopositionpy) - This method returns a list of instances of the `Geo` class.
 >
 ></p></details>
 ---
