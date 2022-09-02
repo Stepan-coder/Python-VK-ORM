@@ -409,7 +409,9 @@
 ></p></details>
 ---
 ### user/lifeposition.py
-#####Class `LifePosition`
+
+######Class `LifePosition`
+
 ><details><summary>View more</summary><p>
 >
 >Class `LifePosition` - Information about fields from the user `Life position` section.
