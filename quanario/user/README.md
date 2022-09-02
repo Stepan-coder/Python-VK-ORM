@@ -1,7 +1,7 @@
 # [Documentation](../../) / User
 
 
-### [user.py](user/user.py)
+### [user.py](user.py)
 ><details><summary>Class `User` - Information about fields from the user 'User' section.</summary><p>
 >
 >* `user_id`: [int](#userpy) - _Property_ for getting the user ID.
@@ -58,7 +58,7 @@
 >
 ></p></details>
 ---
-### [career.py](user/career.py)
+### [career.py](career.py)
 ><details><summary>Class `Career` - Information about fields from the user 'Career' section.</summary><p>
 >
 >* `group_id`: [int](#careerpy) - _Property_ for getting the community ID (if available, otherwise company).
@@ -73,7 +73,7 @@
 >
 ></p></details>
 ---
-### [contacts.py](user/contacts.py)
+### [contacts.py](contacts.py)
 ><details><summary>Class `Contacts` - Information about fields from the user 'Contacts' section.</summary><p>
 >
 >* `site`: [str](#contactspy) - _Property_ for getting the site address specified in the profile.
@@ -87,7 +87,7 @@
 >
 ></p></details>
 ---
-### [counters.py](user/counters.py)
+### [counters.py](counters.py)
 ><details><summary>Class `Counters` - Information about the number of different objects the user has.</summary><p>
 >
 >* `notes`: [int](#counterspy) - _Property_ for getting the number of `notes from the user.
@@ -107,7 +107,7 @@
 >
 ></p></details>
 ---
-### [interests.py](user/interests.py)
+### [interests.py](interests.py)
 ><details><summary>Class `Interests` - Information about fields from the user 'Interests' section.</summary><p>
 >
 >* `about`: [str](#interestspy) - _Property_ for getting the contents of the `About me` field from the profile.
@@ -124,7 +124,7 @@
 >
 ></p></details>
 ---
-### [last_seen.py](user/last_seen.py)
+### [last_seen.py](last_seen.py)
 ><details><summary>Class `LastSeen` - The time of the user last visit.</summary><p>
 >
 >* `time`: [datetime](#last_seenpy) - _Property_ for getting the number of notes from the user.
@@ -146,7 +146,7 @@
 >
 ></p></details>
 ---
-### [lifeposition.py](user/lifeposition.py)
+### [lifeposition.py](lifeposition.py)
 ><details><summary>Class `LifePosition` - Information about fields from the user `Life position` section.</summary><p>
 >
 >* `political`: [Political](#lifepositionpy) - _Property_ for getting information from the `Political Preferences` field.
@@ -213,7 +213,7 @@
 >
 ></p></details>
 ---
-### [military.py](user/military.py)
+### [military.py](military.py)
 ><details><summary>Class `Military` - Information about fields from the user 'Military' section.</summary><p>
 >
 >* `unit`: [str](#militarypy) - _Property_ for getting the number of a military unit.
@@ -225,7 +225,7 @@
 >
 ></p></details>
 ---
-### [user](user)/ [occupation.py](user/occupation.py)
+### [user](user)/ [occupation.py](occupation.py)
 ><details><summary>Class `Occupation` - Information about the user's current occupation.</summary><p>
 >
 >* `id`: [int](#occupationpy) - _Property_ for getting the activity ID.
@@ -244,7 +244,7 @@
 >
 ></p></details>
 ---
-### [params.py](user/params.py)
+### [params.py](params.py)
 ><details><summary>Class `Params` - Information about fields from the user `Params` section.</summary><p>
 >
 >* `can_access_closed`: [bool](#paramspy)  - _Property_ for getting information about the user's ability to see the profile when is_closed = 1 (for example, he is in friends).
@@ -261,7 +261,7 @@
 >
 ></p></details>
 ---
-### [education](user/education) / [education.py](user/education/education.py)
+### [education](education) / [education.py](education/education.py)
 ><details><summary>Class `Education` - Information about fields from the user `Education` section.</summary><p>
 >
 >* `schools`: [Optional](#education--educationpy)[[List](#education--educationpy)[[School](#education--schoolspy)]] - _Property_ for getting a list of schools where the user studied. Array of instances of the `School` class.
@@ -269,7 +269,7 @@
 >
 ></p></details>
 ---
-### [education](user/education) / [schools.py](user/education/schools.py)
+### [education](education) / [schools.py](education/schools.py)
 ><details><summary>Class `School` - Information about fields from the user `School` section.</summary><p>
 >
 >* `id`: [int](#education--schoolspy) - _Property_ for getting the school ID.
@@ -306,7 +306,7 @@
 >
 ></p></details>
 ---
-### [education](user/education) / [universities.py](user/education/universities.py)
+### [education](education) / [universities.py](education/universities.py)
 ><details><summary>Class `University` - Information about fields from the user `University` section.</summary><p>
 >
 >* `id`: [int](#education--universitiespy) - _Property_ for getting the university ID.
