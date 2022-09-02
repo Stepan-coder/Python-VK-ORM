@@ -572,7 +572,7 @@
 ### [user](user) / [education](user/education) / [universities.py](user/education/universities.py)
 ><details><summary>Class `University` - Information about fields from the user `University` section.</summary><p>
 >
->* `id`: [int](#useruser--educationusereducation--universitiespyusereducationuniversitiespy) - _Property_ for getting the university ID.
+>* `id`: [int](#user--education--universitiespy) - _Property_ for getting the university ID.
 >* `name`: [str](#useruser--educationusereducation--universitiespyusereducationuniversitiespy) - _Property_ for getting the name of the university.
 >* `city`: [int](#useruser--educationusereducation--universitiespyusereducationuniversitiespy) - _Property_ for getting the ID of the city where the university is located.
 >* `country`: [int](#useruser--educationusereducation--universitiespyusereducationuniversitiespy) - _Property_ for obtaining the ID of the country in which the university is located.
