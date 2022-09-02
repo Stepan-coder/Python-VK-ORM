@@ -410,7 +410,7 @@
 ---
 ### user/lifeposition.py
 
-######Class `LifePosition`
+######Class`LifePosition`
 
 ><details><summary>View more</summary><p>
 >
