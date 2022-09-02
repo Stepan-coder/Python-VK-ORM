@@ -281,7 +281,7 @@
 >* `contacts`: [Optional](#user--userpy)[[Contacts](#user--contactspy)] - _Property_ for getting information about the user's contact information
 >* `interests`: [Optional](#user--userpy)[[Interests](#user--interestspy)] - _Property_ for getting information about fields from the `Life position` section
 >* `education`: [Optional](#user--userpy)[[Education](#user--education--educationpy)] - _Property_ for obtaining educational institutions in which the user studied.
->* `career`: [Optional](#user--userpy)[[List](#user--userpy)[[Career](#user--carerpy)]] - _Property_ for getting a list of schools where the user studied. Array of instances of the `School` class.
+>* `career`: [Optional](#user--userpy)[[List](#user--userpy)[[Career](#user--careerpy)]] - _Property_ for getting a list of schools where the user studied. Array of instances of the `School` class.
 >* `military`: [Optional](#user--userpy)[[List](#user--userpy)[[Military](#user--militarypy)]] - _Property_ for getting information about the user's military service.
 >* `life_position`: [Optional](#user--userpy)[[LifePosition](#user--lifepositionpy)] - _Property_ for getting information about fields from the `Life position` section.
 >* `params`: [Optional](#user--userpy)[[Params](#user--paramspy)] - _Property_ for getting information about additional user fields.
