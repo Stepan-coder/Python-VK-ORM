@@ -37,8 +37,8 @@ class LastSeen:
     @property
     def platform(self) -> Platform:
         """
-        :ru Свойство для получения количества подписчиков у пользователя.
-        :en Property for getting the number of subscribers from the user.
+        :ru Свойство для получения информации о том, с какого устройства пользователь заходил в последний раз.
+        :en A property for getting information about which device the user last logged in from.
         """
         return self.__convert_platform(self.__last_seen['platform']) if 'platform' in self.__last_seen else None
 

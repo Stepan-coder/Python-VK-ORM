@@ -127,10 +127,10 @@
 
 ><details><summary>Enum `VkKeyboardButton`</summary><p>
 >
->* `DEFAULT` - 
->* `OPENLINK` - 
->* `CALLBACK` - 
->* `LOCATION` -
+>* `DEFAULT`
+>* `OPENLINK`
+>* `CALLBACK`
+>* `LOCATION`
 >
 ></p></details>
 ---
@@ -387,10 +387,48 @@
 ></p></details>
 ---
 ### user/last_seen.py
+><details><summary>Class `LastSeen` - The time of the last visit.</summary><p>
+>
+>* `time`: [datetime](#userlast_seenpy) - Property for getting the number of notes from the user.
+>* `platform`: [Platform](#userlast_seenpy) - Property for getting the number of subscribers from the user.
+>* `get_json()`: [json](#userlast_seenpy) - This method generates a json object from the fields of the 'LastSeen' class.
+>* *`__convert_platform()`: [Platform](#userlast_seenpy) - This private method converts the numeric representation of the value `platform` to Enum `Platform`.*
+>
+></p></details>
 
+><details><summary>Enum `Platform`</summary><p>
+>
+>* `MOBILE_SITE`
+>* `IPHONE_APP`
+>* `IPAD_APP`
+>* `ANDROID_APP`
+>* `WINPHONE_APP`
+>* `WINDOWS10_APP`
+>* `FULL_SITE`
+>
+></p></details>
 ---
 ### user/lifeposition.py
-
+###### Class `LifePosition` - Information about fields from the `Life position` section.
+[](#class-lifeposition---information-about-fields-from-the-life-position-section)
+><details><summary>Class `LifePosition` - Information about fields from the `Life position` section.</summary><p>
+>
+>* `political` - Property for getting information from the `Political Preferences` field.
+>* `langs` - Property for getting information from the `Political Preferences` field.
+>* `religion` - Property for getting information from the `Worldview` field.
+>* `inspired_by` - Property for getting information from the field `Sources of inspiration`.
+>* `people_main` - Property for getting information from the field `The main thing in people`.
+>* `life_main` - Property for getting information from the `Main thing in life` field.
+>* `smoking` - Property for getting information from the `Smoking Attitude` field.
+>* `alcohol` - Property for getting information from the `Attitude to alcohol` field.
+>* `get_json()` - This method generates a json object from the fields of the `LifePosition` class.
+>* *`__convert_political()` - This private method converts the numeric representation of the value `political` to Enum `Political`.*
+>* *`__convert_people_main()` - This private method converts the numeric representation of the value `people_main` to Enum `PeopleMain`.*
+>* *`__convert_life_main()` - This private method converts the numeric representation of the value `life_main` to Enum `LifeMain`.*
+>* *`__convert_position()` - This private method converts the numeric representation of the value `position` to Enum `Position`.*
+>
+>
+></p></details>
 ---
 ### user/military.py
 

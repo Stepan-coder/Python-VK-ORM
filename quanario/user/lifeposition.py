@@ -59,6 +59,7 @@ class LifePosition:
     def political(self) -> Political:
         """
         :ru Свойство для получения информации из поля 'Политические предпочтения'.
+        :en Property for getting information from the 'Political Preferences' field.
         """
         return self.__convert_political(self.__personal['political']) if 'political' in self.__personal else None
 
