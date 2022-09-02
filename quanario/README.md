@@ -280,7 +280,7 @@
 >* `occupation`: [Optional](#useruserpy)[[Occupation](#useroccupationpy)] - _Property_ for getting information about user activity.
 >* `contacts`: [Optional](#useruserpy)[[Contacts](#usercontactspy)] - _Property_ for getting information about the user's contact information
 >* `interests`: [Optional](#useruserpy)[[Interests](#userinterestspy)] - _Property_ for getting information about fields from the `Life position` section
->* `education`: [Optional](#useruserpy)[[Education](#useruser--educationusereducation--educationpyusereducationeducationpy)] - _Property_ for obtaining educational institutions in which the user studied.
+>* `education`: [Optional](#useruserpy)[[Education](#user--education--educationpy)] - _Property_ for obtaining educational institutions in which the user studied.
 >* `career`: [Optional](#useruserpy)[[List](#useruserpy)[[Career](#usercarerpy)]] - _Property_ for getting a list of schools where the user studied. Array of instances of the `School` class.
 >* `military`: [Optional](#useruserpy)[[List](#useruserpy)[[Military](#usermilitarypy)]] - _Property_ for getting information about the user's military service.
 >* `life_position`: [Optional](#useruserpy)[[LifePosition](#userlifepositionpy)] - _Property_ for getting information about fields from the `Life position` section.
@@ -527,26 +527,26 @@
 ### [user](user) / [education](user/education) / [education.py](user/education/education.py)
 ><details><summary>Class `Education` - Information about fields from the user `Education` section.</summary><p>
 >
->* `schools`: [Optional](#useruser--educationusereducation--educationpyusereducationeducationpy)[[List](#useruser--educationusereducation--educationpyusereducationeducationpy)[[School](#useruser--educationusereducation--schoolspyusereducationschoolspy)]] - _Property_ for getting a list of schools where the user studied. Array of instances of the `School` class.
->* `universities`: [Optional](#useruser--educationusereducation--educationpyusereducationeducationpy)[[List](#useruser--educationusereducation--educationpyusereducationeducationpy)[[University](#useruser--educationusereducation--universitiespyusereducationuniversitiespy)]]  - _Property_ for getting a list of universities where the user studied. Array of instances of the `University` class.
+>* `schools`: [Optional](#user--education--educationpy)[[List](#user--education--educationpy)[[School](#user--education--schoolspy)]] - _Property_ for getting a list of schools where the user studied. Array of instances of the `School` class.
+>* `universities`: [Optional](#user--education--educationpy)[[List](#user--education--educationpy)[[University](#user--education--universitiespy)]]  - _Property_ for getting a list of universities where the user studied. Array of instances of the `University` class.
 >
 ></p></details>
 ---
 ### [user](user) / [education](user/education) / [schools.py](user/education/schools.py)
 ><details><summary>Class `School` - Information about fields from the user `School` section.</summary><p>
 >
->* `id`: [int](#useruser--educationusereducation--schoolspyusereducationschoolspy) - _Property_ for getting the school ID.
->* `name`: [str](#useruser--educationusereducation--schoolspyusereducationschoolspy) - _Property_ for getting the name of the school.
->* `city`: [int](#useruser--educationusereducation--schoolspyusereducationschoolspy) - _Property_ for getting the ID of the city where the school is located.
->* `country`: [int](#useruser--educationusereducation--schoolspyusereducationschoolspy) - _Property_ for getting the ID of the country where the school is located.
->* `year_from`: [int](#useruser--educationusereducation--schoolspyusereducationschoolspy) - _Property_ for getting the year of starting school.
->* `year_to`: [int](#useruser--educationusereducation--schoolspyusereducationschoolspy) - _Property_ for getting the year of graduation from school.
->* `year_graduated`: [int](#useruser--educationusereducation--schoolspyusereducationschoolspy) - _Property_ for getting the year of graduation from school.
->* `school_class`: [str](#useruser--educationusereducation--schoolspyusereducationschoolspy) - _Property_ for getting a class letter.
->* `speciality`: [str](#useruser--educationusereducation--schoolspyusereducationschoolspy) - _Property_ for getting a class specialization at school.
->* `school_type`: [SchoolType](#useruser--educationusereducation--schoolspyusereducationschoolspy) - _Property_ for getting the school ID.
->* `get_json()`: [json](#useruser--educationusereducation--schoolspyusereducationschoolspy) - This method generates a json object from the fields of the `School` class.
->* *`__convert_school_type()`: [SchoolType](#useruser--educationusereducation--schoolspyusereducationschoolspy) - This private method converts the numeric representation of the value `school_type` to Enum `SchoolType`.*
+>* `id`: [int](#user--education--schoolspy) - _Property_ for getting the school ID.
+>* `name`: [str](#user--education--schoolspy) - _Property_ for getting the name of the school.
+>* `city`: [int](#user--education--schoolspy) - _Property_ for getting the ID of the city where the school is located.
+>* `country`: [int](#user--education--schoolspy) - _Property_ for getting the ID of the country where the school is located.
+>* `year_from`: [int](#user--education--schoolspy) - _Property_ for getting the year of starting school.
+>* `year_to`: [int](#user--education--schoolspy) - _Property_ for getting the year of graduation from school.
+>* `year_graduated`: [int](#user--education--schoolspy) - _Property_ for getting the year of graduation from school.
+>* `school_class`: [str](#user--education--schoolspy) - _Property_ for getting a class letter.
+>* `speciality`: [str](#user--education--schoolspy) - _Property_ for getting a class specialization at school.
+>* `school_type`: [SchoolType](#user--education--schoolspy) - _Property_ for getting the school ID.
+>* `get_json()`: [json](#user--education--schoolspy) - This method generates a json object from the fields of the `School` class.
+>* *`__convert_school_type()`: [SchoolType](#user--education--schoolspy) - This private method converts the numeric representation of the value `school_type` to Enum `SchoolType`.*
 >
 ></p></details>
 
@@ -573,16 +573,16 @@
 ><details><summary>Class `University` - Information about fields from the user `University` section.</summary><p>
 >
 >* `id`: [int](#user--education--universitiespy) - _Property_ for getting the university ID.
->* `name`: [str](#useruser--educationusereducation--universitiespyusereducationuniversitiespy) - _Property_ for getting the name of the university.
->* `city`: [int](#useruser--educationusereducation--universitiespyusereducationuniversitiespy) - _Property_ for getting the ID of the city where the university is located.
->* `country`: [int](#useruser--educationusereducation--universitiespyusereducationuniversitiespy) - _Property_ for obtaining the ID of the country in which the university is located.
->* `faculty_id`: [int](#useruser--educationusereducation--universitiespyusereducationuniversitiespy) - _Property_ for getting the faculty ID.
->* `faculty_name`: [str](#useruser--educationusereducation--universitiespyusereducationuniversitiespy) - _Property_ for getting the name of the faculty.
->* `chair_id`: [int](#useruser--educationusereducation--universitiespyusereducationuniversitiespy) - _Property_ for getting the department ID.
->* `chair_name`: [str](#useruser--educationusereducation--universitiespyusereducationuniversitiespy) - _Property_ for getting the name of the department.
->* `graduation`: [int](#useruser--educationusereducation--universitiespyusereducationuniversitiespy) - _Property_ for getting the end year.
->* `education_form`: [str](#useruser--educationusereducation--universitiespyusereducationuniversitiespy) - _Property_ for obtaining a form of training.
->* `education_status`: [str](#useruser--educationusereducation--universitiespyusereducationuniversitiespy) - _Property_ for getting the training status.
->* `get_json()`: [json](#useruser--educationusereducation--universitiespyusereducationuniversitiespy) - This method generates a json object from the fields of the `School` class.
+>* `name`: [str](#user--education--universitiespy) - _Property_ for getting the name of the university.
+>* `city`: [int](#user--education--universitiespy) - _Property_ for getting the ID of the city where the university is located.
+>* `country`: [int](#user--education--universitiespy) - _Property_ for obtaining the ID of the country in which the university is located.
+>* `faculty_id`: [int](#user--education--universitiespy) - _Property_ for getting the faculty ID.
+>* `faculty_name`: [str](#user--education--universitiespy) - _Property_ for getting the name of the faculty.
+>* `chair_id`: [int](#user--education--universitiespy) - _Property_ for getting the department ID.
+>* `chair_name`: [str](#user--education--universitiespy) - _Property_ for getting the name of the department.
+>* `graduation`: [int](#user--education--universitiespy) - _Property_ for getting the end year.
+>* `education_form`: [str](#user--education--universitiespy) - _Property_ for obtaining a form of training.
+>* `education_status`: [str](#user--education--universitiespy) - _Property_ for getting the training status.
+>* `get_json()`: [json](#user--education--universitiespy) - This method generates a json object from the fields of the `School` class.
 >
 ></p></details>
