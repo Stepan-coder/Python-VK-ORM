@@ -225,7 +225,7 @@
 >
 ></p></details>
 ---
-### [user](user)/ [occupation.py](occupation.py)
+### [occupation.py](occupation.py)
 ><details><summary>Class `Occupation` - Information about the user's current occupation.</summary><p>
 >
 >* `id`: [int](#occupationpy) - _Property_ for getting the activity ID.
