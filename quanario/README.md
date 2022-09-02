@@ -524,7 +524,7 @@
 >
 ></p></details>
 ---
-### [user](user) / education / education.py
+### [user](user) / [education](user/education) / [education.py](user/education/education.py)
 ><details><summary>Class `Education` - Information about fields from the user `Education` section.</summary><p>
 >
 >* `schools`: [Optional](#usereducationeducationpy)[[List](#usereducationeducationpy)[[School](#usereducationschoolspy)]] - _Property_ for getting a list of schools where the user studied. Array of instances of the `School` class.
@@ -532,7 +532,7 @@
 >
 ></p></details>
 ---
-### [user](user) / education / schools.py
+### [user](user) / [education](user/education) / [schools.py](user/education/schools.py)
 ><details><summary>Class `School` - Information about fields from the user `School` section.</summary><p>
 >
 >* `id`: [int](#usereducationschoolspy) - _Property_ for getting the school ID.
@@ -569,7 +569,7 @@
 >
 ></p></details>
 ---
-### [user](user) / [education](user/education) / universities.py
+### [user](user) / [education](user/education) / [schools.py](user/education/universities.py)
 ><details><summary>Class `University` - Information about fields from the user `University` section.</summary><p>
 >
 >* `id`: [int](#usereducationuniversitiespy) - _Property_ for getting the university ID.
