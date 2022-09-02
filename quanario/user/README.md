@@ -1,4 +1,4 @@
-# [Documentation](../../) / User
+# [Documentation](../) / User
 
 
 ### [user.py](user.py)
