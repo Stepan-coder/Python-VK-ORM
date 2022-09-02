@@ -262,7 +262,15 @@ class User:
 
     @staticmethod
     def __convert_birthdate(birthdate: str) -> str:
+        """
+         :ru Этот приватный метод приводит полученную от `ВКонтакте` дату рождения пользователя к стандартизированному
+          виду `ГГГГ-ММ-ДД`
+         :en This private method brings the date of birth of the user received from VKontakte to the standardized form `YYYY-MM-DD`
 
+         :param birthdate:ru Строковое представление даты рождения пользователя, полученное от `ВКонтакте`.
+         :param birthdate:en String representation of the user's date of birth received from `VKontakte`.
+         :type birthdate: str
+         """
         date = str(birthdate).split(".")
         if len(date) == 3:
             return str(date[2]) + "-" + str(date[1]) + "-" + str(date[0])

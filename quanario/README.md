@@ -88,7 +88,7 @@
 >
 ></p></details>
 ---
-### message_extensions/carousel.py
+### message_extensions / carousel.py
 ><details><summary>Class `Carousel` - The main class for creating attachments of the `Carousel` type. The difference between the carousel and ordinary messages is its unusual appearance, the carousel consists of blocks (maximum 10 pcs.), each block has a title, description and picture. Subsequently, it is possible to attach to each block unique keyboard. It is important that the number of buttons matches in all blocks!!!</summary><p>
 >
 >* `count` - This _Property_ contains the number of elements in the carousel.
@@ -115,7 +115,7 @@
 >
 ></p></details>
 ---
-### message_extensions/keyboard.py
+### message_extensions / keyboard.py
 ><details><summary>Class `Keyboard` - The keyboard in messengers is a special type of attachment, unlike ordinary text messages, it is a tool for interactive user interaction with a bot. By clicking on the button, the user gives the system various commands: if these are ordinary buttons, then when clicking on them, the user gives the command to send the text to the community that is written on the button (i.e., the typing process is accelerated), if it is a link or a geo-location, then the system performs these actions outside of a conversation with the bot (sends to the site, sends a placemark on the map).</summary><p>
 >
 >* `add_button()` -
@@ -134,7 +134,7 @@
 >
 ></p></details>
 ---
-### input_message/message.py
+### input_message / message.py
 ><details><summary>Class `Message`</summary><p>
 >
 >* `type` - _Property_ for getting the message type.
@@ -157,7 +157,7 @@
 >
 ></p></details>
 ---
-### input_message/voice.py
+### input_message / voice.py
 ><details><summary>Class `Voice`</summary><p>
 >
 >* `id` - _Property_ for getting a unique file identifier.
@@ -172,7 +172,7 @@
 >
 ></p></details>
 ---
-### input_message/audio.py
+### input_message / audio.py
 ><details><summary>Class `Audio`</summary><p>
 >
 >* `id` - _Property_ for getting a unique file identifier.
@@ -189,7 +189,7 @@
 >
 ></p></details>
 ---
-### input_message/photo.py
+### input_message / photo.py
 ><details><summary>Class `Photo`</summary><p>
 >
 >* `id` - _Property_ for getting a unique file identifier.
@@ -207,7 +207,7 @@
 >
 ></p></details>
 ---
-### input_message/video.py
+### input_message / video.py
 ><details><summary>Class `Photo`</summary><p>
 >
 >* `id` - _Property_ for getting a unique file identifier.
@@ -230,7 +230,7 @@
 >
 ></p></details>
 ---
-### input_message/file.py
+### input_message / file.py
 ><details><summary>Class `Photo`</summary><p>
 >
 >* `id` - _Property_ for getting a unique file identifier.
@@ -264,31 +264,32 @@
 ></p></details>
 ---
 
-### user/user.py
+### [user](user) / user.py
 ><details><summary>Class `User` - Information about fields from the user 'User' section.</summary><p>
 >
->* `user_id`: [int]() - _Property_ for getting the user ID.
->* `domain`: [str]() - _Property_ for getting a short page address. A string containing the short address of the page is returned (for example, andrew). If it is not assigned, "id"+user_id is returned, for example, id35828305.
->* `screen_name`: [str]() - _Property_ for getting a short page name.
->* `first_name`: [str]() - _Property_ for getting the user name.
->* `last_name`: [str]() - _Property_ for getting the user's last name.
->* `birthday`: [str]() - _Property_ for getting the user's date of birth, in the format YYYY-MM-DD.
+>* `user_id`: [int](#useruserpy) - _Property_ for getting the user ID.
+>* `domain`: [str](#useruserpy) - _Property_ for getting a short page address. A string containing the short address of the page is returned (for example, andrew). If it is not assigned, "id"+user_id is returned, for example, id35828305.
+>* `screen_name`: [str](#useruserpy) - _Property_ for getting a short page name.
+>* `first_name`: [str](#useruserpy) - _Property_ for getting the user name.
+>* `last_name`: [str](#useruserpy) - _Property_ for getting the user's last name.
+>* `birthday`: [str](#useruserpy) - _Property_ for getting the user's date of birth, in the format YYYY-MM-DD.
 >* `sex`: [Sex](#useruserpy) - _Property_ for getting the user's gender. For more information, see `person_enum.Sex`.
 >* `relation`: [Relation](#useruserpy) - _Property_ for getting information about the marital status of the user. For more information, see `person_enum.Relation`.
 >* `online`: [Online](#useruserpy) - _Property_ for getting information about whether the user is currently on the site.
->* `count`: Optional[[Counters](#useruserpy)] - _Property_ for getting information about the number of different objects from the user.
->* `occupation` - _Property_ for getting information about user activity.
->* `contacts` - _Property_ for getting information about the user's contact information
->* `interests` - _Property_ for getting information about fields from the `Life position` section
->* `education`: Optional[[Education](#-usereducationeducationpy)] - _Property_ for obtaining educational institutions in which the user studied.
->* `career` - _Property_ for getting a list of schools where the user studied. Array of instances of the `School` class.
->* `military` - _Property_ for getting information about the user's military service.
->* `life_position` - _Property_ for getting information about fields from the `Life position` section.
->* `params` - _Property_ for getting information about additional user fields.
->* `get_json()` - This method generates a json object from the fields of the `User` class.
->* *`__convert_birthdate()` -* 
->* *`__decode_sex()` - This private method converts the numeric representation of the value `sex` to Enum `Sex`.*
->* *`__decode_online()` - This private method converts the numeric representation of the value `online` to Enum `Online`.*
+>* `count`: [Optional](#useruserpy)[[Counters](#usercounterspy)] - _Property_ for getting information about the number of different objects from the user.
+>* `occupation`: [Optional](#useruserpy)[[Occupation](#useroccupationpy)] - _Property_ for getting information about user activity.
+>* `contacts`: [Optional](#useruserpy)[[Contacts](#usercontactspy)] - _Property_ for getting information about the user's contact information
+>* `interests`: [Optional](#useruserpy)[[Interests](#userinterestspy)] - _Property_ for getting information about fields from the `Life position` section
+>* `education`: [Optional](#useruserpy)[[Education](#usereducationeducationpy)] - _Property_ for obtaining educational institutions in which the user studied.
+>* `career`: [Optional](#useruserpy)[[List](#useruserpy)[[Career](#usercarerpy)]] - _Property_ for getting a list of schools where the user studied. Array of instances of the `School` class.
+>* `military`: [Optional](#useruserpy)[[List](#useruserpy)[[Military](#usermilitarypy)]] - _Property_ for getting information about the user's military service.
+>* `life_position`: [Optional](#useruserpy)[[LifePosition](#userlifepositionpy)] - _Property_ for getting information about fields from the `Life position` section.
+>* `params`: [Optional](#useruserpy)[[Params](#user--paramspy)] - _Property_ for getting information about additional user fields.
+>* `get_json()`: [json](#useruserpy) - This method generates a json object from the fields of the `User` class.
+>* *`__convert_birthdate()`: [str](#useruserpy) - This private method brings the date of birth of the user received from VKontakte to the standardized form `YYYY-MM-DD`* 
+>* *`__decode_sex()`: [Sex](#useruserpy) - This private method converts the numeric representation of the value `sex` to Enum `Sex`.*
+>* *`__decode_online()`: [Online](#useruserpy) - This private method converts the numeric representation of the value `online` to Enum `Online`.*
+>* *`__decode_relation()`: [Relation](#useruserpy) - This private method converts the numeric representation of the value `relation` to Enum `Relation`.*
 >
 ></p></details>
 
@@ -320,7 +321,7 @@
 >
 ></p></details>
 ---
-### user/carer.py
+### user / carer.py
 ><details><summary>Class `Career` - Information about fields from the user 'Career' section.</summary><p>
 >
 >* `group_id`: [int](#usercarerpy) - _Property_ for getting the community ID (if available, otherwise company).
@@ -335,7 +336,7 @@
 >
 ></p></details>
 ---
-### user/contacts.py
+### user / contacts.py
 ><details><summary>Class `Contacts` - Information about fields from the user 'Contacts' section.</summary><p>
 >
 >* `site`: [str](#usercontactspy) - _Property_ for getting the site address specified in the profile.
@@ -349,7 +350,7 @@
 >
 ></p></details>
 ---
-### user/counters.py
+### user / counters.py
 ><details><summary>Class `Counters` - Information about the number of different objects the user has.</summary><p>
 >
 >* `notes`: [int](#usercounterspy) - _Property_ for getting the number of `notes from the user.
@@ -369,7 +370,7 @@
 >
 ></p></details>
 ---
-### user/interests.py
+### user / interests.py
 ><details><summary>Class `Interests` - Information about fields from the user 'Interests' section.</summary><p>
 >
 >* `about`: [str](#userinterestspy) - _Property_ for getting the contents of the `About me` field from the profile.
@@ -386,7 +387,7 @@
 >
 ></p></details>
 ---
-### user/last_seen.py
+### user / last_seen.py
 ><details><summary>Class `LastSeen` - The time of the user last visit.</summary><p>
 >
 >* `time`: [datetime](#userlast_seenpy) - _Property_ for getting the number of notes from the user.
@@ -408,7 +409,7 @@
 >
 ></p></details>
 ---
-### user/lifeposition.py
+### user / lifeposition.py
 ><details><summary>Class `LifePosition` - Information about fields from the user `Life position` section.</summary><p>
 >
 >* `political`: [Political](#userlifepositionpy) - _Property_ for getting information from the `Political Preferences` field.
@@ -475,7 +476,7 @@
 >
 ></p></details>
 ---
-### user/military.py
+### user / military.py
 ><details><summary>Class `Military` - Information about fields from the user 'Military' section.</summary><p>
 >
 >* `unit`: [str](#usermilitarypy) - _Property_ for getting the number of a military unit.
@@ -487,7 +488,7 @@
 >
 ></p></details>
 ---
-### [user/occupation.py]()
+### [user]() / [occupation.py]()
 ><details><summary>Class `Occupation` - Information about the user's current occupation.</summary><p>
 >
 >* `id`: [int](#useroccupationpy) - _Property_ for getting the activity ID.
@@ -523,7 +524,7 @@
 >
 ></p></details>
 ---
-### user/education/education.py
+### user / education / education.py
 ><details><summary>Class `Education` - Information about fields from the user `Education` section.</summary><p>
 >
 >* `schools`: [Optional](#usereducationeducationpy)[[List](#usereducationeducationpy)[[School](#usereducationschoolspy)]] - _Property_ for getting a list of schools where the user studied. Array of instances of the `School` class.
@@ -531,7 +532,7 @@
 >
 ></p></details>
 ---
-### user/education/schools.py
+### user / education / schools.py
 ><details><summary>Class `School` - Information about fields from the user `School` section.</summary><p>
 >
 >* `id`: [int](#usereducationschoolspy) - _Property_ for getting the school ID.
@@ -568,7 +569,7 @@
 >
 ></p></details>
 ---
-### user/education/universities.py
+### user / education / universities.py
 ><details><summary>Class `University` - Information about fields from the user `University` section.</summary><p>
 >
 >* `id`: [int](#usereducationuniversitiespy) - _Property_ for getting the university ID.
