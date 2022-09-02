@@ -264,32 +264,32 @@
 ></p></details>
 ---
 
-### [user](user) / user.py
+### [user](user) / [user.py](user/user.py)
 ><details><summary>Class `User` - Information about fields from the user 'User' section.</summary><p>
 >
->* `user_id`: [int](#useruserpy) - _Property_ for getting the user ID.
->* `domain`: [str](#useruserpy) - _Property_ for getting a short page address. A string containing the short address of the page is returned (for example, andrew). If it is not assigned, "id"+user_id is returned, for example, id35828305.
->* `screen_name`: [str](#useruserpy) - _Property_ for getting a short page name.
->* `first_name`: [str](#useruserpy) - _Property_ for getting the user name.
->* `last_name`: [str](#useruserpy) - _Property_ for getting the user's last name.
->* `birthday`: [str](#useruserpy) - _Property_ for getting the user's date of birth, in the format YYYY-MM-DD.
->* `sex`: [Sex](#useruserpy) - _Property_ for getting the user's gender. For more information, see `person_enum.Sex`.
->* `relation`: [Relation](#useruserpy) - _Property_ for getting information about the marital status of the user. For more information, see `person_enum.Relation`.
->* `online`: [Online](#useruserpy) - _Property_ for getting information about whether the user is currently on the site.
->* `count`: [Optional](#useruserpy)[[Counters](#usercounterspy)] - _Property_ for getting information about the number of different objects from the user.
->* `occupation`: [Optional](#useruserpy)[[Occupation](#useroccupationpy)] - _Property_ for getting information about user activity.
->* `contacts`: [Optional](#useruserpy)[[Contacts](#usercontactspy)] - _Property_ for getting information about the user's contact information
->* `interests`: [Optional](#useruserpy)[[Interests](#userinterestspy)] - _Property_ for getting information about fields from the `Life position` section
->* `education`: [Optional](#useruserpy)[[Education](#user--education--educationpy)] - _Property_ for obtaining educational institutions in which the user studied.
->* `career`: [Optional](#useruserpy)[[List](#useruserpy)[[Career](#usercarerpy)]] - _Property_ for getting a list of schools where the user studied. Array of instances of the `School` class.
->* `military`: [Optional](#useruserpy)[[List](#useruserpy)[[Military](#usermilitarypy)]] - _Property_ for getting information about the user's military service.
->* `life_position`: [Optional](#useruserpy)[[LifePosition](#userlifepositionpy)] - _Property_ for getting information about fields from the `Life position` section.
->* `params`: [Optional](#useruserpy)[[Params](#user--paramspy)] - _Property_ for getting information about additional user fields.
->* `get_json()`: [json](#useruserpy) - This method generates a json object from the fields of the `User` class.
->* *`__convert_birthdate()`: [str](#useruserpy) - This private method brings the date of birth of the user received from VKontakte to the standardized form `YYYY-MM-DD`* 
->* *`__decode_sex()`: [Sex](#useruserpy) - This private method converts the numeric representation of the value `sex` to Enum `Sex`.*
->* *`__decode_online()`: [Online](#useruserpy) - This private method converts the numeric representation of the value `online` to Enum `Online`.*
->* *`__decode_relation()`: [Relation](#useruserpy) - This private method converts the numeric representation of the value `relation` to Enum `Relation`.*
+>* `user_id`: [int](#user--userpy) - _Property_ for getting the user ID.
+>* `domain`: [str](#user--userpy) - _Property_ for getting a short page address. A string containing the short address of the page is returned (for example, andrew). If it is not assigned, "id"+user_id is returned, for example, id35828305.
+>* `screen_name`: [str](#user--userpy) - _Property_ for getting a short page name.
+>* `first_name`: [str](#user--userpy) - _Property_ for getting the user name.
+>* `last_name`: [str](#user--userpy) - _Property_ for getting the user's last name.
+>* `birthday`: [str](#user--userpy) - _Property_ for getting the user's date of birth, in the format YYYY-MM-DD.
+>* `sex`: [Sex](#user--userpy) - _Property_ for getting the user's gender. For more information, see `person_enum.Sex`.
+>* `relation`: [Relation](#user--userpy) - _Property_ for getting information about the marital status of the user. For more information, see `person_enum.Relation`.
+>* `online`: [Online](#user--userpy) - _Property_ for getting information about whether the user is currently on the site.
+>* `count`: [Optional](#user--userpy)[[Counters](#user--counterspy)] - _Property_ for getting information about the number of different objects from the user.
+>* `occupation`: [Optional](#user--userpy)[[Occupation](#user--occupationpy)] - _Property_ for getting information about user activity.
+>* `contacts`: [Optional](#user--userpy)[[Contacts](#user--contactspy)] - _Property_ for getting information about the user's contact information
+>* `interests`: [Optional](#user--userpy)[[Interests](#user--interestspy)] - _Property_ for getting information about fields from the `Life position` section
+>* `education`: [Optional](#user--userpy)[[Education](#user--education--educationpy)] - _Property_ for obtaining educational institutions in which the user studied.
+>* `career`: [Optional](#user--userpy)[[List](#user--userpy)[[Career](#user--carerpy)]] - _Property_ for getting a list of schools where the user studied. Array of instances of the `School` class.
+>* `military`: [Optional](#user--userpy)[[List](#user--userpy)[[Military](#user--militarypy)]] - _Property_ for getting information about the user's military service.
+>* `life_position`: [Optional](#user--userpy)[[LifePosition](#user--lifepositionpy)] - _Property_ for getting information about fields from the `Life position` section.
+>* `params`: [Optional](#user--userpy)[[Params](#user--paramspy)] - _Property_ for getting information about additional user fields.
+>* `get_json()`: [json](#user--userpy) - This method generates a json object from the fields of the `User` class.
+>* *`__convert_birthdate()`: [str](#user--userpy) - This private method brings the date of birth of the user received from VKontakte to the standardized form `YYYY-MM-DD`* 
+>* *`__decode_sex()`: [Sex](#user--userpy) - This private method converts the numeric representation of the value `sex` to Enum `Sex`.*
+>* *`__decode_online()`: [Online](#user--userpy) - This private method converts the numeric representation of the value `online` to Enum `Online`.*
+>* *`__decode_relation()`: [Relation](#user--userpy) - This private method converts the numeric representation of the value `relation` to Enum `Relation`.*
 >
 ></p></details>
 
@@ -321,79 +321,79 @@
 >
 ></p></details>
 ---
-### [user](user) / carer.py
+### [user](user) / [career.py](user/career.py)
 ><details><summary>Class `Career` - Information about fields from the user 'Career' section.</summary><p>
 >
->* `group_id`: [int](#usercarerpy) - _Property_ for getting the community ID (if available, otherwise company).
->* `company`: [str](#usercarerpy) - _Property_ for getting the company name (if available, otherwise group_id).
->* `city_id`: [str](#usercarerpy) - Everything to get the ids of the city, city (if is available, otherwise city_name).
->* `city_name`: [str](#usercarerpy) - _Property_ for getting the name of the city.
->* `country_id`: [int](#usercarerpy) - _Property_ for getting the country ID.
->* `work_from`: [int](#usercarerpy) - _Property_ for getting the year of the start of work.
->* `work_until`: [int](#usercarerpy) - _Property_ for getting the year of completion of work.
->* `position`: [str](#usercarerpy) - _Property_ for getting the title of the position
->* `get_json()`: [json](#usercarerpy) - This method generates a json object from the fields of the `Career` class.
+>* `group_id`: [int](#user--careerpy) - _Property_ for getting the community ID (if available, otherwise company).
+>* `company`: [str](#user--careerpy) - _Property_ for getting the company name (if available, otherwise group_id).
+>* `city_id`: [str](#user--careerpy) - Everything to get the ids of the city, city (if is available, otherwise city_name).
+>* `city_name`: [str](#user--careerpy) - _Property_ for getting the name of the city.
+>* `country_id`: [int](#user--careerpy) - _Property_ for getting the country ID.
+>* `work_from`: [int](#user--careerpy) - _Property_ for getting the year of the start of work.
+>* `work_until`: [int](#user--careerpy) - _Property_ for getting the year of completion of work.
+>* `position`: [str](#user--careerpy) - _Property_ for getting the title of the position
+>* `get_json()`: [json](#user--careerpy) - This method generates a json object from the fields of the `Career` class.
 >
 ></p></details>
 ---
-### [user](user) / contacts.py
+### [user](user) / [contacts.py](user/contacts.py)
 ><details><summary>Class `Contacts` - Information about fields from the user 'Contacts' section.</summary><p>
 >
->* `site`: [str](#usercontactspy) - _Property_ for getting the site address specified in the profile.
->* `connections`: [Dict](#usercontactspy)[[str](#usercontactspy), [Any](#usercontactspy)] - _Property_ for getting data about the user's services specified in the profile, such as: skype, livejournal. A separate string field containing the user's nickname is returned for each service. For example, "skype": "username".
->* `home_town`: [str](#usercontactspy) - _Property_ for getting the name of the hometown.
->* `city_id`: [int](#usercontactspy) - _Property_ for getting the user's city ID, which can be used to get it names using the `database` `method.getCitiesById`.
->* `city_name`: [str](#usercontactspy) - _Property_ for getting the name of the city where the user is located.
->* `country_id`: [int](#usercontactspy) - _Property_ for getting the user's country ID, which can be used to get it names using the `database` `method.getCitiesById`.
->* `country_name`: [str](#usercontactspy) - _Property_ for getting the name of the country in which the user is located.
->* `get_json()`: [json](#usercontactspy) - This method generates a json object from the fields of the `Contacts` class.
+>* `site`: [str](#user--contactspy) - _Property_ for getting the site address specified in the profile.
+>* `connections`: [Dict](#user--contactspy)[[str](#user--contactspy), [Any](#user--contactspy)] - _Property_ for getting data about the user's services specified in the profile, such as: skype, livejournal. A separate string field containing the user's nickname is returned for each service. For example, "skype": "username".
+>* `home_town`: [str](#user--contactspy) - _Property_ for getting the name of the hometown.
+>* `city_id`: [int](#user--contactspy) - _Property_ for getting the user's city ID, which can be used to get it names using the `database` `method.getCitiesById`.
+>* `city_name`: [str](#user--contactspy) - _Property_ for getting the name of the city where the user is located.
+>* `country_id`: [int](#user--contactspy) - _Property_ for getting the user's country ID, which can be used to get it names using the `database` `method.getCitiesById`.
+>* `country_name`: [str](#user--contactspy) - _Property_ for getting the name of the country in which the user is located.
+>* `get_json()`: [json](#user--contactspy) - This method generates a json object from the fields of the `Contacts` class.
 >
 ></p></details>
 ---
-### [user](user) / counters.py
+### [user](user) / [counters.py](user/counters.py)
 ><details><summary>Class `Counters` - Information about the number of different objects the user has.</summary><p>
 >
->* `notes`: [int](#usercounterspy) - _Property_ for getting the number of `notes from the user.
->* `pages`: [int](#usercounterspy) - _Property_ for getting the number of `subscribers from the user.
->* `audios`: [int](#usercounterspy) - _Property_ for getting the number of `audio recordings from the user.
->* `albums`: [int](#usercounterspy) - _Property_ for getting the number of `photo albums from the user.
->* `photos`: [int](#usercounterspy) - _Property_ for getting the number of `photos from the user.
->* `videos`: [int](#usercounterspy) - _Property_ for getting the number of `videos from the user.
->* `user_videos`: [int](#usercounterspy) - _Property_ for getting the number of `videos with user`.
->* `clips_followers`: [int](#usercounterspy) - _Property_ for getting the number of `clips with  user`.
->* `groups`: [int](#usercounterspy) - _Property_ for getting the number of community subscribers from the user.
->* `friends`: [int](#usercounterspy) - _Property_ for getting the number of friends a user has.
->* `followers`: [int](#usercounterspy) - _Property_ for getting the number of `subscribers` from the user.
->* `subscriptions`: [int](#usercounterspy) - _Property_ for getting the number of `subscriptions` from the user.
->* `online_friends`: [int](#usercounterspy) - _Property_ for getting the number of `online friends` of the user.
->* `get_json()`: [json](#usercounterspy) - This method generates a json object from the fields of the `Counters` class.
+>* `notes`: [int](#user--counterspy) - _Property_ for getting the number of `notes from the user.
+>* `pages`: [int](#user--counterspy) - _Property_ for getting the number of `subscribers from the user.
+>* `audios`: [int](#user--counterspy) - _Property_ for getting the number of `audio recordings from the user.
+>* `albums`: [int](#user--counterspy) - _Property_ for getting the number of `photo albums from the user.
+>* `photos`: [int](#user--counterspy) - _Property_ for getting the number of `photos from the user.
+>* `videos`: [int](#user--counterspy) - _Property_ for getting the number of `videos from the user.
+>* `user_videos`: [int](#user--counterspy) - _Property_ for getting the number of `videos with user`.
+>* `clips_followers`: [int](#user--counterspy) - _Property_ for getting the number of `clips with  user`.
+>* `groups`: [int](#user--counterspy) - _Property_ for getting the number of community subscribers from the user.
+>* `friends`: [int](#user--counterspy) - _Property_ for getting the number of friends a user has.
+>* `followers`: [int](#user--counterspy) - _Property_ for getting the number of `subscribers` from the user.
+>* `subscriptions`: [int](#user--counterspy) - _Property_ for getting the number of `subscriptions` from the user.
+>* `online_friends`: [int](#user--counterspy) - _Property_ for getting the number of `online friends` of the user.
+>* `get_json()`: [json](#user--counterspy) - This method generates a json object from the fields of the `Counters` class.
 >
 ></p></details>
 ---
-### [user](user) / interests.py
+### [user](user) / [interests.py](user/interests.py)
 ><details><summary>Class `Interests` - Information about fields from the user 'Interests' section.</summary><p>
 >
->* `about`: [str](#userinterestspy) - _Property_ for getting the contents of the `About me` field from the profile.
->* `status`: [str](#userinterestspy) - _Property_ for getting user status. Returns a string containing the `status` text located in profile under the name.
->* `activities`: [str](#userinterestspy) - _Property_ for getting the contents of the `Activity` field from the profile.
->* `interests`: [str](#userinterestspy) - _Property_ for getting the contents of the `Interests` field from the profile.
->* `music`: [str](#userinterestspy) - _Property_ for getting the contents of the `Favorite music` field from the profile.
->* `movies`: [str](#userinterestspy) - _Property_ for getting the contents of the `Favorite movies` field from the profile.
->* `tv`: [str](#userinterestspy) - _Property_ for getting the contents of the `Favorite TV shows` field from the profile.
->* `books`: [str](#userinterestspy) - _Property_ for getting the contents of the `Favorite books` field from the profile.
->* `games`: [str](#userinterestspy) - _Property_ for getting the contents of the `Favorite games` field from the profile.
->* `quotes`: [str](#userinterestspy) - _Property_ for getting the contents of the `Favorite quotes` field from the profile.
->* `get_json()`: [json](#userinterestspy) - This method generates a json object from the fields of the 'Interests' class.
+>* `about`: [str](#user--interestspy) - _Property_ for getting the contents of the `About me` field from the profile.
+>* `status`: [str](#user--interestspy) - _Property_ for getting user status. Returns a string containing the `status` text located in profile under the name.
+>* `activities`: [str](#user--interestspy) - _Property_ for getting the contents of the `Activity` field from the profile.
+>* `interests`: [str](#user--interestspy) - _Property_ for getting the contents of the `Interests` field from the profile.
+>* `music`: [str](#user--interestspy) - _Property_ for getting the contents of the `Favorite music` field from the profile.
+>* `movies`: [str](#user--interestspy) - _Property_ for getting the contents of the `Favorite movies` field from the profile.
+>* `tv`: [str](#user--interestspy) - _Property_ for getting the contents of the `Favorite TV shows` field from the profile.
+>* `books`: [str](#user--interestspy) - _Property_ for getting the contents of the `Favorite books` field from the profile.
+>* `games`: [str](#user--interestspy) - _Property_ for getting the contents of the `Favorite games` field from the profile.
+>* `quotes`: [str](#user--interestspy) - _Property_ for getting the contents of the `Favorite quotes` field from the profile.
+>* `get_json()`: [json](#user--interestspy) - This method generates a json object from the fields of the 'Interests' class.
 >
 ></p></details>
 ---
-### [user](user) / last_seen.py
+### [user](user) / [last_seen.py](user/last_seen.py)
 ><details><summary>Class `LastSeen` - The time of the user last visit.</summary><p>
 >
->* `time`: [datetime](#userlast_seenpy) - _Property_ for getting the number of notes from the user.
->* `platform`: [Platform](#userlast_seenpy) - _Property_ for getting the number of subscribers from the user.
->* `get_json()`: [json](#userlast_seenpy) - This method generates a json object from the fields of the 'LastSeen' class.
->* *`__convert_platform()`: [Platform](#userlast_seenpy) - This private method converts the numeric representation of the value `platform` to Enum `Platform`.*
+>* `time`: [datetime](#user--last_seenpy) - _Property_ for getting the number of notes from the user.
+>* `platform`: [Platform](#user--last_seenpy) - _Property_ for getting the number of subscribers from the user.
+>* `get_json()`: [json](#user--last_seenpy) - This method generates a json object from the fields of the 'LastSeen' class.
+>* *`__convert_platform()`: [Platform](#user--last_seenpy) - This private method converts the numeric representation of the value `platform` to Enum `Platform`.*
 >
 ></p></details>
 
@@ -409,22 +409,22 @@
 >
 ></p></details>
 ---
-### [user](user) / lifeposition.py
+### [user](user) / [lifeposition.py](user/lifeposition.py)
 ><details><summary>Class `LifePosition` - Information about fields from the user `Life position` section.</summary><p>
 >
->* `political`: [Political](#userlifepositionpy) - _Property_ for getting information from the `Political Preferences` field.
->* `langs`: [List](#userlifepositionpy)[[str](#userlifepositionpy)] - _Property_ for getting information from the `Political Preferences` field.
->* `religion`: [str](#userlifepositionpy) - _Property_ for getting information from the `Worldview` field.
->* `inspired_by`: [str](#userlifepositionpy) - _Property_ for getting information from the field `Sources of inspiration`.
->* `people_main`: [PeopleMain](#userlifepositionpy) - _Property_ for getting information from the field `The main thing in people`.
->* `life_main`: [LifeMain](#userlifepositionpy) - _Property_ for getting information from the `Main thing in life` field.
->* `smoking`: [Position](#userlifepositionpy) - _Property_ for getting information from the `Smoking Attitude` field.
->* `alcohol`: [Position](#userlifepositionpy) - _Property_ for getting information from the `Attitude to alcohol` field.
->* `get_json()`: [json](#userlifepositionpy) - This method generates a json object from the fields of the `LifePosition` class.
->* *`__convert_political()`: [Political](#userlifepositionpy) - This private method converts the numeric representation of the value `political` to Enum `Political`.*
->* *`__convert_people_main()`: [PeopleMain](#userlifepositionpy) - This private method converts the numeric representation of the value `people_main` to Enum `PeopleMain`.*
->* *`__convert_life_main()`: [LifeMain](#userlifepositionpy) - This private method converts the numeric representation of the value `life_main` to Enum `LifeMain`.*
->* *`__convert_position()`: [Position](#userlifepositionpy) - This private method converts the numeric representation of the value `position` to Enum `Position`.*
+>* `political`: [Political](#user--lifepositionpy) - _Property_ for getting information from the `Political Preferences` field.
+>* `langs`: [List](#user--lifepositionpy)[[str](#user--lifepositionpy)] - _Property_ for getting information from the `Political Preferences` field.
+>* `religion`: [str](#user--lifepositionpy) - _Property_ for getting information from the `Worldview` field.
+>* `inspired_by`: [str](#user--lifepositionpy) - _Property_ for getting information from the field `Sources of inspiration`.
+>* `people_main`: [PeopleMain](#user--lifepositionpy) - _Property_ for getting information from the field `The main thing in people`.
+>* `life_main`: [LifeMain](#user--lifepositionpy) - _Property_ for getting information from the `Main thing in life` field.
+>* `smoking`: [Position](#user--lifepositionpy) - _Property_ for getting information from the `Smoking Attitude` field.
+>* `alcohol`: [Position](#user--lifepositionpy) - _Property_ for getting information from the `Attitude to alcohol` field.
+>* `get_json()`: [json](#user--lifepositionpy) - This method generates a json object from the fields of the `LifePosition` class.
+>* *`__convert_political()`: [Political](#user--lifepositionpy) - This private method converts the numeric representation of the value `political` to Enum `Political`.*
+>* *`__convert_people_main()`: [PeopleMain](#user--lifepositionpy) - This private method converts the numeric representation of the value `people_main` to Enum `PeopleMain`.*
+>* *`__convert_life_main()`: [LifeMain](#user--lifepositionpy) - This private method converts the numeric representation of the value `life_main` to Enum `LifeMain`.*
+>* *`__convert_position()`: [Position](#user--lifepositionpy) - This private method converts the numeric representation of the value `position` to Enum `Position`.*
 >
 ></p></details>
 
@@ -476,26 +476,26 @@
 >
 ></p></details>
 ---
-### [user](user) / military.py
+### [user](user) / [military.py](user/military.py)
 ><details><summary>Class `Military` - Information about fields from the user 'Military' section.</summary><p>
 >
->* `unit`: [str](#usermilitarypy) - _Property_ for getting the number of a military unit.
->* `unit_id`: [int](#usermilitarypy) - _Property_ for getting the part ID in the database.
->* `country_id`: [int](#usermilitarypy) - _Property_ for getting the ID of the country where the part is located.
->* `military_from`: [int](#usermilitarypy) - _Property_ for getting the year of service start.
->* `military_until`: [int](#usermilitarypy) - _Property_ for getting the end of service year.
->* `get_json()`: [json](#usermilitarypy) - This method generates a json object from the fields of the `Military` class.
+>* `unit`: [str](#user--militarypy) - _Property_ for getting the number of a military unit.
+>* `unit_id`: [int](#user--militarypy) - _Property_ for getting the part ID in the database.
+>* `country_id`: [int](#user--militarypy) - _Property_ for getting the ID of the country where the part is located.
+>* `military_from`: [int](#user--militarypy) - _Property_ for getting the year of service start.
+>* `military_until`: [int](#user--militarypy) - _Property_ for getting the end of service year.
+>* `get_json()`: [json](#user--militarypy) - This method generates a json object from the fields of the `Military` class.
 >
 ></p></details>
 ---
-### [[user](user)]() / [occupation.py]()
+### [user](user)/ [occupation.py](user/occupation.py)
 ><details><summary>Class `Occupation` - Information about the user's current occupation.</summary><p>
 >
->* `id`: [int](#useroccupationpy) - _Property_ for getting the activity ID.
->* `name`: [str](#useroccupationpy) - _Property_ for getting the name of the activity.
->* `type`: [OccupationType](#useroccupationpy) - _Property_ for getting the type of activity.
->* `get_json()`: [json](#useroccupationpy) - This method generates a json object from the fields of the `Occupation` class.
->* `__convert_occupation_type()`: [OccupationType](#useroccupationpy) - This private method converts the numeric representation of the value `occupation_type` to Enum `Platform`.
+>* `id`: [int](#user--occupationpy) - _Property_ for getting the activity ID.
+>* `name`: [str](#user--occupationpy) - _Property_ for getting the name of the activity.
+>* `type`: [OccupationType](#user--occupationpy) - _Property_ for getting the type of activity.
+>* `get_json()`: [json](#user--occupationpy) - This method generates a json object from the fields of the `Occupation` class.
+>* `__convert_occupation_type()`: [OccupationType](#user--occupationpy) - This private method converts the numeric representation of the value `occupation_type` to Enum `Platform`.
 >
 ></p></details>
 
@@ -510,17 +510,17 @@
 ### [user](user) / [params.py](user/params.py)
 ><details><summary>Class `Params` - Information about fields from the user `Params` section.</summary><p>
 >
->* `can_access_closed`: [bool](#useruser--paramspyuserparamspy)  - _Property_ for getting information about the user's ability to see the profile when is_closed = 1 (for example, he is in friends).
->* `is_closed`: [bool](#useruser--paramspyuserparamspy) - _Property_ for getting information about whether the user's profile is hidden by privacy settings.
->* `has_mobile`: [bool](#useruser--paramspyuserparamspy) - _Property_ for getting information about whether the user's mobile phone number is known.
->* `has_photo`: [bool](#useruser--paramspyuserparamspy) - _Property_ for getting information about whether the user has set a profile photo.
->* `is_no_index`: [bool](#useruser--paramspyuserparamspy) - _Property_ for getting information about whether the profile is indexed by search sites.
->* `is_trending`: [bool](#useruser--paramspyuserparamspy) - _Property_ for getting information about whether the profile is indexed by search sites.
->* `is_verified`: [bool](#useruser--paramspyuserparamspy) - _Property_ for getting information about whether the user's page has been verified.
->* `is_wall_privat`: [bool](#useruser--paramspyuserparamspy) - _Property_ for getting information about whether the user's page is open.
->* `timezone`: [str](#useruser--paramspyuserparamspy) - _Property_ for getting information about the user's time zone.
->* `last_seen`: [Optional](#useruser--paramspyuserparamspy)[[LastSeen](#userlast_seenpy)] - _Property_ for getting information about the user's last visit.
->* `get_json()`: [json](#useruser--paramspyuserparamspy) - This method generates a json object from the fields of the `Params` class.
+>* `can_access_closed`: [bool](#user--paramspy)  - _Property_ for getting information about the user's ability to see the profile when is_closed = 1 (for example, he is in friends).
+>* `is_closed`: [bool](#user--paramspy) - _Property_ for getting information about whether the user's profile is hidden by privacy settings.
+>* `has_mobile`: [bool](#user--paramspy) - _Property_ for getting information about whether the user's mobile phone number is known.
+>* `has_photo`: [bool](#user--paramspy) - _Property_ for getting information about whether the user has set a profile photo.
+>* `is_no_index`: [bool](#user--paramspy) - _Property_ for getting information about whether the profile is indexed by search sites.
+>* `is_trending`: [bool](#user--paramspy) - _Property_ for getting information about whether the profile is indexed by search sites.
+>* `is_verified`: [bool](#user--paramspy) - _Property_ for getting information about whether the user's page has been verified.
+>* `is_wall_privat`: [bool](#user--paramspy) - _Property_ for getting information about whether the user's page is open.
+>* `timezone`: [str](#user--paramspy) - _Property_ for getting information about the user's time zone.
+>* `last_seen`: [Optional](#user--paramspy)[[LastSeen](#user--last_seenpy)] - _Property_ for getting information about the user's last visit.
+>* `get_json()`: [json](#user--paramspy) - This method generates a json object from the fields of the `Params` class.
 >
 ></p></details>
 ---
