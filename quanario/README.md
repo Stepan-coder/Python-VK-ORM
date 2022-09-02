@@ -411,19 +411,19 @@
 ### user/lifeposition.py
 ><details><summary>Class `LifePosition` - Information about fields from the user `Life position` section.</summary><p>
 >
->* `political` - _Property_ for getting information from the `Political Preferences` field.
->* `langs` - _Property_ for getting information from the `Political Preferences` field.
->* `religion` - _Property_ for getting information from the `Worldview` field.
->* `inspired_by` - _Property_ for getting information from the field `Sources of inspiration`.
->* `people_main` - _Property_ for getting information from the field `The main thing in people`.
->* `life_main` - _Property_ for getting information from the `Main thing in life` field.
->* `smoking` - _Property_ for getting information from the `Smoking Attitude` field.
->* `alcohol` - _Property_ for getting information from the `Attitude to alcohol` field.
->* `get_json()` - This method generates a json object from the fields of the `LifePosition` class.
->* *`__convert_political()` - This private method converts the numeric representation of the value `political` to Enum `Political`.*
->* *`__convert_people_main()` - This private method converts the numeric representation of the value `people_main` to Enum `PeopleMain`.*
->* *`__convert_life_main()` - This private method converts the numeric representation of the value `life_main` to Enum `LifeMain`.*
->* *`__convert_position()` - This private method converts the numeric representation of the value `position` to Enum `Position`.*
+>* `political`: [Political](#userlifepositionpy) - _Property_ for getting information from the `Political Preferences` field.
+>* `langs`: [List](#userlifepositionpy)[[str](#userlifepositionpy)] - _Property_ for getting information from the `Political Preferences` field.
+>* `religion`: [str](#userlifepositionpy) - _Property_ for getting information from the `Worldview` field.
+>* `inspired_by`: [str](#userlifepositionpy) - _Property_ for getting information from the field `Sources of inspiration`.
+>* `people_main`: [PeopleMain](#userlifepositionpy) - _Property_ for getting information from the field `The main thing in people`.
+>* `life_main`: [LifeMain](#userlifepositionpy) - _Property_ for getting information from the `Main thing in life` field.
+>* `smoking`: [Position](#userlifepositionpy) - _Property_ for getting information from the `Smoking Attitude` field.
+>* `alcohol`: [Position](#userlifepositionpy) - _Property_ for getting information from the `Attitude to alcohol` field.
+>* `get_json()`: [json](#userlifepositionpy) - This method generates a json object from the fields of the `LifePosition` class.
+>* *`__convert_political()`: [Political](#userlifepositionpy) - This private method converts the numeric representation of the value `political` to Enum `Political`.*
+>* *`__convert_people_main()`: [PeopleMain](#userlifepositionpy) - This private method converts the numeric representation of the value `people_main` to Enum `PeopleMain`.*
+>* *`__convert_life_main()`: [LifeMain](#userlifepositionpy) - This private method converts the numeric representation of the value `life_main` to Enum `LifeMain`.*
+>* *`__convert_position()`: [Position](#userlifepositionpy) - This private method converts the numeric representation of the value `position` to Enum `Position`.*
 >
 ></p></details>
 
@@ -465,7 +465,7 @@
 >
 ></p></details>
 
-><details><summary>Enum `LifeMain`</summary><p>
+><details><summary>Enum `Position`</summary><p>
 >
 >* `SHARPLY_NEGATIVE`
 >* `NEGATIVE`
@@ -490,11 +490,11 @@
 ### [user/occupation.py]()
 ><details><summary>Class `Occupation` - Information about the user's current occupation.</summary><p>
 >
->* `id` - _Property_ for getting the activity ID.
->* `name` - _Property_ for getting the name of the activity.
->* `type` - _Property_ for getting the type of activity.
->* `get_json()` - This method generates a json object from the fields of the `Occupation` class.
->* `__convert_occupation_type()` - This private method converts the numeric representation of the value `occupation_type` to Enum `Platform`.
+>* `id`: [int](#useroccupationpy) - _Property_ for getting the activity ID.
+>* `name`: [str](#useroccupationpy) - _Property_ for getting the name of the activity.
+>* `type`: [OccupationType](#useroccupationpy) - _Property_ for getting the type of activity.
+>* `get_json()`: [json](#useroccupationpy) - This method generates a json object from the fields of the `Occupation` class.
+>* `__convert_occupation_type()`: [OccupationType](#useroccupationpy) - This private method converts the numeric representation of the value `occupation_type` to Enum `Platform`.
 >
 ></p></details>
 
@@ -502,7 +502,7 @@
 >
 >* `WORK`
 >* `SCHOOL`
->* `UNIVERSITY
+>* `UNIVERSITY`
 >
 ></p></details>
 ---
@@ -526,8 +526,8 @@
 ### user/education/education.py
 ><details><summary>Class `Education` - Information about fields from the user `Education` section.</summary><p>
 >
->* `schools`: [Optional](#usereducationeducationpy)[[List](#usereducationeducationpy)[[School](#userlast_seenpy)]] - _Property_ for getting a list of schools where the user studied. Array of instances of the `School` class.
->* `universities`: [Optional](#usereducationeducationpy)[[List](#usereducationeducationpy)[[University](#userlast_seenpy)]]  - _Property_ for getting a list of universities where the user studied. Array of instances of the `University` class.
+>* `schools`: [Optional](#usereducationeducationpy)[[List](#usereducationeducationpy)[[School](#usereducationschoolspy)]] - _Property_ for getting a list of schools where the user studied. Array of instances of the `School` class.
+>* `universities`: [Optional](#usereducationeducationpy)[[List](#usereducationeducationpy)[[University](#usereducationuniversitiespy)]]  - _Property_ for getting a list of universities where the user studied. Array of instances of the `University` class.
 >
 ></p></details>
 ---

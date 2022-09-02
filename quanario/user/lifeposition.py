@@ -38,7 +38,7 @@ class LifeMain(Enum):
 class Position(Enum):
     SHARPLY_NEGATIVE = "SHARPLY_NEGATIVE"  # резко негативное
     NEGATIVE = "NEGATIVE"  # негативное
-    COMPROMISE = "COMPROMISE"  # негативное
+    COMPROMISE = "COMPROMISE"  # компромиссное
     NEUTRAL = "NEUTRAL"  # нейтральное
     POSITIVE = "POSITIVE"  # положительное
 
