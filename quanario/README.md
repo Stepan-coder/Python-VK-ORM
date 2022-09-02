@@ -409,10 +409,10 @@
 ></p></details>
 ---
 ### user/lifeposition.py
-###### Class `LifePosition` - Information about fields from the `Life position` section.
-[](#class-lifeposition---information-about-fields-from-the-life-position-section)
-><details><summary>Class `LifePosition` - Information about fields from the `Life position` section.</summary><p>
+######Class `LifePosition`
+><details><summary>View more</summary><p>
 >
+>Class `LifePosition` - Information about fields from the user `Life position` section.
 >* `political` - Property for getting information from the `Political Preferences` field.
 >* `langs` - Property for getting information from the `Political Preferences` field.
 >* `religion` - Property for getting information from the `Worldview` field.
