@@ -569,7 +569,7 @@
 >
 ></p></details>
 ---
-### [user](user) / [education](user/education) / [schools.py](user/education/universities.py)
+### [user](user) / [education](user/education) / [universities.py](user/education/universities.py)
 ><details><summary>Class `University` - Information about fields from the user `University` section.</summary><p>
 >
 >* `id`: [int](#usereducationuniversitiespy) - _Property_ for getting the university ID.
