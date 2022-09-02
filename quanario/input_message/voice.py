@@ -1,10 +1,10 @@
 import os
 import urllib.request
-from typing import List
+from typing import Dict, List, Any
 
 
 class Voice:
-    def __init__(self, voice: dict):
+    def __init__(self, voice: Dict[str, Any]):
         self.__voice = voice
 
     @property

@@ -48,7 +48,7 @@
 
 ---
 
-### bot.py
+### [bot.py](bot.py)
 ><details><summary>Class `Bot`</summary><p>
 >
 >* `TOKEN` - _Property_ for getting a community TOKEN.
@@ -65,7 +65,7 @@
 >
 ></p></details>
 ---
-### send.py
+### [send.py](send.py)
 ><details><summary>Class `Send`</summary><p>
 >
 >* `message()` - This method allows you to send a message with the text `message` to a user with the id `user_id`, if necessary, it is possible to attach a keyboard with buttons - `keyboard`. For more information about `keyboard`, see the [documentation](message_extensions/keyboard.py).
@@ -78,7 +78,7 @@
 >
 ></p></details>
 ---
-### upload.py
+### [upload.py](upload.py)
 ><details><summary>Class `Upload`</summary><p>
 >
 >* `voice()` - This method allows you to get an `attachment` for an `audio file` to send it to the user.
@@ -88,7 +88,7 @@
 >
 ></p></details>
 ---
-### message_extensions / carousel.py
+### [message_extensions](message_extensions) / [carousel.py](message_extensions/carousel.py)
 ><details><summary>Class `Carousel` - The main class for creating attachments of the `Carousel` type. The difference between the carousel and ordinary messages is its unusual appearance, the carousel consists of blocks (maximum 10 pcs.), each block has a title, description and picture. Subsequently, it is possible to attach to each block unique keyboard. It is important that the number of buttons matches in all blocks!!!</summary><p>
 >
 >* `count` - This _Property_ contains the number of elements in the carousel.
@@ -115,7 +115,7 @@
 >
 ></p></details>
 ---
-### message_extensions / keyboard.py
+### [message_extensions](message_extensions) / [keyboard.py](message_extensions/keyboard.py)
 ><details><summary>Class `Keyboard` - The keyboard in messengers is a special type of attachment, unlike ordinary text messages, it is a tool for interactive user interaction with a bot. By clicking on the button, the user gives the system various commands: if these are ordinary buttons, then when clicking on them, the user gives the command to send the text to the community that is written on the button (i.e., the typing process is accelerated), if it is a link or a geo-location, then the system performs these actions outside of a conversation with the bot (sends to the site, sends a placemark on the map).</summary><p>
 >
 >* `add_button()` -
@@ -134,20 +134,20 @@
 >
 ></p></details>
 ---
-### input_message / message.py
+### [input_message](input_message) / [message.py](input_message/message.py)
 ><details><summary>Class `Message`</summary><p>
 >
->* `type` - _Property_ for getting the message type.
->* `text` - _Property_ for receiving the text of the message sent by the user.
->* `user_id` - _Property_ for getting the message type.
->* `attachments` - _Property_ for getting a list of attachments.
->* `is_have_attachments()` - Method for getting information about the presence of attachments in a message from a user.
->* `is_voices()` - A method for getting information about the presence of `voice` messages in attachments to a message from a user.
->* `is_audio()` - A method for getting information about the presence of `music` in attachments to a message from a user.
->* `is_photos()` - Method for getting information about the presence of `photos` in attachments to a message from the user.
->* `is_videos()` - Method for getting information about the presence of `video` recordings in attachments to a message from a user.
->* `is_files()` - Method for getting information about the presence of `files` or `documents` in attachments to a message from the user.
->* `is_geo()` - Method for getting information about sending a geo position by the user.
+>* `type`: [VkBotEventType](#input_message--messagepy) - _Property_ for getting the message type.
+>* `text`: [str](#input_message--messagepy) - _Property_ for receiving the text of the message sent by the user.
+>* `user_id`: [int](#input_message--messagepy) - _Property_ for getting the message type.
+>* `attachments`: [Optional](#input_message--messagepy)[[Dict](#input_message--messagepy)[[str](#input_message--messagepy), [Any](#input_message--messagepy)]] - _Property_ for getting a list of attachments.
+>* `is_have_attachments()`: [bool](#input_message--messagepy) - Method for getting information about the presence of attachments in a message from a user.
+>* `is_voices()`: [bool](#input_message--messagepy) - A method for getting information about the presence of `voice` messages in attachments to a message from a user.
+>* `is_audio()`: [bool](#input_message--messagepy) - A method for getting information about the presence of `music` in attachments to a message from a user.
+>* `is_photos()`: [bool](#input_message--messagepy) - Method for getting information about the presence of `photos` in attachments to a message from the user.
+>* `is_videos()`: [bool](#input_message--messagepy) - Method for getting information about the presence of `video` recordings in attachments to a message from a user.
+>* `is_files()`: [bool](#input_message--messagepy) - Method for getting information about the presence of `files` or `documents` in attachments to a message from the user.
+>* `is_geo()`: [bool](#input_message--messagepy) - Method for getting information about sending a geo position by the user.
 >* `get_voices()` - This method returns a list of instances of the `Voice` class.
 >* `get_audios()` - This method returns a list of instances of the `Audio` class.
 >* `get_photos()` - This method returns a list of instances of the `Photo` class.
@@ -157,109 +157,109 @@
 >
 ></p></details>
 ---
-### input_message / voice.py
+### [input_message](input_message) / [voice.py](input_message/voice.py)
 ><details><summary>Class `Voice`</summary><p>
 >
->* `id` - _Property_ for getting a unique file identifier.
->* `duration` - _Property_ for getting the duration of an audio file.
->* `url_mp3` - _Property_ for getting a link to download a file in the `.mp3` format.
->* `url_ogg` - _Property_ for getting a link to download a file in the `.ogg` format.
->* `waveform` - _Property_ for getting a graph of file volume changes.
->* `owner_id` - _Property_ for getting the ID of the `user` or `community` who uploaded the file.
->* `access_key` - _Property_ for obtaining an access key, for sending a file to other users.
->* `save_mp3()` - A method for saving a file in the system in `.mp3` format.
->* `save_ogg()` - A method for saving a file in the system in `.ogg` format.
+>* `id`: [int](#input_message--voicepy) - _Property_ for getting a unique file identifier.
+>* `duration`: [int](#input_message--voicepy) - _Property_ for getting the duration of an audio file.
+>* `url_mp3`: [str](#input_message--voicepy) - _Property_ for getting a link to download a file in the `.mp3` format.
+>* `url_ogg`: [str](#input_message--voicepy) - _Property_ for getting a link to download a file in the `.ogg` format.
+>* `waveform`: [List](#input_message--voicepy)[[int](#input_message--voicepy)] - _Property_ for getting a graph of file volume changes.
+>* `owner_id`: [int](#input_message--voicepy) - _Property_ for getting the ID of the `user` or `community` who uploaded the file.
+>* `access_key`: [str](#input_message--voicepy) - _Property_ for obtaining an access key, for sending a file to other users.
+>* `save_mp3()`: [None](#input_message--voicepy) - A method for saving a file in the system in `.mp3` format.
+>* `save_ogg()`: [None](#input_message--voicepy) - A method for saving a file in the system in `.ogg` format.
 >
 ></p></details>
 ---
-### input_message / audio.py
+### [input_message](input_message) / [audio.py](input_message/audio.py)
 ><details><summary>Class `Audio`</summary><p>
 >
->* `id` - _Property_ for getting a unique file identifier.
->* `title` - _Property_ for getting the name of the audio file.
->* `artist` - _Property_ for getting the artist's name.
->* `date` - _Property_ for getting the file upload date to the `VKontakte` server (in Unix format).
->* `duration` - _Property_ for getting the duration of an audio.
->* `url_mp3` - _Property_ for getting a link to download a file.
->* `is_explicit` - 
->* `is_focus_track` - 
->* `owner_id` - _Property_ for getting the ID of the `user` or `community` who uploaded the file.
->* `track_code` - _Property_ for obtaining an access key, for sending a file to other users.
->* `save_mp3()` - A method for saving a file in the system in `.mp3` format.
+>* `id`: [int](#input_message--audiopy) - _Property_ for getting a unique file identifier.
+>* `title`: [str](#input_message--audiopy) - _Property_ for getting the name of the audio file.
+>* `artist`: [str](#input_message--audiopy) - _Property_ for getting the artist's name.
+>* `date`: [int](#input_message--audiopy) - _Property_ for getting the file upload date to the `VKontakte` server (in Unix format).
+>* `duration`: [int](#input_message--audiopy) - _Property_ for getting the duration of an audio.
+>* `url_mp3`: [str](#input_message--audiopy) - _Property_ for getting a link to download a file.
+>* `is_explicit`: [bool](#input_message--audiopy) - 
+>* `is_focus_track`: [bool](#input_message--audiopy) - 
+>* `owner_id`: [int](#input_message--audiopy) - _Property_ for getting the ID of the `user` or `community` who uploaded the file.
+>* `track_code`: [str](#input_message--audiopy) - _Property_ for obtaining an access key, for sending a file to other users.
+>* `save_mp3()`: [None](#input_message--audiopy) - A method for saving a file in the system in `.mp3` format.
 >
 ></p></details>
 ---
-### input_message / photo.py
+### [input_message](input_message) / [photo.py](input_message/photo.py)
 ><details><summary>Class `Photo`</summary><p>
 >
->* `id` - _Property_ for getting a unique file identifier.
->* `width` - _Property_ for getting the width of the photo.
->* `height` - _Property_ for getting the height of the photo.
->* `url` - _Property_ for getting a link to download a file.
->* `album_id` - _Property_ for getting the album where the file is placed.
->* `date` - _Property_ for getting the file upload date to the `VKontakte` server (in Unix format).
->* `post_id` - _Property_ for getting the post ID.
->* `owner_id` - _Property_ for getting the ID of the `user` or `community` who uploaded the file.
->* `access_key` - _Property_ for obtaining an access key, for sending a file to other users.
->* `get_attachment()` - Method for getting the file ID string.
->* `save()` - A method for saving a file in the system.
->* *`__get_image` - A private method for finding the highest file resolution.*
+>* `id`: [int](#input_message--photopy) - _Property_ for getting a unique file identifier.
+>* `width`: [int](#input_message--photopy) - _Property_ for getting the width of the photo.
+>* `height`: [int](#input_message--photopy) - _Property_ for getting the height of the photo.
+>* `url`: [str](#input_message--photopy) - _Property_ for getting a link to download a file.
+>* `album_id`: [int](#input_message--photopy) - _Property_ for getting the album where the file is placed.
+>* `date`: [int](#input_message--photopy) - _Property_ for getting the file upload date to the `VKontakte` server (in Unix format).
+>* `post_id`: [int](#input_message--photopy) - _Property_ for getting the post ID.
+>* `owner_id`: [int](#input_message--photopy) - _Property_ for getting the ID of the `user` or `community` who uploaded the file.
+>* `access_key`: [str](#input_message--photopy) - _Property_ for obtaining an access key, for sending a file to other users.
+>* `get_attachment()`: [str](#input_message--photopy) - Method for getting the file ID string.
+>* `save()`: [None](#input_message--photopy) - A method for saving a file in the system.
+>* *`__get_image`: [Tuple](#input_message--photopy)[[int](#input_message--photopy), [int](#input_message--photopy), [str](#input_message--photopy)] - A private method for finding the highest file resolution.*
 >
 ></p></details>
 ---
-### input_message / video.py
-><details><summary>Class `Photo`</summary><p>
+### [input_message](input_message) / [video.py](input_message/video.py)
+><details><summary>Class `Video`</summary><p>
 >
->* `id` - _Property_ for getting a unique file identifier.
->* `width` - _Property_ for getting the width of the video.
->* `height` - _Property_ for getting the height of the video.
->* `title` - _Property_ for getting the full name of the file.
->* `url` - _Property_ for getting a link to download a file.
->* `date` - _Property_ for getting the file upload date to the `VKontakte` server (in Unix format).
->* `description` - _Property_ for getting a description of the video.
->* `duration` - _Property_ for getting the duration of an video.
->* `views` - _Property_ for getting the number of views of a video recording.
->* `can_edit` - _Property_ for getting the number of views of a video recording.
->* `can_add` - _Property_ for getting information whether the user can record a video to himself.
->* `can_attach_link` - _Property_ for getting information whether a user can attach an action button to a video.
->* `comments` - _Property_ for getting the number of comments on the video.
->* `is_favorite` - _Property_ for getting information about adding an object to bookmarks from the current user.
->* `owner_id` - _Property_ for getting the ID of the `user` or `community` who uploaded the file.
->* `access_key` - _Property_ for obtaining an access key, for sending a file to other users.
->* `get_attachment()` - Method for getting the file ID string.
->
-></p></details>
----
-### input_message / file.py
-><details><summary>Class `Photo`</summary><p>
->
->* `id` - _Property_ for getting a unique file identifier.
->* `type` - _Property_ for getting a unique file ID.
->* `title` - _Property_ for getting the full name of the file.
->* `extension` - _Property_ for getting the file extension, for example: `.png` or `.pdf`.
->* `size` - _Property_ for getting the file size in bytes. (How much space does it take up on disk)
->* `url` - _Property_ for getting a link to download a file.
->* `date` - _Property_ for getting the file upload date to the `VKontakte` server (in Unix format).
->* `owner_id` - _Property_ for getting the ID of the `user` or `community` who uploaded the file.
->* `access_key` - _Property_ for obtaining an access key, for sending a file to other users.
->* `get_attachment` - Method for getting the file ID string.
->* `save` -Method for saving a file in the system.
+>* `id`: [int](#input_message--videopy) - _Property_ for getting a unique file identifier.
+>* `width`: [int](#input_message--videopy) - _Property_ for getting the width of the video.
+>* `height`: [int](#input_message--videopy) - _Property_ for getting the height of the video.
+>* `title`: [str](#input_message--videopy) - _Property_ for getting the full name of the file.
+>* `url`: [str](#input_message--videopy) - _Property_ for getting a link to download a file.
+>* `date`: [int](#input_message--videopy) - _Property_ for getting the file upload date to the `VKontakte` server (in Unix format).
+>* `description`: [str](#input_message--videopy) - _Property_ for getting a description of the video.
+>* `duration`: [int](#input_message--videopy) - _Property_ for getting the duration of an video.
+>* `views`: [tin](#input_message--videopy) - _Property_ for getting the number of views of a video recording.
+>* `can_edit`: [int](#input_message--videopy) - _Property_ for getting the number of views of a video recording.
+>* `can_add`: [int](#input_message--videopy) - _Property_ for getting information whether the user can record a video to himself.
+>* `can_attach_link`: [int](#input_message--videopy) - _Property_ for getting information whether a user can attach an action button to a video.
+>* `comments`: [int](#input_message--videopy) - _Property_ for getting the number of comments on the video.
+>* `is_favorite`: [bool](#input_message--videopy) - _Property_ for getting information about adding an object to bookmarks from the current user.
+>* `owner_id`: [int](#input_message--videopy) - _Property_ for getting the ID of the `user` or `community` who uploaded the file.
+>* `access_key`: [str](#input_message--videopy) - _Property_ for obtaining an access key, for sending a file to other users.
+>* `get_attachment()`: [str](#input_message--videopy) - Method for getting the file ID string.
 >
 ></p></details>
 ---
-### input_message/geoposition.py
-><details><summary>Class `Photo`</summary><p>
+### [input_message](input_message) / [file.py](input_message/file.py)
+><details><summary>Class `File`</summary><p>
 >
->* `id` - _Property_ for getting the unique identifier of the placemark on the map.
->* `from_id` - _Property_ for getting the unique identifier of the user who sent the tag.
->* `date` - _Property_ for getting the date of sending the geo position.
->* `out` - 
->* `latitude` - _Property_ for getting the geographical `latitude` of the starting point, set in degrees.
->* `longitude` - _Property_ for getting the geographical `longitude` of the starting point, set in degrees.
->* `location_type` - _Property_ for getting the type of the label sent by the user.
->* `title` - _Property_ for getting the location name as a string.
->* `country` - _Property_ for getting the country where the label is located.
->* `city` - _Property_ for getting the city where the label is located.
+>* `id`: [int](#input_message--filepy) - _Property_ for getting a unique file identifier.
+>* `type`: [int](#input_message--filepy) - _Property_ for getting a unique file ID.
+>* `title`: [str](#input_message--filepy) - _Property_ for getting the full name of the file.
+>* `extension`: [str](#input_message--filepy) - _Property_ for getting the file extension, for example: `.png` or `.pdf`.
+>* `size`: [str](#input_message--filepy) - _Property_ for getting the file size in bytes. (How much space does it take up on disk)
+>* `url`: [str](#input_message--filepy) - _Property_ for getting a link to download a file.
+>* `date`: [int](#input_message--filepy) - _Property_ for getting the file upload date to the `VKontakte` server (in Unix format).
+>* `owner_id`: [int](#input_message--filepy) - _Property_ for getting the ID of the `user` or `community` who uploaded the file.
+>* `access_key`: [str](#input_message--filepy) - _Property_ for obtaining an access key, for sending a file to other users.
+>* `get_attachment()`: [str](#input_message--filepy) - Method for getting the file ID string.
+>* `save()`: [None](#input_message--filepy) -Method for saving a file in the system.
+>
+></p></details>
+---
+### [input_message](input_message) / [geoposition.py](input_message/geoposition.py)
+><details><summary>Class `Geo`</summary><p>
+>
+>* `id`: [int](#input_message--geopositionpy) - _Property_ for getting the unique identifier of the placemark on the map.
+>* `from_id`: [int](#input_message--geopositionpy) - _Property_ for getting the unique identifier of the user who sent the tag.
+>* `date`: [int](#input_message--geopositionpy) - _Property_ for getting the date of sending the geo position.
+>* `out`: [int](#input_message--geopositionpy) - 
+>* `latitude`: [float](#input_message--geopositionpy) - _Property_ for getting the geographical `latitude` of the starting point, set in degrees.
+>* `longitude`: [float](#input_message--geopositionpy) - _Property_ for getting the geographical `longitude` of the starting point, set in degrees.
+>* `location_type`: [str](#input_message--geopositionpy) - _Property_ for getting the type of the label sent by the user.
+>* `title`: [str](#input_message--geopositionpy) - _Property_ for getting the location name as a string.
+>* `country`: [str](#input_message--geopositionpy) - _Property_ for getting the country where the label is located.
+>* `city`: [str](#input_message--geopositionpy) - _Property_ for getting the city where the label is located.
 >
 ></p></details>
 ---

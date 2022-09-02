@@ -63,7 +63,7 @@ class Video:
         return self.__video['description']
 
     @property
-    def duration(self) -> str:
+    def duration(self) -> int:
         """
         :ru Свойство для получения длительности видео.
         :en Property for getting the duration of an video.

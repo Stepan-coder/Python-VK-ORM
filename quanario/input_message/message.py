@@ -1,11 +1,12 @@
 import vk_api
-from typing import Optional
+from typing import Optional, Dict, List, Any
 from quanario.input_message.voice import *
 from quanario.input_message.audio import *
 from quanario.input_message.photo import *
 from quanario.input_message.video import *  # Недоделано (проблемы со скачиванием)
 from quanario.input_message.file import *
 from quanario.input_message.geoposition import *
+from vk_api.bot_longpoll import VkBotEventType
 
 
 class Message:
@@ -13,7 +14,7 @@ class Message:
         self.__event = event
 
     @property
-    def type(self):
+    def type(self) -> VkBotEventType:
         """
         :ru Свойство для получения типа сообщения.
         :en Property for getting the message type.
@@ -37,7 +38,7 @@ class Message:
         return self.__event.object.message['peer_id']
 
     @property
-    def attachments(self) -> Optional[dict]:
+    def attachments(self) -> Optional[Dict[str, Any]]:
         """
         :ru Свойство для получения списка вложений.
         :en Property for getting a list of attachments.
