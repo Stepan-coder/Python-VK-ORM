@@ -163,6 +163,10 @@ class CarouselElement:
         """
         ru: Этот `приватный` метод позволяет подготовить клавиатуру для добавления её в блок `карусели`. Он необходим, так как клавиатура для `карусели` не может содержать несколько кнопок `в ряд`.
         en: This `private` method allows you to prepare the keyboard for adding it to the `carousel` block. It is necessary because the keyboard for the `carousel` cannot contain several buttons `in a row`.
+
+        :param keyboard:ru Объект клавиатуры, который необходимо преобразовать
+        :param keyboard:en Keyboard object to be converted.
+        :type keyboard: keyboard
         """
         if keyboard is not None:
             buttons = []

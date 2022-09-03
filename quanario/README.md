@@ -120,10 +120,10 @@
 ### [message_extensions](message_extensions) / [keyboard.py](message_extensions/keyboard.py)
 ><details><summary>Class `Keyboard` - The keyboard in messengers is a special type of attachment, unlike ordinary text messages, it is a tool for interactive user interaction with a bot. By clicking on the button, the user gives the system various commands: if these are ordinary buttons, then when clicking on them, the user gives the command to send the text to the community that is written on the button (i.e., the typing process is accelerated), if it is a link or a geo-location, then the system performs these actions outside of a conversation with the bot (sends to the site, sends a placemark on the map).</summary><p>
 >
->* `add_button()` -
->* `add_line()` -
->* `get_keyboard()` - This is json by mind, but it return in the format of a regular string.
->* `get_empty_keyboard()` - This is json by mind, but it return in the format of a regular string.
+>* `add_button()`: [None](#message_extensions--keyboardpy) - This method adds a button with the type `button_type`, the color `color`, the attachment `payload` and the text `text` at the `right`, to the existing keyboard.
+>* `add_line()`: [None](#message_extensions--keyboardpy) - This method moves the `cursor` of the buttons one cell down. I.e., by default, the buttons are added to the row, to the right.
+>* `get_keyboard()`: [str](#message_extensions--keyboardpy) - This is json by mind, but it return in the format of a regular string.
+>* `get_empty_keyboard()`: [str](#message_extensions--keyboardpy) - This is json by mind, but it return in the format of a regular string.
 >
 ></p></details>
 

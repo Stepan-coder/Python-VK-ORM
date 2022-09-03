@@ -41,6 +41,12 @@ class Keyboard:
                    text: str = None,
                    color: VkKeyboardColor = None,
                    payload: Any = None) -> None:
+        """
+        ru: Этот метод добавляет кнопку с типом `button_type`, цветом `color`, вложением `payload` и текстом `text`
+         `справа`, к имеющейся клавиатуре.
+        en: This method adds a button with the type `button_type`, the color `color`, the attachment `payload` and
+         the text `text` at the right, to the existing keyboard.
+        """
         if button_type == VkKeyboardButton.DEFAULT:
             self.__keyboard.add_button(label=text, color=color)
         elif button_type == VkKeyboardButton.OPENLINK:
@@ -51,18 +57,24 @@ class Keyboard:
             self.__keyboard.add_location_button()
 
     def add_line(self) -> None:
+        """
+        ru: Этот метод делает перенос `курсора` кнопок на одну ячейку вниз. Т.е. по умолчанию кнопки добавляются в
+         строку, вправо.
+        en: This method moves the `cursor` of the buttons one cell down. I.e., by default, the buttons are added to the
+         row, to the right.
+        """
         self.__keyboard.add_line()
 
     def get_keyboard(self) -> str:
         """
-        ru: По уму это json, но он возвращает в формате обычной строки
+        ru: По уму это json, но он возвращает в формате обычной строки.
         en: This is json by mind, but it returns in the format of a regular string.
         """
         return self.__keyboard.get_keyboard()
 
     def get_empty_keyboard(self) -> str:
         """
-        ru: По уму это json, но он возвращает в формате обычной строки
+        ru: По уму это json, но он возвращает в формате обычной строки.
         en: This is json by mind, but it returns in the format of a regular string
         """
         return self.__keyboard.get_empty_keyboard()
