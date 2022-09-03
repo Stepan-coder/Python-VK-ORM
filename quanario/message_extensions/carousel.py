@@ -8,8 +8,8 @@ from vk_api.keyboard import VkKeyboard, VkKeyboardColor
 
 class CarouselElement:
     """
-    :ru Класс представляющий собой один элемент `карусели`.
-    :en A class representing a single `carousel` element.
+    ru: Класс представляющий собой один элемент `карусели`.
+    en: A class representing a single `carousel` element.
     """
     def __init__(self, title: str, description: str, attachment: str, keyboard: Keyboard = None):
         """
@@ -160,6 +160,10 @@ class CarouselElement:
 
     @staticmethod
     def __extract_keyboard_buttons(keyboard: Keyboard) -> json:
+        """
+        ru: Этот `приватный` метод позволяет подготовить клавиатуру для добавления её в блок `карусели`. Он необходим, так как клавиатура для `карусели` не может содержать несколько кнопок `в ряд`.
+        en: This `private` method allows you to prepare the keyboard for adding it to the `carousel` block. It is necessary because the keyboard for the `carousel` cannot contain several buttons `in a row`.
+        """
         if keyboard is not None:
             buttons = []
             for line in json.loads(keyboard.get_keyboard())['buttons']:

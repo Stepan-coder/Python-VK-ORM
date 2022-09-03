@@ -93,27 +93,27 @@
 ### [message_extensions](message_extensions) / [carousel.py](message_extensions/carousel.py)
 ><details><summary>Class `Carousel` - The main class for creating attachments of the `Carousel` type. The difference between the carousel and ordinary messages is its unusual appearance, the carousel consists of blocks (maximum 10 pcs.), each block has a title, description and picture. Subsequently, it is possible to attach to each block unique keyboard. It is important that the number of buttons matches in all blocks!!!</summary><p>
 >
->* `count` - This _Property_ contains the number of elements in the carousel.
->* `last_element` - This _Property_ contains the `last element` added to the `carousel`, thereby opening the possibility of its editing, for example, to change the description or change the photo.
->* `add_element()` - This method `creates a new block` for the `carousel` and adds it to the existing ones.
->* `get_carousel()` - This method `builds` the entire `carousel`, for later sending it to the user.
+>* `count`: [int](#message_extensions--carouselpy) - This _Property_ contains the number of elements in the carousel.
+>* `last_element`: [CarouselElement](#message_extensions--carouselpy) - This _Property_ contains the `last element` added to the `carousel`, thereby opening the possibility of its editing, for example, to change the description or change the photo.
+>* `add_element()`: [None](#message_extensions--carouselpy) - This method `creates a new block` for the `carousel` and adds it to the existing ones.
+>* `get_carousel()`: [json](#message_extensions--carouselpy) - This method `builds` the entire `carousel`, for later sending it to the user.
 >
 ></p></details>
 
 ><details><summary>Class `CarouselElement` - A class representing a single `carousel' element.</summary><p>
 >
->* `title` - This _Property_ contains the block header.
->* `title` - The `setter` for the `title` _Property_ allows you to set a new value for the _Property_.
->* `description` - This _Property_ contains the block description.
->* `description` - The `setter` for the `description` _Property_ allows you to set a new value for the _Property_.
->* `attachment` - This _Property_ contains a link to the block image.
->* `attachment` - The `setter` for the `attachment` _Property_ allows you to set a new value for the _Property_.
->* `keyboard` - This _Property_ contains json with buttons for the element.
->* `keyboard` - The `setter` for the `keyboard` _Property_ allows you to set a new value for the _Property_.
->* `compile()` - This method performs the `assembly` of the carousel block, for subsequent sending it to the user.
->* *`__check_length()` - This `privat` method shortens the input string to the specified `count` length.*
->* *`__cut_attachment()` - This `private` method allocates a unique image id from the input `attachment`*
->* *`__extract_keyboard_buttons` -*
+>* `title`: [str](#message_extensions--carouselpy) - This _Property_ contains the block header.
+>* `title`: [None](#message_extensions--carouselpy) - The `setter` for the `title` _Property_ allows you to set a new value for the _Property_.
+>* `description`: [str](#message_extensions--carouselpy) - This _Property_ contains the block description.
+>* `description`: [None](#message_extensions--carouselpy) - The `setter` for the `description` _Property_ allows you to set a new value for the _Property_.
+>* `attachment`: [str](#message_extensions--carouselpy) - This _Property_ contains a link to the block image.
+>* `attachment`: [None](#message_extensions--carouselpy) - The `setter` for the `attachment` _Property_ allows you to set a new value for the _Property_.
+>* `keyboard`: [json](#message_extensions--carouselpy) - This _Property_ contains json with buttons for the element.
+>* `keyboard`: [None](#message_extensions--carouselpy) - The `setter` for the `keyboard` _Property_ allows you to set a new value for the _Property_.
+>* `compile()`: [Dict](#message_extensions--carouselpy)[[str](#message_extensions--carouselpy), [Any](#message_extensions--carouselpy)] - This method performs the `assembly` of the carousel block, for subsequent sending it to the user.
+>* *`__check_length()`: [str](#message_extensions--carouselpy) - This `privat` method shortens the input string to the specified `count` length.*
+>* *`__cut_attachment()`: [str](#message_extensions--carouselpy) - This `private` method allocates a unique image id from the input `attachment`*
+>* *`__extract_keyboard_buttons`: [json](#message_extensions--carouselpy) - This `private` method allows you to prepare the keyboard for adding it to the `carousel` block. It is necessary because the keyboard for the `carousel` cannot contain several buttons `in a row`.*
 >
 ></p></details>
 ---
