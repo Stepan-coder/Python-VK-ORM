@@ -488,7 +488,7 @@
 >
 ></p></details>
 ---
-### [user](user)/ [occupation.py](user/occupation.py)
+### [user](user) / [occupation.py](user/occupation.py) 
 ><details><summary>Class `Occupation` - Information about the user's current occupation.</summary><p>
 >
 >* `id`: [int](#user--occupationpy) - _Property_ for getting the activity ID.
