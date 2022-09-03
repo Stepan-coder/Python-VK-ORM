@@ -7,6 +7,10 @@ from vk_api.keyboard import VkKeyboard, VkKeyboardColor
 
 
 class CarouselElement:
+    """
+    :ru Класс представляющий собой один элемент `карусели`.
+    :en A class representing a single `carousel` element.
+    """
     def __init__(self, title: str, description: str, attachment: str, keyboard: Keyboard = None):
         """
         :param title:ru Короткий заголовок блока, при его написании не рекомендуется использовать более 30 символов.

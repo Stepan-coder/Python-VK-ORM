@@ -14,6 +14,12 @@ from vk_api.bot_longpoll import VkBotLongPoll, VkBotEventType
 
 
 class Bot(object):
+    """
+    :ru Основной класс библиотеки `quanario`, объединяющий в себе все доступные функции по приёму и отправке сообщений
+      пользователям.
+    :en The main class of the library is `quanario`, which combines all the available functions for receiving and
+     sending messages to users.
+    """
     def __init__(self, token: str = None, app_id: int = None):
         """
         :param token:ru Токен для авторизации бота в сообществе

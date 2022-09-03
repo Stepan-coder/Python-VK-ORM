@@ -8,6 +8,10 @@ from quanario.message_extensions.carousel import *
 
 
 class Send:
+    """
+    :ru Класс реализующий отправку медиаконтента пользователям.
+    :en A class that implements sending media content to users.
+    """
     def __init__(self, vk: vk_api.vk_api.VkApiMethod):
         self.__vk = vk
 
@@ -105,7 +109,7 @@ class Send:
                                 attachment=attachment,
                                 random_id=get_random_id())
 
-    def photo(self, user_id: int, attachment: str or List[str], message: str = None):
+    def photo(self, user_id: int, attachment: str or List[str], message: str = None) -> None:
         """
         ru: Этот метод позволяет отправить пользователю с id 'user_id' фотографию.
         en: This method allows you to send a photo to a user with the id 'user_id'.

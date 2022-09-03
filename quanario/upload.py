@@ -9,6 +9,10 @@ from vk_api.bot_longpoll import VkBotLongPoll, VkBotEventType
 
 
 class Upload:
+    """
+    :ru Класс реализующий  загрузку медиаконтента на сервера `ВКонтакте`, для дальнейшей отправки пользователям.
+    :en A class that implements uploading media content to servers `VKontakte`, for further sending to users.
+    """
     def __init__(self, vk: vk_api.vk_api.VkApiMethod):
         self.__vk = vk
 

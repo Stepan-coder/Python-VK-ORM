@@ -49,42 +49,44 @@
 ---
 
 ### [bot.py](bot.py)
-><details><summary>Class `Bot`</summary><p>
+><details><summary>Class `Bot` -The main class of the library is `quanario`, which combines all the available functions for receiving and sending messages to users.</summary><p>
 >
->* `TOKEN` - _Property_ for getting a community TOKEN.
->* `APP_ID` - _Property_ for getting a community ID.
->* `vk` - _Property_ for getting the main bot object.
->* `longpoll` - _Property_ for getting a long poll object (needed for interacting with VKontakte servers).
->* `send` - _Property_ for getting an instance of the `Send` class. This class implements the functionality of sending various types of messages to the user.
->* `upload` - _Property_ for getting an instance of the `Upload` class. This class implements the functionality of publishing content on vkontakte server.
->* `run()` - The main method of the `Bot` class. It launches a call to the `init_method` method in an eternal loop to receive and process messages from the user.
->* `get_user_info()` - This method makes a request in VKontakte to get information about the user, in response it receives json, which is converted into an instance of the `User` class.
->* `create_keyboard()` - Static method of the `Bot` class that allows you to get an instance of the `Keyboard` class to create a keyboard.
->* `create_carousel()` - Static method of the `Bot` class that allows you to get an instance of the `Carousel` class to create a carousel.
->* *`__bot_boot()` - A `private` method of the `Bot` class that authorizes the bot in VKontakte.*
+>* `TOKEN`: [str](#botpy) - _Property_ for getting a community TOKEN.
+>* `TOKEN`: [None](#botpy) - _Property_ `setter` for getting a community TOKEN.
+>* `APP_ID`: [int](#botpy) - _Property_ for getting a community ID.
+>* `APP_ID`: [None](#botpy) - _Property_ `setter`  for getting a community ID.
+>* `vk`: [vk_api.vk_api.VkApiMethod](#botpy) - _Property_ for getting the main bot object.
+>* `longpoll`: [vk_api.bot_longpoll.VkBotLongPoll](#botpy) - _Property_ for getting a long poll object (needed for interacting with VKontakte servers).
+>* `send`: [Send](#sendpy) - _Property_ for getting an instance of the `Send` class. This class implements the functionality of sending various types of messages to the user.
+>* `upload`: [Upload](#uploadpy) - _Property_ for getting an instance of the `Upload` class. This class implements the functionality of publishing content on vkontakte server.
+>* `run()`: [None](#botpy) - The main method of the `Bot` class. It launches a call to the `init_method` method in an eternal loop to receive and process messages from the user.
+>* `get_user_info()`: [User](#user--userpy) - This method makes a request in VKontakte to get information about the user, in response it receives json, which is converted into an instance of the `User` class.
+>* `create_keyboard()`: [Keyboard](#message_extensions--keyboardpy) - Static method of the `Bot` class that allows you to get an instance of the `Keyboard` class to create a keyboard.
+>* `create_carousel()`: [Carousel](#message_extensions--carouselpy) - Static method of the `Bot` class that allows you to get an instance of the `Carousel` class to create a carousel.
+>* *`__bot_boot()`: [None](#botpy) - A `private` method of the `Bot` class that authorizes the bot in VKontakte.*
 >
 ></p></details>
 ---
 ### [send.py](send.py)
-><details><summary>Class `Send`</summary><p>
+><details><summary>Class `Send` - A class that implements sending media content to users.</summary><p>
 >
->* `message()` - This method allows you to send a message with the text `message` to a user with the id `user_id`, if necessary, it is possible to attach a keyboard with buttons - `keyboard`. For more information about `keyboard`, see the [documentation](message_extensions/keyboard.py).
->* `carousel()` - This method allows you to send a message with the text `message` to a user with the id `user_id`, if necessary, it is possible to attach a carousel - `carousel`. For more information about `carousel`, see the [documentation](message_extensions/carousel.py).
->* `sticker()` - This method allows you to send a `sticker` with the number `sticker_id` to a user with the id `user_id`.
->* `voice()` - This method allows you to send an `audio` file to a user with the id `user_id` as a voice message.
->* `photo()` - This method allows you to send a `photo` to a user with the id `user_id`.
->* `video()` - This method allows you to send `video` file to a user with the id `user_id`.
->* `file()` - This method allows you to send `file` or `document` to a user with the id `user_id`.
+>* `message()`: [None](#sendpy) - This method allows you to send a message with the text `message` to a user with the id `user_id`, if necessary, it is possible to attach a keyboard with buttons - `keyboard`. For more information about `keyboard`, see the [documentation](message_extensions/keyboard.py).
+>* `carousel()`: [None](#sendpy) - This method allows you to send a message with the text `message` to a user with the id `user_id`, if necessary, it is possible to attach a carousel - `carousel`. For more information about `carousel`, see the [documentation](message_extensions/carousel.py).
+>* `sticker()`: [None](#sendpy) - This method allows you to send a `sticker` with the number `sticker_id` to a user with the id `user_id`.
+>* `voice()`: [None](#sendpy) - This method allows you to send an `audio` file to a user with the id `user_id` as a voice message.
+>* `photo()`: [None](#sendpy) - This method allows you to send a `photo` to a user with the id `user_id`.
+>* `video()`: [None](#sendpy) - This method allows you to send `video` file to a user with the id `user_id`.
+>* `file()`: [None](#sendpy) - This method allows you to send `file` or `document` to a user with the id `user_id`.
 >
 ></p></details>
 ---
 ### [upload.py](upload.py)
-><details><summary>Class `Upload`</summary><p>
+><details><summary>Class `Upload` - A class that implements uploading media content to servers `VKontakte`, for further sending to users.</summary><p>
 >
->* `voice()` - This method allows you to get an `attachment` for an `audio file` to send it to the user.
->* `photo()` - This method allows you to get an `attachment` for an `image` to send it to the user.
->* `file()` - This method allows you to get an `attachment` for the `file` to send it to the user.
->* `convert_audio()` - The `VKontakte` social network has an oddity when sending an `audio file` as a `voice` message - an audio file it must be `single-channel` and in `.ogg` format. This is exactly the problem that this method solves. Important clarification - for the correct operation of this method, the mandatory installation of the `ffmpeg` package is required, as well as add it to the environment variables.
+>* `voice()`: [str](#uploadpy) - This method allows you to get an `attachment` for an `audio file` to send it to the user.
+>* `photo()`: [str](#uploadpy) - This method allows you to get an `attachment` for an `image` to send it to the user.
+>* `file()`: [str](#uploadpy) - This method allows you to get an `attachment` for the `file` to send it to the user.
+>* `convert_audio()`: [str](#uploadpy) - The `VKontakte` social network has an oddity when sending an `audio file` as a `voice` message - an audio file it must be `single-channel` and in `.ogg` format. This is exactly the problem that this method solves. Important clarification - for the correct operation of this method, the mandatory installation of the `ffmpeg` package is required, as well as add it to the environment variables.
 >
 ></p></details>
 ---
@@ -98,7 +100,7 @@
 >
 ></p></details>
 
-><details><summary>Class `CarouselElement`</summary><p>
+><details><summary>Class `CarouselElement` - A class representing a single `carousel' element.</summary><p>
 >
 >* `title` - This _Property_ contains the block header.
 >* `title` - The `setter` for the `title` _Property_ allows you to set a new value for the _Property_.
