@@ -2,7 +2,7 @@
 
 
 ### [user.py](user.py)
-><details><summary>Class `User` - Information about fields from the user 'User' section.</summary><p>
+><details><summary>Class `User` - The main class for presenting information about the user in a convenient format of nested classes containing personal information about his various fields of activity..</summary><p>
 >
 >* `user_id`: [int](#userpy) - _Property_ for getting the user ID.
 >* `domain`: [str](#userpy) - _Property_ for getting a short page address. A string containing the short address of the page is returned (for example, andrew). If it is not assigned, "id"+user_id is returned, for example, id35828305.

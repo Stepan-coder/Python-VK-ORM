@@ -34,6 +34,12 @@ class Online(Enum):
 
 
 class User:
+    """
+    :ru Основной класс для представления информации о пользователе в удобном формате вложенных классов содержащих личную
+     информацию о его различных сферах деятельности.
+    :en The main class for presenting information about the user in a convenient format of nested classes containing
+     personal information about his various fields of activity.
+    """
     def __init__(self, user: Dict[str, Any]):
         """
         :ru Информация о полях из раздела 'User'.

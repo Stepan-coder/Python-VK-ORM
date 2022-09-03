@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a8d29b79-6017-4580-91f4-2550ded620d8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/quanario/input_message/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/quanario/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/quanario/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quanario/input_message/message.py" beforeDir="false" afterPath="$PROJECT_DIR$/quanario/input_message/message.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quanario/user/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/quanario/user/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/quanario/user/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/quanario/user/user.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
     </list>
@@ -43,7 +46,7 @@
       <recent name="C:\Users\stepa\Desktop\Проекты\Quanario\examples\echo_bot" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.geoposition">
+  <component name="RunManager" selected="Python.test">
     <configuration name="audio" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Quanario" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -151,8 +154,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.geoposition" />
         <item itemvalue="Python.test" />
+        <item itemvalue="Python.geoposition" />
         <item itemvalue="Python.video" />
         <item itemvalue="Python.audio" />
         <item itemvalue="Python.photo" />

@@ -10,6 +10,14 @@ from vk_api.bot_longpoll import VkBotEventType
 
 
 class Message:
+    """
+    :ru Основной класс для обработки ботом, сообщений полученных от пользователя. Его основной задачей я является
+     представление полученных вложений (голосовых сообщений, музыки, фотографий, видео, геопозиций) в виде объектов,
+     с которыми удобно взаимодействовать.
+    en: The main class for processing messages received from the user by the bot. Its main task is to represent the
+     received attachments (voice messages, music, photos, videos, geo-positions) in the form of objects with which it
+     is convenient to interact.
+    """
     def __init__(self, event: vk_api):
         self.__event = event
 

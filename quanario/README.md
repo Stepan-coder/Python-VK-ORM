@@ -135,7 +135,7 @@
 ></p></details>
 ---
 ### [input_message](input_message) / [message.py](input_message/message.py)
-><details><summary>Class `Message`</summary><p>
+><details><summary>Class `Message` - The main class for processing messages received from the user by the bot. Its main task is to represent the received attachments (voice messages, music, photos, videos, geo-positions) in the form of objects with which it is convenient to interact.</summary><p>
 >
 >* `type`: [VkBotEventType](#input_message--messagepy) - _Property_ for getting the message type.
 >* `text`: [str](#input_message--messagepy) - _Property_ for receiving the text of the message sent by the user.
@@ -158,7 +158,7 @@
 ></p></details>
 ---
 ### [input_message](input_message) / [voice.py](input_message/voice.py)
-><details><summary>Class `Voice`</summary><p>
+><details><summary>Class `Voice` - A class for processing voice messages sent by a user to a chatbot.</summary><p>
 >
 >* `id`: [int](#input_message--voicepy) - _Property_ for getting a unique file identifier.
 >* `duration`: [int](#input_message--voicepy) - _Property_ for getting the duration of an audio file.
@@ -173,7 +173,7 @@
 ></p></details>
 ---
 ### [input_message](input_message) / [audio.py](input_message/audio.py)
-><details><summary>Class `Audio`</summary><p>
+><details><summary>Class `Audio` - A class for processing audio messages sent by a user to a chatbot.</summary><p>
 >
 >* `id`: [int](#input_message--audiopy) - _Property_ for getting a unique file identifier.
 >* `title`: [str](#input_message--audiopy) - _Property_ for getting the name of the audio file.
@@ -181,8 +181,8 @@
 >* `date`: [int](#input_message--audiopy) - _Property_ for getting the file upload date to the `VKontakte` server (in Unix format).
 >* `duration`: [int](#input_message--audiopy) - _Property_ for getting the duration of an audio.
 >* `url_mp3`: [str](#input_message--audiopy) - _Property_ for getting a link to download a file.
->* `is_explicit`: [bool](#input_message--audiopy) - 
->* `is_focus_track`: [bool](#input_message--audiopy) - 
+>* `is_explicit`: [bool](#input_message--audiopy) - _Property_ is outdated or undefined.
+>* `is_focus_track`: [bool](#input_message--audiopy) - _Property_ is outdated or undefined.
 >* `owner_id`: [int](#input_message--audiopy) - _Property_ for getting the ID of the `user` or `community` who uploaded the file.
 >* `track_code`: [str](#input_message--audiopy) - _Property_ for obtaining an access key, for sending a file to other users.
 >* `save_mp3()`: [None](#input_message--audiopy) - A method for saving a file in the system in `.mp3` format.
@@ -190,7 +190,7 @@
 ></p></details>
 ---
 ### [input_message](input_message) / [photo.py](input_message/photo.py)
-><details><summary>Class `Photo`</summary><p>
+><details><summary>Class `Photo` - A class for processing photo messages sent by a user to a chatbot.</summary><p>
 >
 >* `id`: [int](#input_message--photopy) - _Property_ for getting a unique file identifier.
 >* `width`: [int](#input_message--photopy) - _Property_ for getting the width of the photo.
@@ -208,7 +208,7 @@
 ></p></details>
 ---
 ### [input_message](input_message) / [video.py](input_message/video.py)
-><details><summary>Class `Video`</summary><p>
+><details><summary>Class `Video` - A class for processing video messages sent by a user to a chatbot.</summary><p>
 >
 >* `id`: [int](#input_message--videopy) - _Property_ for getting a unique file identifier.
 >* `width`: [int](#input_message--videopy) - _Property_ for getting the width of the video.
@@ -231,7 +231,7 @@
 ></p></details>
 ---
 ### [input_message](input_message) / [file.py](input_message/file.py)
-><details><summary>Class `File`</summary><p>
+><details><summary>Class `File` - A class for processing files sent by a user to a chatbot.</summary><p>
 >
 >* `id`: [int](#input_message--filepy) - _Property_ for getting a unique file identifier.
 >* `type`: [int](#input_message--filepy) - _Property_ for getting a unique file ID.
@@ -248,7 +248,7 @@
 ></p></details>
 ---
 ### [input_message](input_message) / [geoposition.py](input_message/geoposition.py)
-><details><summary>Class `Geo`</summary><p>
+><details><summary>Class `Geo` - A class for processing user geoposition sent by a user to a chatbot.</summary><p>
 >
 >* `id`: [int](#input_message--geopositionpy) - _Property_ for getting the unique identifier of the placemark on the map.
 >* `from_id`: [int](#input_message--geopositionpy) - _Property_ for getting the unique identifier of the user who sent the tag.
@@ -265,7 +265,7 @@
 ---
 
 ### [user](user) / [user.py](user/user.py)
-><details><summary>Class `User` - Information about fields from the user 'User' section.</summary><p>
+><details><summary>Class `User` - The main class for presenting information about the user in a convenient format of nested classes containing personal information about his various fields of activity..</summary><p>
 >
 >* `user_id`: [int](#user--userpy) - _Property_ for getting the user ID.
 >* `domain`: [str](#user--userpy) - _Property_ for getting a short page address. A string containing the short address of the page is returned (for example, andrew). If it is not assigned, "id"+user_id is returned, for example, id35828305.
