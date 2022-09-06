@@ -17,13 +17,13 @@
 
 
 привет   
-`quanario` - root folder of the project.
+`quanario` - root folder of the project.  
 &nbsp;&nbsp;&nbsp;&nbsp; ∟ `bot.py` - the main class of the module. [Learn more.](#botpy)  
 &nbsp;&nbsp;&nbsp;&nbsp; ∟ `send.py` - class for sending messages and attachments to the user. [Learn more.](#sendpy)
-
-
 &nbsp;&nbsp;&nbsp;&nbsp; ∟ `upload.py` - class for uploading attachments to the `VKontakte` server. [Learn more.](#uploadpy)  
 &nbsp;&nbsp;&nbsp;&nbsp; |-> `message_extensions`  
+
+
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ∟ `carousel.py` - class that implements the functionality of the `carousel` element. [Learn more.](#message_extensions--carouselpy)  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ∟ `keyboard.py` - class that implements the functionality of the `keyboard` element. [Learn more.](#message_extensions--keyboardpy)  
 &nbsp;&nbsp;&nbsp;&nbsp; |-> `input_message`  
