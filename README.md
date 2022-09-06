@@ -15,7 +15,9 @@
 - and much more!
 ---
 
+
 ### Project structure  
+
 
 |-> `quanario` - root folder of the project.  
 &nbsp;&nbsp;&nbsp;&nbsp; ∟ `bot.py` - the main class of the module. [Learn more.](quanario#botpy)  
