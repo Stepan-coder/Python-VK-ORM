@@ -13,7 +13,11 @@
 - the appearance of the `carousel` object, 
 - the ability to receive and process `attachments` from the user _(including geo-location)_   
 - and much more!
+
+
 ---
+
+
 привет
 |-> `quanario` - root folder of the project.  
 &nbsp;&nbsp;&nbsp;&nbsp; ∟ `bot.py` - the main class of the module. [Learn more.](#botpy)  
