@@ -17,7 +17,7 @@
 
  
 |->`quanario` - root folder of the project.  
-&nbsp;&nbsp;&nbsp;&nbsp; ∟ `bot.py` - the main class of the module. [Learn more.](quanario#botpy)  
+&nbsp;&nbsp;&nbsp;&nbsp; ∟ `bot.py` - the main class of the module. [Learn more.](quanario/quanario#botpy)  
 &nbsp;&nbsp;&nbsp;&nbsp; ∟ `send.py` - class for sending messages and attachments to the user. [Learn more.](quanario#sendpy)  
 &nbsp;&nbsp;&nbsp;&nbsp; ∟ `upload.py` - class for uploading attachments to the `VKontakte` server. [Learn more.](quanario#uploadpy)  
 &nbsp;&nbsp;&nbsp;&nbsp; |-> `message_extensions`  
