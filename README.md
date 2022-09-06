@@ -14,7 +14,8 @@
 - the ability to receive and process `attachments` from the user _(including geo-location)_   
 - and much more!
 ---
-### Project structure  
+
+## Project structure  
   
   
 |-> `quanario` - root folder of the project.  
