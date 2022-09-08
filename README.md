@@ -14,7 +14,7 @@
 - the ability to receive and process `attachments` from the user _(including geo-location)_   
 - and much more!
 ---
-
+### [Project structure](quanario)
  
 |->`quanario` - root folder of the project.  
 &nbsp;&nbsp;&nbsp;&nbsp; ∟ `bot.py` - the main class of the module. [Learn more.](quanario/quanario#botpy)  
