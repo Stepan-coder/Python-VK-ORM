@@ -132,11 +132,11 @@ CC-BY-NC and commercial usage available after agreement with `Quanario_VK` autho
 
 ## Alternatives
 
-Of course, we are not the first to decide to make a library for ourselves, so we give alternatives, perhaps you will find them more convenient for yourself:  
+Of course, I'am not the first to decide to make a library for ourselves, so I give alternatives, perhaps you will find them more convenient for yourself:  
 * [vkwave](https://github.com/fscdev/vkwave)
 * [vkbottle](https://github.com/vkbottle/vkbottle)
 * [LiteVkApi](https://github.com/Ma-Mush/LiteVkApi)
 * [vk_maria](https://github.com/lxstvayne/vk_maria)
 
 
-### We believe that using our development will be pleasant for you!
+### I believe that using my development will be pleasant for you!
