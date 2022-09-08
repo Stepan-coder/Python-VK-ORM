@@ -1,17 +1,5 @@
 # QUANARIO - Module for the development of chatbots in the social network `VKontakte`
 
-<div id="badges">
-  <a href="your-linkedin-URL">
-    <img src="https://img.shields.io/badge/VKontacte-blue?style=for-the-badge&logo=Vk&logoColor=white" alt="LinkedIn Badge"/>
-  </a>
-  <a href="your-youtube-URL">
-    <img src="https://img.shields.io/badge/YouTube-red?style=for-the-badge&logo=youtube&logoColor=white" alt="Youtube Badge"/>
-  </a>
-  <a href="your-twitter-URL">
-    <img src="https://img.shields.io/badge/Twitter-blue?style=for-the-badge&logo=twitter&logoColor=white" alt="Twitter Badge"/>
-  </a>
-</div>
-
 ## Introduction ##
 
 &nbsp;&nbsp;&nbsp;&nbsp;In 2019, I wanted to make a chatbot for learning foreign languages, I do not know exactly why, but I really wanted to. But I liked the idea that you can make some kind of resource that is accessed through a messenger. In general, in my opinion, resources should be divided into two types: exclusively `informational` and `design`. For example, I would refer `Wikipedia` or the `library's website` to the `informational` ones, and an `online store`, a website `apple.com` to the `design`. This approach organizes resources according to their purpose.  
@@ -101,6 +89,7 @@ You also have the opportunity to get acquainted with other, more complex example
 
 ## **FAQ**
 
+We are just launching this project, but if you have any questions, you can always ask in `issues` or in our [telegram](https://t.me/+-awnUbOP1l41MjAy) chat or [VKontakte]() group.
 
 # **License**
 
@@ -118,3 +107,11 @@ CC-BY-NC and commercial usage available after agreement with `quanario` authors.
 
 * link 1
 * link 2
+
+## Alternatives
+
+Of course, we are not the first to decide to make a library for ourselves, so we give alternatives, perhaps you will find them more convenient for yourself:  
+* [vkwave](https://github.com/fscdev/vkwave)
+* [vkbottle](https://github.com/vkbottle/vkbottle)
+* [LiteVkApi](https://github.com/Ma-Mush/LiteVkApi)
+* [vk_maria](https://github.com/lxstvayne/vk_maria)
