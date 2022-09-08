@@ -111,7 +111,7 @@ As an example, I can demonstrate the community on VKontakte - [LinguisticBot](ht
 
 ## **FAQ**
 
-We are just launching this project, but if you have any questions, you can always ask in `issues` or in our [telegram](https://t.me/+-awnUbOP1l41MjAy) chat or [VKontakte]() group.
+I'm just launching this project, but if you have any questions, you can always ask in `issues` or in our [telegram](https://t.me/+-awnUbOP1l41MjAy) chat or [VKontakte](https://vk.com/quanario_vk) group.
 
 # **License**
 
