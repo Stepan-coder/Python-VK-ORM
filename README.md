@@ -1,6 +1,20 @@
-# QUANARIO - Module for the development of chatbots in the social network `VKontakte`
+# Quanario_VK - Module for the development of chatbots in the social network `VKontakte`
 
-## Introduction ##
+## Table of contents
+
+* [Introduction](#introduction)
+* [Project structure](#project-structure)
+* [Project Installation](#installation)
+* [Usage](#usage)
+* [Demo](#demo)
+* [FAQ](#faq)
+* [License](#license)
+* [Commerical inquiries](#commerical-inquiries)
+* [Further reading](#further-reading)
+* [Alternatives](#alternatives)
+
+
+## Introduction 
 
 &nbsp;&nbsp;&nbsp;&nbsp;In 2019, I wanted to make a chatbot for learning foreign languages, I do not know exactly why, but I really wanted to. But I liked the idea that you can make some kind of resource that is accessed through a messenger. In general, in my opinion, resources should be divided into two types: exclusively `informational` and `design`. For example, I would refer `Wikipedia` or the `library's website` to the `informational` ones, and an `online store`, a website `apple.com` to the `design`. This approach organizes resources according to their purpose.  
 &nbsp;&nbsp;&nbsp;&nbsp;To create my own bot, I began to study the Internet for what and how to do. Of course, the first thing I came across was instructions for creating bots in telegram. But only in my opinion `telegram` is already overloaded with all kinds of bots and, unfortunately, does not have the resources to popularize the group ~~with the exception of paid advertising in other groups~~.  
@@ -51,9 +65,11 @@
 ---
 ## **Installation**
 
+Will be soon... But for now, you can just add the `quanario` folder to the root of your project and use it as a regular library.
 
 ## **Usage**
-To start development, you need to install the module (see the `Installation` section) and import it into your project. An example of the simplest echo bot:
+
+To start development, you need to install the module (see the [installation](#installation) section) and import it into your project. An example of the simplest echo bot:
 
 <details><summary>See an example</summary><p>
 
@@ -87,6 +103,12 @@ You also have the opportunity to get acquainted with other, more complex example
 |-> [Geoposition](examples/geoposition)  
 &nbsp;&nbsp;&nbsp;&nbsp; ∟ To view the `geoposition` example, click [here](examples/geoposition/geoposition.py). 
 
+## **Demo**
+
+![LinguisticBotLogo](https://sun9-41.userapi.com/impg/GTqw8HgGArjBXm2TYsUhpXSvP0zc6BLwgwahmg/t51vIX4ts2g.jpg?size=2560x2560&quality=95&sign=d82fead7ad72554a5d3eb5a24a4826a6&type=album)
+
+As an example, I can demonstrate the community on VKontakte - [LinguisticBot](https://vk.com/linguisticbot ). This is my community for learning foreign languages for everyone. It implements all the modules of this educational school website. The bot provides 6 types of interactive tasks to increase the user's vocabulary, as well as an audition task. In addition, as an example, a store has been implemented in which you can buy tips and sections with listening. This project has been running nonstop for 2 years. During this period, a huge number of bugs and bugs in the library have been fixed [Quanario_VK](https://github.com/Stepan-coder/Quanario_VK)
+
 ## **FAQ**
 
 We are just launching this project, but if you have any questions, you can always ask in `issues` or in our [telegram](https://t.me/+-awnUbOP1l41MjAy) chat or [VKontakte]() group.
@@ -95,7 +117,7 @@ We are just launching this project, but if you have any questions, you can alway
 
 ![сс-nc-by-license](https://static.wixstatic.com/media/342407_05e016f9f44240429203c35dfc8df63b~mv2.png/v1/fill/w_563,h_200,al_c,lg_1,q_80/342407_05e016f9f44240429203c35dfc8df63b~mv2.webp)
 
-CC-BY-NC and commercial usage available after agreement with `quanario` authors.
+CC-BY-NC and commercial usage available after agreement with `Quanario_VK` authors.
 
 ## **Commerical inquiries**
 
@@ -115,3 +137,6 @@ Of course, we are not the first to decide to make a library for ourselves, so we
 * [vkbottle](https://github.com/vkbottle/vkbottle)
 * [LiteVkApi](https://github.com/Ma-Mush/LiteVkApi)
 * [vk_maria](https://github.com/lxstvayne/vk_maria)
+
+
+### We believe that using our development will be pleasant for you!
