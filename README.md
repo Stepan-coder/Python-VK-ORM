@@ -1,5 +1,17 @@
 # QUANARIO - Module for the development of chatbots in the social network `VKontakte`
 
+<div id="badges">
+  <a href="your-linkedin-URL">
+    <img src="https://img.shields.io/badge/VKontacte-blue?style=for-the-badge&logo=Vk&logoColor=white" alt="LinkedIn Badge"/>
+  </a>
+  <a href="your-youtube-URL">
+    <img src="https://img.shields.io/badge/YouTube-red?style=for-the-badge&logo=youtube&logoColor=white" alt="Youtube Badge"/>
+  </a>
+  <a href="your-twitter-URL">
+    <img src="https://img.shields.io/badge/Twitter-blue?style=for-the-badge&logo=twitter&logoColor=white" alt="Twitter Badge"/>
+  </a>
+</div>
+
 ## Introduction ##
 
 &nbsp;&nbsp;&nbsp;&nbsp;In 2019, I wanted to make a chatbot for learning foreign languages, I do not know exactly why, but I really wanted to. But I liked the idea that you can make some kind of resource that is accessed through a messenger. In general, in my opinion, resources should be divided into two types: exclusively `informational` and `design`. For example, I would refer `Wikipedia` or the `library's website` to the `informational` ones, and an `online store`, a website `apple.com` to the `design`. This approach organizes resources according to their purpose.  
@@ -14,7 +26,8 @@
 - the ability to receive and process `attachments` from the user _(including geo-location)_   
 - and much more!
 ---
-### [Project structure](quanario)
+
+## [Project structure](quanario)
  
 |->`quanario` - root folder of the project.  
 &nbsp;&nbsp;&nbsp;&nbsp; ∟ `bot.py` - the main class of the module. [Learn more.](https://github.com/Stepan-coder/Quanario/tree/master/quanario#botpy)  
@@ -48,5 +61,60 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ∟ `universities.py` - class with information about which `universities` the user attended. [Learn more.](https://github.com/Stepan-coder/Quanario/tree/master/quanario#user--education--universitiespy)  
 
 ---
-  
-  
+## **Installation**
+
+
+## **Usage**
+To start development, you need to install the module (see the `Installation` section) and import it into your project. An example of the simplest echo bot:
+
+<details><summary>See an example</summary><p>
+
+```Python3
+from quanario.bot import *
+
+
+def send_keyboard(bot: Bot, message: Message, args: tuple = None):
+    pass
+
+TOKEN = "*YOUR TOKEN*"
+APP_ID = 000000000
+
+bot = Bot(token=TOKEN, app_id=APP_ID)
+bot.run(init_method=send_keyboard)
+```
+
+</p></details>
+
+You also have the opportunity to get acquainted with other, more complex examples, to do this, follow one of the links below.  
+|-> [Echo](examples/echo)  
+&nbsp;&nbsp;&nbsp;&nbsp; ∟ To view the `text` example, click [here](examples/echo/text.py).  
+&nbsp;&nbsp;&nbsp;&nbsp; ∟ To view the `audio` example, click [here](examples/echo/audio.py).  
+&nbsp;&nbsp;&nbsp;&nbsp; ∟ To view the `photo` example, click [here](examples/echo/photo.py).  
+&nbsp;&nbsp;&nbsp;&nbsp; ∟ To view the `video` example, click [here](examples/echo/video.py).  
+&nbsp;&nbsp;&nbsp;&nbsp; ∟ To view the `file` example, click [here](examples/echo/file.py).  
+|-> [Keyboard](examples/keyboard)  
+&nbsp;&nbsp;&nbsp;&nbsp; ∟ To view the `keyboard` example, click [here](examples/keyboard/keyboard.py).  
+|-> [Carousel](examples/carousel)  
+&nbsp;&nbsp;&nbsp;&nbsp; ∟ To view the `carousel` example, click [here](examples/carousel/carousel.py).  
+|-> [Geoposition](examples/geoposition)  
+&nbsp;&nbsp;&nbsp;&nbsp; ∟ To view the `geoposition` example, click [here](examples/geoposition/geoposition.py). 
+
+## **FAQ**
+
+
+# **License**
+
+![сс-nc-by-license](https://static.wixstatic.com/media/342407_05e016f9f44240429203c35dfc8df63b~mv2.png/v1/fill/w_563,h_200,al_c,lg_1,q_80/342407_05e016f9f44240429203c35dfc8df63b~mv2.webp)
+
+CC-BY-NC and commercial usage available after agreement with `quanario` authors.
+
+## **Commerical inquiries**
+
+- Via email - stepan.borodin2016@bk.ru
+- Via VK - via this [link](https://vk.com/stepanborodin)
+- Via telegram - via this [link](https://t.me/StepanBorodin)
+
+## **Further reading**
+
+* link 1
+* link 2
