@@ -127,8 +127,7 @@ CC-BY-NC and commercial usage available after agreement with `Quanario_VK` autho
 
 ## **Further reading**
 
-* link 1
-* link 2
+Will be soon... 
 
 ## Alternatives
 
