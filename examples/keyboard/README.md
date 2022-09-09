@@ -20,10 +20,8 @@ bot = Bot(token=TOKEN, app_id=APP_ID)
 bot.run(init_method=send_keyboard)
 ```
 ---
-#### Обычная клавиатура (Simple keyboard)
-![Simple Keyboard](../../images/Keyboard.jpg) 
-#### Встроенная клавиатура (Inline keyboard)
-![Inline Keyboard](../../images/inline_keyboard.jpg)
+#### Обычная клавиатура (Simple keyboard) / Встроенная клавиатура (Inline keyboard) 
+![Simple Keyboard](../../images/Keyboard.jpg)  ![Inline Keyboard](../../images/inline_keyboard.jpg)
 Для отправки клавиатуры пользователю, её необходимо сгенерировать. Для этого вызовем метод `create_keyboard()` экземпляра класса `bot`. Вообще, клавиатуры бывают двух типов: `обычные` и так называемые `inline`. Inline клавиатуры отличаются от обычных тем, что располагаются в беседе, в то время, как обычные клавиатуры, прикрепляются к нижней части экрана... Аргумент `one_time`, необходим для сохранения текущей клавиатуры у пользователя, до отправки следующей. (Ради интереса можете поэкспериментировать с параметрами `inline` и `one_time`)
 ><details><summary>Watch in English</summary><p>
 >
