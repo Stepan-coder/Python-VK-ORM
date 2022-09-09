@@ -1,6 +1,6 @@
 # Examples
 
-To start development, you need to install the module (see the [installation](../#installation) section) and import it into your project. An example of the simplest echo bot:
+To start development, you need to install the module (see the [installation](../Quanario_VK#installation) section) and import it into your project. An example of the simplest echo bot:
 
 <details><summary>See an example</summary><p>
 
