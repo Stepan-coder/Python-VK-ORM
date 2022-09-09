@@ -1,5 +1,7 @@
 # Quanario_VK - Module for the development of chatbots in the social network `VKontakte`
 
+![Logo](images/Quanario.png)  
+
 ## Table of contents
 
 * [Introduction](#introduction)
