@@ -20,7 +20,7 @@ bot = Bot(token=TOKEN, app_id=APP_ID)
 bot.run(init_method=send_carousel)
 ```
 ---
-![Vk_Carousel](../../images/Carousel.jpg)
+![<img src="../../images/Carousel.jpg" height="50%"/>](../../images/Carousel.jpg)
 Карусель - это новый формат взаимодействия пользователя с ботом, представленный компанией `ВКонтакте`. Карусель состоит из нескольких карточек состоящих из: картинки, заголовка карточки, описания карточки и кнопок клавиатуры. Для отправки карусели пользователю, её необходимо сгенерировать. Для этого вызовем метод `create_carousel()` экземпляра класса `bot`.
 ><details><summary>Watch in English</summary><p>
 >
