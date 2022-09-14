@@ -105,17 +105,17 @@ You also have the opportunity to get acquainted with other, more complex example
 |-> [Geoposition](examples/geoposition)  
 &nbsp;&nbsp;&nbsp;&nbsp; ∟ To view the `geoposition` example, click [here](examples/geoposition/geoposition.py). 
 
-## **Demo**
+## [**Demo**](https://vk.me/linguisticbot)
 
 ![LinguisticBotLogo](https://sun9-41.userapi.com/impg/GTqw8HgGArjBXm2TYsUhpXSvP0zc6BLwgwahmg/t51vIX4ts2g.jpg?size=2560x2560&quality=95&sign=d82fead7ad72554a5d3eb5a24a4826a6&type=album)
 
-As an example, I can demonstrate the community on VKontakte - [LinguisticBot](https://vk.me/linguisticbot ). This is my community for learning foreign languages for everyone. It implements all the modules of this educational school website. The bot provides 6 types of interactive tasks to increase the user's vocabulary, as well as an audition task. In addition, as an example, a store has been implemented in which you can buy tips and sections with listening. This project has been running nonstop for 2 years. During this period, a huge number of bugs and bugs in the library have been fixed [Quanario_VK](https://github.com/Stepan-coder/Quanario_VK)
+As an example, I can demonstrate the community on VKontakte - [LinguisticBot](https://vk.me/linguisticbot). This is my community for learning foreign languages for everyone. It implements all the modules of this educational school website. The bot provides 6 types of interactive tasks to increase the user's vocabulary, as well as an audition task. In addition, as an example, a store has been implemented in which you can buy tips and sections with listening. This project has been running nonstop for 2 years. During this period, a huge number of bugs and bugs in the library have been fixed [Quanario_VK](https://github.com/Stepan-coder/Quanario_VK)
 
 ## **FAQ**
 
 I'm just launching this project, but if you have any questions, you can always ask in `issues` or in our [telegram](https://t.me/+-awnUbOP1l41MjAy) chat or [VKontakte](https://vk.com/quanario_vk) group.
 
-# **License**
+# [**License**](LICENSE)
 
 ![сс-nc-by-license](https://static.wixstatic.com/media/342407_05e016f9f44240429203c35dfc8df63b~mv2.png/v1/fill/w_563,h_200,al_c,lg_1,q_80/342407_05e016f9f44240429203c35dfc8df63b~mv2.webp)
 
