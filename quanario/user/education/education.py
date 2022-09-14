@@ -1,3 +1,11 @@
+"""
+:authors: Stepan Borodin
+:license: CC-BY-NC
+:copyright: (c) 2022 Stepan-coder
+:link: https://github.com/Stepan-coder/Quanario_VK
+"""
+
+
 from quanario.user.education.schools import *
 from quanario.user.education.universities import *
 from typing import Dict, Any, List, Optional

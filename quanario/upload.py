@@ -1,3 +1,11 @@
+"""
+:authors: Stepan Borodin
+:license: CC-BY-NC
+:copyright: (c) 2022 Stepan-coder
+:link: https://github.com/Stepan-coder/Quanario_VK
+"""
+
+
 import os
 import vk_api
 import ffmpeg

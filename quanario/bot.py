@@ -1,3 +1,11 @@
+"""
+:authors: Stepan Borodin
+:license: CC-BY-NC
+:copyright: (c) 2022 Stepan-coder
+:link: https://github.com/Stepan-coder/Quanario_VK
+"""
+
+
 from __future__ import annotations
 import asyncio
 import warnings

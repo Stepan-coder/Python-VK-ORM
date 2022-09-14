@@ -1,3 +1,11 @@
+"""
+:authors: Stepan Borodin
+:license: CC-BY-NC
+:copyright: (c) 2022 Stepan-coder
+:link: https://github.com/Stepan-coder/Quanario_VK
+"""
+
+
 import vk_api
 from typing import Optional, Dict, List, Any
 from quanario.input_message.voice import *

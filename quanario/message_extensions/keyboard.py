@@ -1,3 +1,11 @@
+"""
+:authors: Stepan Borodin
+:license: CC-BY-NC
+:copyright: (c) 2022 Stepan-coder
+:link: https://github.com/Stepan-coder/Quanario_VK
+"""
+
+
 from enum import Enum
 from typing import Any
 from vk_api.keyboard import VkKeyboard, VkKeyboardColor
