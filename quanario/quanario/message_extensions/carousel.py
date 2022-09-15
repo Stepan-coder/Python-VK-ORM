@@ -10,7 +10,7 @@ import json
 from enum import Enum
 from typing import Any, Dict, List
 from prettytable import PrettyTable
-from quanario.message_extensions.keyboard import *
+from .keyboard import *
 from vk_api.keyboard import VkKeyboard, VkKeyboardColor
 
 

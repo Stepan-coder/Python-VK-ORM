@@ -6,8 +6,8 @@
 """
 
 
-from quanario.user.education.schools import *
-from quanario.user.education.universities import *
+from .schools import *
+from .universities import *
 from typing import Dict, Any, List, Optional
 
 

@@ -110,6 +110,7 @@ def send_carousel(bot: Bot, message: Message, args: tuple = None):
     card_keyboard.add_button(text="Open google.com",
                              button_type=VkKeyboardButton.OPENLINK,
                              payload="https://www.google.ru")
+    card_keyboard.add_line()
     card_keyboard.add_button(button_type=VkKeyboardButton.LOCATION)
 
     carousel.add_element(title="Card №1 title",

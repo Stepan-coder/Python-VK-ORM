@@ -11,8 +11,8 @@ from vk_api import VkApi
 from vk_api.upload import VkUpload
 from vk_api.utils import get_random_id
 from vk_api.bot_longpoll import VkBotLongPoll, VkBotEventType
-from quanario.message_extensions.keyboard import *
-from quanario.message_extensions.carousel import *
+from .message_extensions.keyboard import *
+from .message_extensions.carousel import *
 
 
 class Send:

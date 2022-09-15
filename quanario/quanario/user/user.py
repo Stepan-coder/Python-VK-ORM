@@ -4,18 +4,17 @@
 :copyright: (c) 2022 Stepan-coder
 :link: https://github.com/Stepan-coder/Quanario_VK
 """
-
-
+import time
 from enum import Enum
-from quanario.user.params import *
-from quanario.user.career import *
-from quanario.user.military import *
-from quanario.user.counters import *
-from quanario.user.contacts import *
-from quanario.user.interests import *
-from quanario.user.occupation import *
-from quanario.user.lifeposition import *
-from quanario.user.education.education import *
+from .params import *
+from .career import *
+from .military import *
+from .counters import *
+from .contacts import *
+from .interests import *
+from .occupation import *
+from .lifeposition import *
+from .education.education import *
 from typing import Dict, Any, List, Optional
 
 
@@ -224,24 +223,25 @@ class User:
         :ru Этот метод формирует json объект из полей класса 'User'.
         :en This method generates a json object from the fields of the 'User' class.
         """
+        t1 = time.time()
         if self.education.schools is not None:
-            schools_id =[school.json() if is_full else school.id for school in self.education.schools]
+            schools_id =[school.get_json() if is_full else school.id for school in self.education.schools]
         else:
             schools_id = self.education.schools
         if self.education.universities is not None:
-            uni_id = [university.json() if is_full else university.id for university in self.education.universities]
+            uni_id = [university.get_json() if is_full else university.id for university in self.education.universities]
         else:
             uni_id = self.education.universities
         if self.career is not None:
             for career in self.career:
                 if is_full:
-                    user_career = career.json()
+                    user_career = career.get_json()
                 else:
                     user_career = career.company if career.company is not None else career.group_id
         else:
             user_career = self.career
         if self.military is not None:
-            military = [military.json() if is_full else military.unit_id for military in self.military]
+            military = [military.get_json() if is_full else military.unit_id for military in self.military]
         else:
             military = self.military
         main_info = {"id": self.user_id,
@@ -265,6 +265,7 @@ class User:
                       "military": military}
         life_position = self.life_position.get_json()
         params = self.params.get_json()
+        print(time.time() - t1)
         return {**main_info,
                 **count,
                 **occupation,

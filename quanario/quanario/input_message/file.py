@@ -8,7 +8,6 @@
 
 import os
 import urllib.request
-import quanario.upload
 from typing import Tuple
 
 

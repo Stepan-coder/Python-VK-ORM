@@ -7,13 +7,13 @@
 
 
 import vk_api
+from .voice import *
+from .audio import *
+from .photo import *
+from .video import *  # Недоделано (проблемы со скачиванием)
+from .file import *
+from .geoposition import *
 from typing import Optional, Dict, List, Any
-from quanario.input_message.voice import *
-from quanario.input_message.audio import *
-from quanario.input_message.photo import *
-from quanario.input_message.video import *  # Недоделано (проблемы со скачиванием)
-from quanario.input_message.file import *
-from quanario.input_message.geoposition import *
 from vk_api.bot_longpoll import VkBotEventType
 
 
