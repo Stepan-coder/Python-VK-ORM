@@ -8,9 +8,9 @@
 
 import json
 from enum import Enum
+from .keyboard import *
 from typing import Any, Dict, List
 from prettytable import PrettyTable
-from .keyboard import *
 from vk_api.keyboard import VkKeyboard, VkKeyboardColor
 
 
