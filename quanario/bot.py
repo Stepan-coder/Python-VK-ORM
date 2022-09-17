@@ -2,14 +2,14 @@ from __future__ import annotations
 import asyncio
 import warnings
 import traceback
-from send import *
-from upload import *
-from user.user import *
-from input_message.message import *
+from .send import *
+from .upload import *
+from .user.user import *
+from .input_message.message import *
 from vk_api import VkApi
 from typing import Callable, Awaitable
-from message_extensions import keyboard
-from message_extensions import carousel
+from .message_extensions import keyboard
+from .message_extensions import carousel
 from vk_api.bot_longpoll import VkBotLongPoll, VkBotEventType
 
 
