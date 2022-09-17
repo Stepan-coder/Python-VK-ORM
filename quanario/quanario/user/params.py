@@ -8,7 +8,7 @@
 
 import json
 from enum import Enum
-from .last_seen import *
+from last_seen import *
 from typing import Dict, Any, List, Optional
 
 

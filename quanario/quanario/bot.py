@@ -12,12 +12,12 @@ import warnings
 import traceback
 from vk_api import VkApi
 from typing import Callable, Awaitable
-from .send import *
-from .upload import *
-from .user.user import *
-from .input_message.message import *
-from .message_extensions.keyboard import *
-from .message_extensions.carousel import *
+from send import *
+from upload import *
+from user.user import *
+from input_message.message import *
+from message_extensions.keyboard import *
+from message_extensions.carousel import *
 from vk_api.bot_longpoll import VkBotLongPoll, VkBotEventType
 
 

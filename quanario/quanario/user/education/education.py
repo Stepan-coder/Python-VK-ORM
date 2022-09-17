@@ -6,8 +6,8 @@
 """
 
 
-from .schools import *
-from .universities import *
+from schools import *
+from universities import *
 from typing import Dict, Any, List, Optional
 
 

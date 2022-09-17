@@ -7,12 +7,12 @@
 
 
 import vk_api
-from .voice import *
-from .audio import *
-from .photo import *
-from .video import *  # Недоделано (проблемы со скачиванием)
-from .file import *
-from .geoposition import *
+from voice import *
+from audio import *
+from photo import *
+from video import *  # Недоделано (проблемы со скачиванием)
+from file import *
+from geoposition import *
 from typing import Optional, Dict, List, Any
 from vk_api.bot_longpoll import VkBotEventType
 

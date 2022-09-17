@@ -8,15 +8,15 @@
 
 import time
 from enum import Enum
-from .params import *
-from .career import *
-from .military import *
-from .counters import *
-from .contacts import *
-from .interests import *
-from .occupation import *
-from .lifeposition import *
-from .education.education import *
+from params import *
+from career import *
+from military import *
+from counters import *
+from contacts import *
+from interests import *
+from occupation import *
+from lifeposition import *
+from education.education import *
 from typing import Dict, Any, List, Optional
 
 
