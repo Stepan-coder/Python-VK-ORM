@@ -1,23 +1,15 @@
-"""
-:authors: Stepan Borodin
-:license: CC-BY-NC
-:copyright: (c) 2022 Stepan-coder
-:link: https://github.com/Stepan-coder/Quanario_VK
-"""
-
-
 from __future__ import annotations
 import asyncio
 import warnings
 import traceback
-from vk_api import VkApi
-from typing import Callable, Awaitable
 from send import *
 from upload import *
 from user.user import *
 from input_message.message import *
-from message_extensions.keyboard import *
-from message_extensions.carousel import *
+from vk_api import VkApi
+from typing import Callable, Awaitable
+from message_extensions import keyboard
+from message_extensions import carousel
 from vk_api.bot_longpoll import VkBotLongPoll, VkBotEventType
 
 
