@@ -160,10 +160,14 @@ bot.run(init_method=send_keyboard)
 ---
 #### Update 29/09/2022
 После небольшого обновления, появилась возможность вывести на экран текущую клавиатуру. Это сделано для удобства и ускорения разработки, теперь вы можете её увидеть просто напечатав её объект `print(*your keyboard object*)`.
+
 ><details><summary>Watch in English</summary><p>
 >
 >After a small update, it became possible to display the current keyboard. This is done for convenience and acceleration of development, now you can see it simply by typing its object `print(*your keyboard object*)`.
 ></p></details>
+
+<details><summary>View the code</summary><p>
+
 ```Python3 
 from quanario.bot import *
 
@@ -213,6 +217,11 @@ keyboard.add_button(button_type=VkKeyboardButton.LOCATION)
 print(keyboard)
 bot.run(init_method=some_method)
 ```
+
+</p></details>
+
+<details><summary>View the table</summary><p>
+
 ```Python3 
 +-----------------------------------------------------------+
 |           Keyboard(inline=False, one_time=False)          |
@@ -226,6 +235,8 @@ bot.run(init_method=some_method)
 |                          LOCATION                         |
 +-----------------------------------------------------------+
 ```
+
+</p></details>
 
 ### P.S. 
 Подробнее ознакомиться с работой `клавиатуры` можно [тут](../../quanario/message_extensions/keyboard.py) 
