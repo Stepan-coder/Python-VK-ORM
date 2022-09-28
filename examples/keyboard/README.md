@@ -158,6 +158,75 @@ bot.run(init_method=send_keyboard)
 >
 ></p></details>
 ---
+#### Update 29/09/2022
+После небольшого обновления, появилась возможность вывести на экран текущую клавиатуру. Это сделано для удобства и ускорения разработки, теперь вы можете её увидеть просто напечатав её объект `print(*your keyboard object*)`.
+><details><summary>Watch in English</summary><p>
+>
+>After a small update, it became possible to display the current keyboard. This is done for convenience and acceleration of development, now you can see it simply by typing its object `print(*your keyboard object*)`.
+></p></details>
+```Python3 
+from quanario.bot import *
+
+
+def send_keyboard(bot: Bot, message: Message, args: tuple = None):
+    # YOUR CODE HERE
+    pass
+
+TOKEN = "*YOUR TOKEN*"
+APP_ID = 000000000
+
+bot = Bot()
+bot.TOKEN = TOKEN
+bot.APP_ID = APP_ID
+keyboard = bot.create_keyboard()
+keyboard.add_button(text="PRIMARY",
+                    button_type=VkKeyboardButton.DEFAULT,
+                    color=VkKeyboardColor.PRIMARY)
+keyboard.add_button(text="SECONDARY",
+                    button_type=VkKeyboardButton.DEFAULT,
+                    color=VkKeyboardColor.SECONDARY)
+keyboard.add_button(text="POSITIVE",
+                    button_type=VkKeyboardButton.DEFAULT,
+                    color=VkKeyboardColor.POSITIVE)
+keyboard.add_button(text="NEGATIVE",
+                    button_type=VkKeyboardButton.DEFAULT,
+                    color=VkKeyboardColor.NEGATIVE)
+keyboard.add_button(text="NEGATIVE",
+                    button_type=VkKeyboardButton.DEFAULT,
+                    color=VkKeyboardColor.NEGATIVE)
+keyboard.add_line()
+keyboard.add_button(text="Open this link",
+                    button_type=VkKeyboardButton.OPENLINK,
+                    payload="https://www.google.ru")
+keyboard.add_line()
+keyboard.add_button(text="PRIMARY",
+                    button_type=VkKeyboardButton.DEFAULT,
+                    color=VkKeyboardColor.PRIMARY)
+keyboard.add_button(text="SECONDARY",
+                    button_type=VkKeyboardButton.DEFAULT,
+                    color=VkKeyboardColor.SECONDARY)
+keyboard.add_button(text="POSITIVE",
+                    button_type=VkKeyboardButton.DEFAULT,
+                    color=VkKeyboardColor.POSITIVE)
+keyboard.add_line()
+keyboard.add_button(button_type=VkKeyboardButton.LOCATION)
+print(keyboard)
+bot.run(init_method=some_method)
+```
+```Python3 
++-----------------------------------------------------------+
+|           Keyboard(inline=False, one_time=False)          |
++----------+------------+-----------+-----------+-----------+
+|  PRIMARY |  SECONDARY |  POSITIVE |  NEGATIVE |  NEGATIVE |
++----------+------------+-----------+-----------+-----------+
+|                          OPENLINK                         |
++------------------+--------------------+-------------------+
+|      PRIMARY     |      SECONDARY     |      POSITIVE     |
++------------------+--------------------+-------------------+
+|                          LOCATION                         |
++-----------------------------------------------------------+
+```
+
 ### P.S. 
 Подробнее ознакомиться с работой `клавиатуры` можно [тут](../../quanario/message_extensions/keyboard.py) 
 ><details><summary>Watch in English</summary><p>
