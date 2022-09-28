@@ -4,8 +4,7 @@
 :copyright: (c) 2022 Stepan-coder
 :link: https://github.com/Stepan-coder/Quanario_VK
 """
-
-
+import math
 from enum import Enum
 from typing import Any
 from vk_api.keyboard import VkKeyboard, VkKeyboardColor
@@ -42,7 +41,42 @@ class Keyboard:
      sends a placemark on the map).
     """
     def __init__(self, inline: bool = False, one_time: bool = False):
+        self.__inline = inline
+        self.__one_time = one_time
         self.__keyboard = VkKeyboard(inline=inline, one_time=one_time)
+
+    def __str__(self):
+        max_len = -1
+        this_table = [[f"Keyboard(inline={self.__inline}, one_time={self.__one_time})"]]
+        for line in self.__keyboard.lines:
+            row = []
+            row_len = 2 + len(row) - 1  # 2 * '|' + (count - 1) * '|' (between buttons)
+            for button in line:
+                label = ""
+                if button['action']['type'] == 'text':
+                    label = button['action']['label']
+                elif button['action']['type'] == 'location':
+                    label = 'LOCATION'
+                elif button['action']['type'] == 'open_link':
+                    label = 'OPENLINK'
+                row.append(label)
+                row_len += 2 + len(label) + 2  # '  ' + button_text + '  '
+            this_table.append(row)
+            if row_len > max_len:
+                max_len = row_len
+        table, last_row = "", ""
+        for line in this_table:
+            count = (max_len - (2 + len(line) - 1) - len(''.join(line))) / len(line) / 2
+            row = f"+{''.join(['-' * (math.ceil(count) + len(button) + int(count)) + '+' for button in line])}\n"
+            table += f"{Keyboard.__join_rows(last_row, row=row)}\n" if last_row != "" else row
+            table += f"|{''.join([' ' * math.ceil(count) + button + ' ' * int(count) + '|' for button in line])}\n"
+            last_row = row
+        table += last_row
+        return str(table)
+
+    @property
+    def lines(self):
+        return self.__keyboard.lines
 
     def add_button(self,
                    button_type: VkKeyboardButton,
@@ -86,5 +120,12 @@ class Keyboard:
         en: This is json by mind, but it returns in the format of a regular string
         """
         return self.__keyboard.get_empty_keyboard()
+
+    @staticmethod
+    def __join_rows(last_row: str, row: str) -> str:
+        if len(last_row) != len(row):
+            raise Exception('')
+        return ''.join(['+' if l == '+' or r == '+' else '-' for l, r in zip(last_row, row) if l != '\n' or r != '\n'])
+
 
 
